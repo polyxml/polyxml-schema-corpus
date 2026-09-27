@@ -49,6 +49,15 @@ SCHEMAS = {
         "schemas/hl7-cda/POCD_MT000040UV02.xsd",
         "schemas/hl7-cda/CDA.xsd",
     ],
+    "Transit SIRI (CEN)": [
+        "schemas/transit-siri/siri_core.xsd",
+    ],
+    "Defense UCI (US DoD / NATO)": [
+        "schemas/defense-uci/UCI_Versioning_v2_5_0.xsd",
+        "schemas/defense-uci/UCI_SecurityMarkings_v2_5_0.xsd",
+        "schemas/defense-uci/uci_entity_core.xsd",
+        "schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd",
+    ],
 }
 
 

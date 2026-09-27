@@ -42,6 +42,17 @@ schemas = [
     "schemas/hl7-cda/CDA.xsd",
 ]
 
+[modules.transit_siri]
+schemas = ["schemas/transit-siri/siri_core.xsd"]
+
+[modules.defense_uci]
+schemas = [
+    "schemas/defense-uci/UCI_Versioning_v2_5_0.xsd",
+    "schemas/defense-uci/UCI_SecurityMarkings_v2_5_0.xsd",
+    "schemas/defense-uci/uci_entity_core.xsd",
+    "schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd",
+]
+
 [[generate]]
 target = "rust"
 output = "rust"

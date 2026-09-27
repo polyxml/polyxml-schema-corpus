@@ -29,6 +29,8 @@ This corpus ensures PolyXML reliably compiles and generates clean, idiomatic cod
 | **EV Charging** | ISO 15118 (V2G) | `V2G_CI_MsgDef.xsd`<br>`V2G_CI_MsgDataTypes.xsd`<br>`xmldsig-core-schema.xsd` | Electric Vehicle-to-Grid communication. Cross-namespace import with W3C XML Digital Signatures (`xmldsig`). Tests multi-schema deduplication (#81). |
 | **BPM / Workflow** | OMG BPMN 2.0 | `BPMN20.xsd`<br>`Semantic.xsd`<br>`BPMNDI.xsd`<br>`DC.xsd`<br>`DI.xsd` | Business Process Model and Notation. Deep extension inheritance (`tBaseElement` &rarr; `tFlowElement` &rarr; `tFlowNode` &rarr; `tTask`), heavy `xs:substitutionGroup` usage. |
 | **Healthcare** | HL7 CDA R2.1 | `CDA.xsd`<br>`POCD_MT000040UV02.xsd`<br>`NarrativeBlock.xsd` | Clinical Document Architecture. 1,450+ types, complex narrative mixed content, extensive clinical code vocabularies. |
+| **Public Transit** | CEN SIRI v1.4 | `siri_core.xsd` | Service Interface for Real Time Information (European Committee for Standardization / CEN). High-frequency vehicle monitoring telemetry. |
+| **Defense & Aerospace** | US DoD / NATO UCI v2.5 | `UCI_MessageDefinitions_v2_5_0.xsd`<br>`UCI_SecurityMarkings_v2_5_0.xsd`<br>`uci_entity_core.xsd` | Universal Command and Control Interface. 8+ MB schema file with over 720 top-level root element declarations and security classification markings. |
 
 ---
 
@@ -53,10 +55,17 @@ polyxml-schema-corpus/
 │   │   ├── DC.xsd
 │   │   ├── DI.xsd
 │   │   └── Semantic.xsd
-│   └── hl7-cda/               # HL7 Clinical Document Architecture R2.1
-│       ├── CDA.xsd
-│       ├── POCD_MT000040UV02.xsd
-│       └── coreschemas/       # HL7 shared core datatypes & vocabulary
+│   ├── hl7-cda/               # HL7 Clinical Document Architecture R2.1
+│   │   ├── CDA.xsd
+│   │   ├── POCD_MT000040UV02.xsd
+│   │   └── coreschemas/       # HL7 shared core datatypes & vocabulary
+│   ├── transit-siri/          # CEN SIRI real-time transit telemetry
+│   │   └── siri_core.xsd
+│   └── defense-uci/           # US DoD / NATO UCI Command & Control (8MB)
+│       ├── UCI_MessageDefinitions_v2_5_0.xsd
+│       ├── UCI_SecurityMarkings_v2_5_0.xsd
+│       ├── UCI_Versioning_v2_5_0.xsd
+│       └── uci_entity_core.xsd
 ├── polyxml.toml               # Multi-module workspace configuration
 ├── runner.py                  # Automated validation and benchmark harness
 ├── LICENSE                    # Apache-2.0
@@ -69,7 +78,7 @@ polyxml-schema-corpus/
 
 ### 1. Run the Validation & Benchmark Suite
 
-Ensure `polyxml` is installed or compiled in `../PolyXML/target/debug/polyxml`:
+Ensure `polyxml` is installed or compiled in `../PolyXML/target/release/polyxml` (or `target/debug/polyxml`):
 
 ```bash
 python3 runner.py
@@ -94,6 +103,9 @@ polyxml validate schemas/iso15118/*.xsd
 
 # Validate BPMN 2.0 schemas
 polyxml validate schemas/bpmn20/*.xsd
+
+# Validate 8MB Defense UCI schema
+polyxml validate schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd
 ```
 
 ### 3. Build & Generate Code Across Modules
@@ -117,6 +129,8 @@ The XML schemas included in this corpus are normative specifications published b
 - **ISO 15118**: International Organization for Standardization / CharIN.
 - **BPMN 2.0**: Object Management Group (OMG).
 - **HL7 CDA**: Health Level Seven International.
+- **CEN SIRI**: European Committee for Standardization.
+- **US DoD / NATO UCI**: Air Force Research Laboratory / Open Architecture Management.
 - **XMLDSIG**: World Wide Web Consortium (W3C).
 
 ## License
