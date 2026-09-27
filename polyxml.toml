@@ -43,7 +43,7 @@ schemas = [
 ]
 
 [modules.transit_siri]
-schemas = ["schemas/transit-siri/siri_core.xsd"]
+schemas = ["schemas/transit-siri/siri/siri_all_framework-v2.0.xsd"]
 
 [modules.defense_uci]
 schemas = [
@@ -52,6 +52,151 @@ schemas = [
     "schemas/defense-uci/uci_entity_core.xsd",
     "schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd",
 ]
+
+[modules.iso20022_pain001]
+schemas = ["schemas/iso20022/pain.001.001.10.xsd"]
+
+[modules.ubl_ccts]
+schemas = ["schemas/ubl-2.1/common/CCTS_CCT_SchemaModule-2.1.xsd"]
+
+[modules.ubl_udt]
+schemas = ["schemas/ubl-2.1/common/UBL-UnqualifiedDataTypes-2.1.xsd"]
+depends_on = ["ubl_ccts"]
+
+[modules.ubl_qdt]
+schemas = ["schemas/ubl-2.1/common/UBL-QualifiedDataTypes-2.1.xsd"]
+depends_on = ["ubl_udt"]
+
+[modules.ubl_cbc]
+schemas = ["schemas/ubl-2.1/common/UBL-CommonBasicComponents-2.1.xsd"]
+depends_on = ["ubl_qdt", "ubl_udt"]
+
+[modules.ubl_signature_basic]
+schemas = ["schemas/ubl-2.1/common/UBL-SignatureBasicComponents-2.1.xsd"]
+depends_on = ["ubl_udt"]
+
+[modules.ubl_signature_aggregate]
+schemas = ["schemas/ubl-2.1/common/UBL-SignatureAggregateComponents-2.1.xsd"]
+depends_on = ["ubl_signature_basic", "ubl_cbc"]
+
+[modules.etsi_xades]
+schemas = [
+    "schemas/ubl-2.1/common/UBL-XAdESv132-2.1.xsd",
+    "schemas/ubl-2.1/common/UBL-XAdESv141-2.1.xsd",
+]
+depends_on = ["iso15118_xmldsig"]
+
+[modules.ubl_signature]
+schemas = ["schemas/ubl-2.1/common/UBL-CommonSignatureComponents-2.1.xsd"]
+depends_on = ["ubl_signature_aggregate", "ubl_cbc", "etsi_xades"]
+
+[modules.ubl_extensions]
+schemas = [
+    "schemas/ubl-2.1/common/UBL-CommonExtensionComponents-2.1.xsd",
+    "schemas/ubl-2.1/common/UBL-ExtensionContentDataType-2.1.xsd",
+]
+depends_on = ["ubl_cbc", "ubl_signature"]
+
+[modules.ubl_cac]
+schemas = ["schemas/ubl-2.1/common/UBL-CommonAggregateComponents-2.1.xsd"]
+depends_on = ["ubl_cbc", "ubl_extensions"]
+
+[modules.ubl_invoice]
+schemas = ["schemas/ubl-2.1/maindoc/UBL-Invoice-2.1.xsd"]
+depends_on = ["ubl_cac", "ubl_cbc", "ubl_extensions"]
+
+[modules.w3c_xhtml]
+schemas = ["schemas/hl7-fhir/fhir-xhtml.xsd"]
+
+[modules.hl7_fhir]
+schemas = ["schemas/hl7-fhir/fhir-single.xsd"]
+depends_on = ["w3c_xhtml"]
+
+[modules.w3c_xmlschema]
+schemas = ["schemas/w3c-xmlschema/XMLSchema.xsd"]
+
+[modules.w3c_xmlenc]
+schemas = ["schemas/security-saml/xenc-schema.xsd"]
+depends_on = ["iso15118_xmldsig"]
+
+[modules.saml_assertion]
+schemas = ["schemas/security-saml/saml-schema-assertion-2.0.xsd"]
+depends_on = ["w3c_xmlenc", "iso15118_xmldsig"]
+
+[modules.security_saml]
+schemas = ["schemas/security-saml/saml-schema-protocol-2.0.xsd"]
+depends_on = ["saml_assertion", "w3c_xmlenc", "iso15118_xmldsig"]
+
+[modules.w3c_xlink]
+schemas = ["schemas/regulatory-xbrl/xlink-2003-12-31.xsd"]
+
+[modules.xbrl_xlink]
+schemas = ["schemas/regulatory-xbrl/xl-2003-12-31.xsd"]
+depends_on = ["w3c_xlink"]
+
+[modules.xbrl_linkbase]
+schemas = ["schemas/regulatory-xbrl/xbrl-linkbase-2003-12-31.xsd"]
+depends_on = ["xbrl_xlink"]
+
+[modules.regulatory_xbrl]
+schemas = ["schemas/regulatory-xbrl/xbrl-instance-2003-12-31.xsd"]
+depends_on = ["xbrl_linkbase"]
+
+[modules.ietf_atom]
+schemas = ["schemas/geospatial-kml/atom-author-link.xsd"]
+
+[modules.oasis_ciq_xal]
+schemas = ["schemas/geospatial-kml/xAL.xsd"]
+
+[modules.geospatial_kml]
+schemas = ["schemas/geospatial-kml/ogckml22.xsd"]
+depends_on = ["ietf_atom", "oasis_ciq_xal"]
+
+[modules.aviation_base]
+schemas = ["schemas/aviation-fixm/core/base/Base.xsd"]
+
+[modules.aviation_flight]
+schemas = ["schemas/aviation-fixm/core/flight/Flight.xsd"]
+depends_on = ["aviation_base"]
+
+[modules.aviation_messaging]
+schemas = ["schemas/aviation-fixm/core/messaging/Messaging.xsd"]
+depends_on = ["aviation_base"]
+
+[modules.aviation_fixm]
+schemas = ["schemas/aviation-fixm/core/Fixm.xsd"]
+depends_on = ["aviation_flight", "aviation_messaging"]
+
+[modules.aviation_nas]
+schemas = ["schemas/aviation-fixm/extensions/nas/Nas.xsd"]
+depends_on = ["aviation_fixm"]
+
+[modules.finance_fpml]
+schemas = ["schemas/finance-fpml/fpml-main-5-12.xsd"]
+
+[modules.geospatial_gml]
+schemas = ["schemas/transit-netex/gml/gml_extract_all_objects_v_3_2_1.xsd"]
+
+[modules.transit_netex]
+schemas = ["schemas/transit-netex/NeTEx_publication_timetable.xsd"]
+depends_on = ["geospatial_gml", "transit_siri"]
+
+[modules.soap_envelope]
+schemas = [
+    "schemas/messaging-as4/soap-envelope-1.1.xsd",
+    "schemas/messaging-as4/soap-envelope-1.2.xsd",
+]
+
+[modules.messaging_as4]
+schemas = ["schemas/messaging-as4/ebms-header-3_0.xsd"]
+depends_on = ["soap_envelope"]
+
+[modules.dublin_core]
+schemas = ["schemas/transit-railml/dc.xsd"]
+
+[modules.transit_railml]
+schemas = ["schemas/transit-railml/railML.xsd"]
+depends_on = ["dublin_core"]
 
 [[generate]]
 target = "rust"

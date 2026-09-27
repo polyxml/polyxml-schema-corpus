@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- $Id: infrastructure.xsd 855 2018-10-04 15:07:53Z christian.rahmig $ -->
+<xs:schema xmlns:rail="https://www.railml.org/schemas/2018" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+           targetNamespace="https://www.railml.org/schemas/2018" 
+           elementFormDefault="qualified" 
+           version="2.4">
+
+  <xs:annotation>
+    <xs:documentation>Copyright (c) railML.org e.V. Dresden/Germany; All Rights Reserved.</xs:documentation>
+    <xs:documentation>This work is licensed under the restricted CreativeCommons Attribution-NonCommercial-NoDerivs 3.0 Unported License with additional license conditions of railML.org.</xs:documentation>
+    <xs:documentation>For further information see: https://www.railml.org/licence</xs:documentation>
+    <xs:documentation>Content of this file: XML Schema for railML(R) 2.4 Definition of elements (partially hidden as complex type) for infrastructure sub schema (IS), uses infrastructure types and attribute groups from "xs:include" path</xs:documentation>
+  </xs:annotation>
+
+  <xs:include schemaLocation="infrastructureTypes.xsd" />
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/03/xml.xsd" />
+
+  <xs:element name="infrastructure">
+    <xs:annotation>
+      <xs:documentation source="http://wiki.railml.org/index.php?title=IS:infrastructure" />
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="rail:tInfrastructure">
+          <xs:sequence>
+            <xs:element name="infraAttrGroups" type="rail:eInfraAttrGroup" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation source="http://wiki.railml.org/index.php?title=IS:infraAttrGroups" />
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="tracks" type="rail:eTracks" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation source="http://wiki.railml.org/index.php?title=IS:tracks" />
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="trackGroups" type="rail:eTrackGroups" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackGroups" />
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="operationControlPoints" type="rail:eOperationControlPoints" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation source="http://wiki.railml.org/index.php?title=IS:operationControlPoints" />
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="controllers" type="rail:eControllers" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation source="http://wiki.railml.org/index.php?title=IS:controllers" />
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="speedProfiles" type="rail:eSpeedProfiles" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation source="http://wiki.railml.org/index.php?title=IS:speedProfiles" />
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="states" type="rail:tStates" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Container to define disabled/enabled status of infrastructure</xs:documentation>
+              </xs:annotation>
+          </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:key name="infraAttributesKey">
+      <xs:selector xpath=".//rail:infraAttrGroups/rail:infraAttributes" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="infraAttributes-trackKeyref" refer="rail:infraAttributesKey">
+      <xs:selector xpath=".//rail:tracks/rail:track" />
+      <xs:field xpath="@infraAttrGroupRef" />
+    </xs:keyref>
+    <xs:keyref name="infraAttributes-infraAttrGroupRefKeyref" refer="rail:infraAttributesKey">
+      <xs:selector xpath=".//rail:infraAttrGroupRefs/rail:infraAttrGroupRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="connectionKey">
+      <xs:selector xpath=".//rail:connection" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="connection-connectionKeyref" refer="rail:connectionKey">
+      <xs:selector xpath=".//rail:connection" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="speedChangeKey">
+      <xs:selector xpath=".//rail:speedChanges/rail:speedChange" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="speedChange-signalSpeedRefKeyref" refer="rail:speedChangeKey">
+      <xs:selector xpath=".//rail:signal/rail:speed/rail:speedChangeRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="levelCrossingKey">
+      <xs:selector xpath=".//rail:levelCrossings/rail:levelCrossing" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="levelCrossing-signalLevelCrossingKeyref" refer="rail:levelCrossingKey">
+      <xs:selector xpath=".//rail:signal/rail:levelCrossing" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="trackConditionKey">
+      <xs:selector xpath=".//rail:trackConditions/rail:trackCondition" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="trackCondition-signalTrainRadioKeyref" refer="rail:trackConditionKey">
+      <xs:selector xpath=".//rail:signal/rail:trainRadio" />
+      <xs:field xpath="@trackConditionRef" />
+    </xs:keyref>
+    <xs:keyref name="trackCondition-signalCatenaryKeyref" refer="rail:trackConditionKey">
+      <xs:selector xpath=".//rail:signal/rail:catenary" />
+      <xs:field xpath="@trackConditionRef" />
+    </xs:keyref>
+    <xs:keyref name="trackCondition-signalBrakingKeyref" refer="rail:trackConditionKey">
+      <xs:selector xpath=".//rail:signal/rail:braking" />
+      <xs:field xpath="@trackConditionRef" />
+    </xs:keyref>
+    
+    <xs:key name="mileageChangeKey">
+      <xs:selector xpath=".//rail:mileageChanges/rail:mileageChange" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="mileageChange-signalMilepostKeyref" refer="rail:mileageChangeKey">
+      <xs:selector xpath=".//rail:signal/rail:milepost" />
+      <xs:field xpath="@mileageChangeRef" />
+    </xs:keyref>
+
+    <xs:key name="signalKey">
+      <xs:selector xpath=".//rail:signals/rail:signal" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="signal-signalRefKeyref" refer="rail:signalKey">
+      <xs:selector xpath=".//rail:stopPost/rail:signalRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+    <xs:keyref name="signal-signalGroupKeyref" refer="rail:signalKey">
+      <xs:selector xpath=".//rail:signalGroups/rail:signalGroup/rail:signalRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="baliseKey">
+      <xs:selector xpath=".//rail:balises/rail:balise" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="balise-baliseGroupKeyref" refer="rail:baliseKey">
+      <xs:selector xpath=".//rail:baliseGroup/rail:baliseRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="baliseGroupKey">
+      <xs:selector xpath=".//rail:balises/rail:baliseGroup" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="baliseGroup-signalKeyref" refer="rail:baliseGroupKey">
+      <xs:selector xpath=".//rail:signals/rail:signal/rail:baliseGroupRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="trainProtectionElementKey">
+      <xs:selector xpath=".//rail:trainProtectionElements/rail:trainProtectionElement" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="trainProtectionElement-trainProtectionElementGroupKeyref" refer="rail:trainProtectionElementKey">
+      <xs:selector xpath=".//rail:trainProtectionElementGroup/rail:trainProtectionElementRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="trainProtectionElementGroupKey">
+      <xs:selector xpath=".//rail:trainProtectionElements/rail:trainProtectionElementGroup" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="trainProtectionElementGroup-signalKeyref" refer="rail:trainProtectionElementGroupKey">
+      <xs:selector xpath=".//rail:signals/rail:signal/rail:trainProtectionElementGroupRef" />
+      <xs:field xpath="@ref" />
+    </xs:keyref>
+
+    <xs:key name="controllerKey">
+      <xs:selector xpath=".//rail:controllers/rail:controller" />
+      <xs:field xpath="@id" />
+    </xs:key>
+    <xs:keyref name="controller-switchKeyref" refer="rail:controllerKey">
+      <xs:selector xpath=".//rail:switch" />
+      <xs:field xpath="@controllerRef" />
+    </xs:keyref>
+    <xs:keyref name="controller-levelCrossingKeyref" refer="rail:controllerKey">
+      <xs:selector xpath=".//rail:levelCrossings/rail:levelCrossing" />
+      <xs:field xpath="@controllerRef" />
+    </xs:keyref>
+    <xs:keyref name="controller-signalKeyref" refer="rail:controllerKey">
+      <xs:selector xpath=".//rail:signals/rail:signal" />
+      <xs:field xpath="@controllerRef" />
+    </xs:keyref>
+    <xs:keyref name="controller-trainDetectorKeyref" refer="rail:controllerKey">
+      <xs:selector xpath=".//rail:trainDetectionElements/rail:trainDetector" />
+      <xs:field xpath="@controllerRef" />
+    </xs:keyref>
+    <xs:keyref name="controller-trackCircuitBorderKeyref" refer="rail:controllerKey">
+      <xs:selector xpath=".//rail:trainDetectionElements/rail:trackCircuitBorder" />
+      <xs:field xpath="@controllerRef" />
+    </xs:keyref>
+    <xs:keyref name="controller-locallyControlledAreaKeyref" refer="rail:controllerKey">
+      <xs:selector xpath=".//rail:trackGroups/rail:locallyControlledArea" />
+      <xs:field xpath="@controllerRef" />
+    </xs:keyref>
+
+  </xs:element>
+
+  <xs:complexType name="eOperationControlPoints">
+    <xs:sequence>
+      <xs:element name="ocp" type="rail:eOcp" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:ocp" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eOcp">
+    <xs:complexContent>
+      <xs:extension base="rail:tOperationControlPoint">
+        <xs:sequence>
+          <xs:element name="propOperational" type="rail:eOcpPropOperational" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:propOperational" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="propService" type="rail:tOcpPropService" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:propService" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="propEquipment" type="rail:eOcpPropEquipment" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:propEquipment" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="propOther" type="rail:eOcpPropOther" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:propOther" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="tsi" type="rail:tOcpTsi" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>DEPRECATED. Use register entry "PrimaryLocationCode" instead.</xs:documentation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:tsi" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="area" type="rail:tOcpArea" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:area" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="geoCoord" type="rail:tGeoCoord" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:geoCoord_ocp" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="designator" type="rail:tDesignator" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:designator" />
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eOcpPropOperational">
+    <xs:complexContent>
+      <xs:extension base="rail:tOcpPropOperational">
+        <xs:sequence>
+          <xs:element name="uptime" type="rail:tOcpUptime" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:uptime" />
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eOcpPropOther">
+    <xs:complexContent>
+      <xs:extension base="rail:tOcpPropOther">
+        <xs:sequence>
+          <xs:element name="additionalName" type="rail:tOcpAdditionalName" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Deprecated for next major release, use "additionalName" in "ocp" instead.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="states" type="rail:tStates" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>container for states of OCP; use this element to define the status of the OCP in terms of availability for operation</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eOcpPropEquipment">
+    <xs:choice>
+      <xs:element name="summary" type="rail:tOcpPropEquipmentSummary">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:summary" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trackRef" type="rail:tTrackRefInGroup" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackRef_propEquipment" />
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="eControllers">
+    <xs:sequence>
+      <xs:element name="controller" type="rail:tController" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:controller" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eSpeedProfiles">
+    <xs:sequence>
+      <xs:element name="speedProfile" type="rail:tSpeedProfile" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:speedProfile" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eInfraAttrGroup">
+    <xs:sequence>
+      <xs:element name="infraAttributes" type="rail:eInfraAttr" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:infraAttributes" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eLocallyControlledArea">
+    <xs:complexContent>
+      <xs:extension base="rail:tLocallyControlledArea">
+        <xs:sequence>
+          <xs:element name="trackRef" type="rail:tTrackRefInGroup" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackRef_locallyControlledArea" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="controllerRef" type="rail:tElementRefInGroup" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>reference from locally controlled area to a controller</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eLine">
+    <xs:complexContent>
+      <xs:extension base="rail:tLine">
+        <xs:sequence>
+          <xs:element name="lineDescr" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>DEPRECATED with railML version 2.4</xs:documentation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:lineDescr" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trackRef" type="rail:tTrackRefInGroup" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackRef_line" />
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackGroups">
+    <xs:sequence>
+      <xs:element name="line" type="rail:eLine" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:line" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="locallyControlledArea" type="rail:eLocallyControlledArea" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:locallyControlledArea" />
+        </xs:annotation>
+      </xs:element>
+      <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>provide an extension point for non-railML elements in foreign namespace</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eTracks">
+    <xs:sequence>
+      <xs:element name="track" type="rail:eTrack" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:track" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eTrack">
+    <xs:complexContent>
+      <xs:extension base="rail:tTrack">
+        <xs:sequence>
+          <xs:element name="trackDescr" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>DEPRECATED with railML version 2.4</xs:documentation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackDescr" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trackTopology" type="rail:eTrackTopology">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackTopology" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trackElements" type="rail:eTrackElements" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackElements" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ocsElements" type="rail:eOcsElements" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:ocsElements" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="infraAttrGroupRefs" type="rail:eInfraAttrGroupRefs" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:infraAttrGroupRefs" />
+            </xs:annotation>
+          </xs:element>
+          <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Deprecated for next major release, use "generic any element" instead.</xs:documentation>
+            </xs:annotation>
+          </xs:any>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackTopology">
+    <xs:sequence>
+      <xs:element name="trackBegin" type="rail:eTrackBegin">
+        <xs:annotation>
+          <xs:documentation>this node marks the begin of the track defined by its relative position pos=0</xs:documentation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackBegin" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trackEnd" type="rail:eTrackEnd">
+        <xs:annotation>
+          <xs:documentation>this node marks the end of the track defined by its relative position pos=(length of track)</xs:documentation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackEnd" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="mileageChanges" type="rail:eMileageChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:mileageChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="connections" type="rail:eConnections" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:connections" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="crossSections" type="rail:eCrossSections" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:crossSections" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="borders" type="rail:eBorder" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:borders" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackNode">
+    <xs:complexContent>
+      <xs:extension base="rail:tTrackNode">
+        <xs:choice>
+          <xs:element name="connection" type="rail:tConnectionData">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:connection_trackBegin" />
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:connection_trackEnd" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="bufferStop" type="rail:tBufferStop">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:bufferStop_trackBegin" />
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:bufferStop_trackEnd" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="openEnd" type="rail:tOpenEnd">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:openEnd_trackBegin" />
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:openEnd_trackEnd" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="macroscopicNode" type="rail:tMacroscopicNode">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:macroscopicNode_trackBegin" />
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:macroscopicNode_trackEnd" />
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackBegin">
+    <xs:complexContent>
+      <xs:extension base="rail:eTrackNode">
+        <xs:attribute name="absDir" type="rail:tMileageDirection">
+          <xs:annotation>
+            <xs:documentation>the starting direction of the mileage related to the track</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackEnd">
+    <xs:complexContent>
+      <xs:extension base="rail:eTrackNode">
+        <xs:attribute name="absPosIn" type="rail:tLengthM">
+          <xs:annotation>
+            <xs:documentation>the mileage of the (incoming) line in meters</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eSwitch">
+    <xs:complexContent>
+      <xs:extension base="rail:tSwitch">
+        <xs:sequence>
+          <xs:element name="connection" type="rail:tSwitchConnectionData" maxOccurs="3">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:connection_switch" />
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eCrossing">
+    <xs:complexContent>
+      <xs:extension base="rail:tCrossing">
+        <xs:sequence>
+          <xs:element name="connection" type="rail:tSwitchConnectionData" maxOccurs="3">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:connection_crossing" />
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eMileageChanges">
+    <xs:sequence>
+      <xs:element name="mileageChange" type="rail:tMileageChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:mileageChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eConnections">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="switch" type="rail:eSwitch" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:switch" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="crossing" type="rail:eCrossing" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:crossing" />
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="eCrossSections">
+    <xs:sequence>
+      <xs:element name="crossSection" type="rail:tCrossSection" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:crossSection" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eBorder">
+    <xs:sequence>
+      <xs:element name="border" type="rail:tBorder" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:border" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackElements">
+    <xs:sequence>
+      <xs:element name="speedChanges" type="rail:eSpeedChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:speedChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="gradientChanges" type="rail:eGradientChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:gradientChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="radiusChanges" type="rail:eRadiusChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:radiusChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="tunnels" type="rail:eTunnels" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:tunnels" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bridges" type="rail:eBridges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:bridges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="levelCrossings" type="rail:eLevelCrossings" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:levelCrossings" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ownerChanges" type="rail:eOwnerChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:ownerChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="operationModeChanges" type="rail:eOperationModeChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:operationModeChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trainProtectionChanges" type="rail:eTrainProtectionChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainProtectionChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="electrificationChanges" type="rail:eElectrificationChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:electrificationChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="powerTransmissionChanges" type="rail:ePowerTransmissionChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:powerTransmissionChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="axleWeightChanges" type="rail:eAxleWeightChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:axleWeightChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="gaugeChanges" type="rail:eGaugeChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:gaugeChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="clearanceGaugeChanges" type="rail:eClearanceGaugeChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:clearanceGaugeChanges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="geoMappings" type="rail:eGeoMappings" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:geoMappings" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trackConditions" type="rail:eTrackConditions" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackConditions" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="platformEdges" type="rail:ePlatformEdges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:platformEdges" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="serviceSections" type="rail:eServiceSections" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:serviceSections" />
+        </xs:annotation>
+      </xs:element>
+      <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>provide an extension point for non-railML elements in foreign namespace</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eSpeedChanges">
+    <xs:sequence>
+      <xs:element name="speedChange" type="rail:tSpeedChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:speedChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eGradientChanges">
+    <xs:sequence>
+      <xs:element name="gradientChange" type="rail:tGradientChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:gradientChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eRadiusChanges">
+    <xs:sequence>
+      <xs:element name="radiusChange" type="rail:tRadiusChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:radiusChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eCrossedElements">
+    <xs:sequence>
+      <xs:element name="crossedElement" type="rail:tCrossedElement" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:crossedElement" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eTunnel">
+    <xs:complexContent>
+      <xs:extension base="rail:tTunnel">
+        <xs:sequence>
+          <xs:element name="crossedElements" type="rail:eCrossedElements" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>list the elements that are crossed by this element</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTunnels">
+    <xs:sequence>
+      <xs:element name="tunnel" type="rail:eTunnel" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:tunnel" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eBridge">
+    <xs:complexContent>
+      <xs:extension base="rail:tBridge">
+        <xs:sequence>
+          <xs:element name="crossedElements" type="rail:eCrossedElements" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>list the elements that are crossed by this element</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eBridges">
+    <xs:sequence>
+      <xs:element name="brigde" type="rail:eBridge" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:brigde" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eLevelCrossing">
+    <xs:complexContent>
+      <xs:extension base="rail:tLevelCrossing">
+        <xs:sequence>
+          <xs:element name="crossedElements" type="rail:eCrossedElements" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>list the elements that are crossed by this element</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eLevelCrossings">
+    <xs:sequence>
+      <xs:element name="levelCrossing" type="rail:eLevelCrossing" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:levelCrossing" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eOwnerChanges">
+    <xs:sequence>
+      <xs:element name="ownerChange" type="rail:tOwnerChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:ownerChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eOperationModeChanges">
+    <xs:sequence>
+      <xs:element name="operationModeChange" type="rail:tOperationModeChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:operationModeChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eTrainProtectionChanges">
+    <xs:sequence>
+      <xs:element name="trainProtectionChange" type="rail:tTrainProtectionChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainProtectionChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eElectrificationChanges">
+    <xs:sequence>
+      <xs:element name="electrificationChange" type="rail:tElectrificationChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:electrificationChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ePowerTransmissionChanges">
+    <xs:sequence>
+      <xs:element name="powerTransmissionChange" type="rail:tPowerTransmissionChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:powerTransmissionChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eAxleWeightChanges">
+    <xs:sequence>
+      <xs:element name="axleWeightChange" type="rail:tAxleWeightChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:axleWeightChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eGaugeChanges">
+    <xs:sequence>
+      <xs:element name="gaugeChange" type="rail:tGaugeChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:gaugeChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eClearanceGaugeChanges">
+    <xs:sequence>
+      <xs:element name="clearanceGaugeChange" type="rail:tClearanceGaugeChange" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:clearanceGaugeChange" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eGeoMappings">
+    <xs:sequence>
+      <xs:element name="geoMapping" type="rail:tPlacedElement" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:geoMapping" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackConditions">
+    <xs:sequence>
+      <xs:element name="trackCondition" type="rail:tTrackCondition" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackCondition" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ePlatformEdges">
+    <xs:sequence>
+      <xs:element name="platformEdge" type="rail:tPlatformEdge" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:platformEdge" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eServiceSections">
+    <xs:sequence>
+      <xs:element name="serviceSection" type="rail:tServiceSection" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:serviceSection" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eOcsElements">
+    <xs:sequence>
+      <xs:element name="signals" type="rail:eSignals" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:signals" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trainDetectionElements" type="rail:eTrainDetectionElements" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainDetectionElements" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="balises" type="rail:eBalises" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:balises" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trainProtectionElements" type="rail:eTrainProtectionElements" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainProtectionElements" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="stopPosts" type="rail:eStopPosts" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:stopPosts" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="derailers" type="rail:eDerailers" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:derailers" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trainRadioChanges" type="rail:eTrainRadioChanges" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainRadios" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="locks" type="rail:eLocks" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:locks" />
+        </xs:annotation>
+      </xs:element>
+      <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>provide an extension point for non-railML elements in foreign namespace</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eSignals">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="signal" type="rail:tSignal">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:signal" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="signalGroups" type="rail:eSignalGroups">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:signalGroups" />
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="eSignalGroups">
+    <xs:sequence>
+      <xs:element name="signalGroup" type="rail:eSignalGroup" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:signalGroup" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eSignalGroup">
+    <xs:complexContent>
+      <xs:extension base="rail:tSignalGroup">
+        <xs:sequence>
+          <xs:element name="signalRef" type="rail:tSignalRefInGroup" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:signalRef" />
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTrainDetectionElements">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="trainDetector" type="rail:tTrainDetector">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainDetector" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trackCircuitBorder" type="rail:tTrackCircuitBorder">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trackCircuitBorder" />
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="eBalises">
+    <xs:sequence>
+      <xs:element name="balise" type="rail:tBalise" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:balise" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="baliseGroup" type="rail:tBaliseGroup" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:baliseGroup" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eTrainProtectionElements">
+    <xs:sequence>
+      <xs:element name="trainProtectionElement" type="rail:tTrainProtectionElement" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainProtectionElement" />
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="trainProtectionElementGroup" type="rail:tTrainProtectionElementGroup" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainProtectionElementGroup" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eStopPosts">
+    <xs:sequence>
+      <xs:element name="stopPost" type="rail:tStopPost" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:stopPost" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eDerailers">
+    <xs:sequence>
+      <xs:element name="derailer" type="rail:tDerailer" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:derailer" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eTrainRadioChanges">
+    <xs:sequence>
+      <xs:element name="trainRadioChange" type="rail:tTrainRadioChange" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>start of section with certain train radio system installed at the infrastructure</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eLocks">
+    <xs:sequence>
+      <xs:element name="lock" type="rail:tLock" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Locks are physical railway infrastructure elements that are used for logical locking connections between switches, derailers, level crossings, or other signalling components.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="eInfraAttrGroupRefs">
+    <xs:sequence>
+      <xs:element name="infraAttrGroupRef" type="rail:tElementWithReference" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>sub-element for a reference to an infraAttributes instance</xs:documentation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:infraAttributes" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eInfraAttr">
+    <xs:complexContent>
+      <xs:extension base="rail:tElementWithIDAndNameWithoutAny">
+        <xs:all>
+          <xs:element name="owner" type="rail:tOwner" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:owner" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="operationMode" type="rail:tOperationMode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:operationMode" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trainProtection" type="rail:tTrainProtection" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainProtection" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="electrification" type="rail:tElectrification" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:electrification" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="powerTransmission" type="rail:tPowerTransmission" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:powerTransmission" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="axleWeight" type="rail:tAxleWeight" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:axleWeight" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="gauge" type="rail:tGauge" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:gauge" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="clearanceGauge" type="rail:tClearanceGaugeType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:clearanceGauge" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="speeds" type="rail:eSpeeds" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:speeds" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="epsgCode" type="rail:tEpsgCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:epsgCode" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="trainRadio" type="rail:tTrainRadioAttributes" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:trainRadio" />
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="generalInfraAttributes" type="rail:eGeneralInfraAttributes" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation source="http://wiki.railml.org/index.php?title=IS:generalInfraAttributes" />
+            </xs:annotation>
+          </xs:element>
+        </xs:all>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eSpeeds">
+    <xs:sequence>
+      <xs:element name="speed" type="rail:tSpeedInfo" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:speed" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eGeneralInfraAttributes">
+    <xs:sequence>
+      <xs:element name="generalInfraAttribute" type="rail:eGeneralInfraAttribute" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:generalInfraAttribute" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eGeneralInfraAttribute">
+    <xs:sequence>
+      <xs:element name="attributes" type="rail:eAttributes" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:attributes" />
+        </xs:annotation>
+      </xs:element>
+      <xs:any namespace="##other" processContents="strict" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eAttributes">
+    <xs:sequence>
+      <xs:element name="attribute" type="rail:tAttribute" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="http://wiki.railml.org/index.php?title=IS:attribute" />
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="infrastructureVisualizations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="visualization" type="rail:eInfrastructureVisualization" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>container elements for all infrastructure visualizations</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute ref="xml:base" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="eInfrastructureVisualization">
+    <xs:complexContent>
+      <xs:extension base="rail:tInfrastructureVisualization">
+        <xs:sequence>
+          <xs:element name="lineVis" type="rail:eLineVis" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>visualization of a railway line</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ocpVis" type="rail:eOcpVis" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>visualization of an OCP</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eLineVis">
+    <xs:complexContent>
+      <xs:extension base="rail:tElementWithReference">
+        <xs:sequence>
+          <xs:element name="trackVis" type="rail:eTrackVis" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>visualization of a railway track</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackVis">
+    <xs:complexContent>
+      <xs:extension base="rail:tElementWithReference">
+        <xs:sequence>
+          <xs:element name="trackElementVis" type="rail:eTrackElementVis" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>visualization of a railway track element</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eTrackElementVis">
+    <xs:complexContent>
+      <xs:extension base="rail:tElementWithReference">
+        <xs:sequence>
+          <xs:element name="position" type="rail:tPoint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eOcpVis">
+    <xs:complexContent>
+      <xs:extension base="rail:tElementWithReference">
+        <xs:sequence>
+          <xs:element name="position" type="rail:tPoint">
+            <xs:annotation>
+              <xs:documentation>position of the OCP visualization element in grid coordinates</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="size" type="rail:tSize" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>size of the OCP visualization element</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

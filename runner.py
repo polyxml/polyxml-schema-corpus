@@ -25,6 +25,9 @@ SCHEMAS = {
     "SEPA pacs.008 (ISO 20022)": [
         "schemas/iso20022/pacs.008.001.09.xsd",
     ],
+    "SEPA pain.001 (ISO 20022)": [
+        "schemas/iso20022/pain.001.001.10.xsd",
+    ],
     "ISO 15118 EV Charging": [
         "schemas/iso15118/xmldsig-core-schema.xsd",
         "schemas/iso15118/V2G_CI_AppProtocol.xsd",
@@ -49,8 +52,51 @@ SCHEMAS = {
         "schemas/hl7-cda/POCD_MT000040UV02.xsd",
         "schemas/hl7-cda/CDA.xsd",
     ],
+    "HL7 FHIR R4": [
+        "schemas/hl7-fhir/fhir-xhtml.xsd",
+        "schemas/hl7-fhir/fhir-single.xsd",
+    ],
+    "OASIS UBL 2.1": [
+        "schemas/ubl-2.1/maindoc/UBL-Invoice-2.1.xsd",
+        "schemas/ubl-2.1/maindoc/UBL-Order-2.1.xsd",
+    ],
+    "W3C XML Schema": [
+        "schemas/w3c-xmlschema/XMLSchema.xsd",
+    ],
+    "OASIS SAML 2.0": [
+        "schemas/security-saml/saml-schema-assertion-2.0.xsd",
+        "schemas/security-saml/saml-schema-protocol-2.0.xsd",
+    ],
+    "XBRL 2.1 Financial Filings": [
+        "schemas/regulatory-xbrl/xbrl-instance-2003-12-31.xsd",
+    ],
+    "OGC KML 2.2": [
+        "schemas/geospatial-kml/ogckml22.xsd",
+    ],
+    "OGC GML 3.2.1 (ISO 19136)": [
+        "schemas/transit-netex/gml/gml_extract_all_objects_v_3_2_1.xsd",
+    ],
+    "FIXM 4.0 (ICAO & FAA Aviation)": [
+        "schemas/aviation-fixm/core/base/Base.xsd",
+        "schemas/aviation-fixm/core/flight/Flight.xsd",
+        "schemas/aviation-fixm/core/messaging/Messaging.xsd",
+        "schemas/aviation-fixm/core/Fixm.xsd",
+        "schemas/aviation-fixm/extensions/nas/Nas.xsd",
+    ],
+    "FpML 5.12 (ISDA Derivatives)": [
+        "schemas/finance-fpml/fpml-main-5-12.xsd",
+    ],
     "Transit SIRI (CEN)": [
-        "schemas/transit-siri/siri_core.xsd",
+        "schemas/transit-siri/siri/siri_all_framework-v2.0.xsd",
+    ],
+    "Transit NeTEx (CEN Timetables)": [
+        "schemas/transit-netex/NeTEx_publication_timetable.xsd",
+    ],
+    "Transit RailML 2.4": [
+        "schemas/transit-railml/railML.xsd",
+    ],
+    "OASIS ebMS 3.0 / AS4": [
+        "schemas/messaging-as4/ebms-header-3_0.xsd",
     ],
     "Defense UCI (US DoD / NATO)": [
         "schemas/defense-uci/UCI_Versioning_v2_5_0.xsd",

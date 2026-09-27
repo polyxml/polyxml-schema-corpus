@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:nor="http://www.jernbanedirektoratet.no/railml" xmlns:rail="https://www.railml.org/schemas/2018" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.jernbanedirektoratet.no/railml" elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.5">
+	<xs:annotation>
+		<xs:documentation>
+			railML2.4nor Common, file version: 1.1
+			Release Date: 2022-06-17
+			nor extension version: 5.5
+		</xs:documentation>
+	</xs:annotation>
+	
+  <!-- Extending railML2.4 -->
+	
+	<!-- 	<xs:import namespace="https://www.railml.org/schemas/2018" schemaLocation="https://schemas.railml.org/2018/railML-2.4/schema/railML.xsd">-->	
+	<xs:import namespace="https://www.railml.org/schemas/2018" schemaLocation="railML.xsd">
+		<xs:annotation>
+			<xs:documentation>Copyright (c) Jernbanedirektoratet Oslo/Norway and trafIT solutions Zurich/Switzerland; All rights reserved</xs:documentation>
+			<xs:documentation>This work is licensed according to the railML2.4 license</xs:documentation>
+			<xs:documentation>For further information see: https://www.railml.org/licence</xs:documentation>
+		</xs:annotation>
+	</xs:import>
+
+  <!-- Generic attributes -->
+	
+	<xs:attribute name="parentRef" type="rail:tGenericRef">
+		<xs:annotation>
+			<xs:documentation>A reference to a parent element, that this element is a part of</xs:documentation>
+			<xs:documentation>To be used as an attribute of TT:category and TT:trainGroup</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	
+	<!-- Generic elements -->
+	
+	<xs:element name="designator" type="rail:tDesignator">
+		<xs:annotation>
+			<xs:documentation>Allows the use of designators globally</xs:documentation>
+			<xs:documentation>To be used as a child element of RS:vehicle</xs:documentation>
+			<xs:documentation source="http://wiki2.railml.org/index.php?title=IS:designator"/>
+		</xs:annotation>
+	</xs:element>
+	
+  <!-- Extension of organizationalUnits -->
+  
+  	<xs:complexType name="organizationalUnits">
+		<xs:annotation>
+			<xs:documentation>Extension of rail:tOrganizationalUnits to allow new subelement vehicleOwner</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="rail:tOrganizationalUnits">
+				<xs:sequence>
+					<xs:element name="vehicleOwner" type="rail:tElementWithIDAndName">
+						<xs:annotation>
+							<xs:documentation>A company that owns and leases out vehicles</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>
