@@ -1,0 +1,85 @@
+PolyXML Industry Schema Corpus & Benchmark Suite
+Copyright (c) 2026 Bailey Nguyen and PolyXML Contributors
+
+This product includes software developed by the PolyXML Project
+(https://github.com/polyxml/PolyXML).
+
+===============================================================================
+STANDARDS ATTRIBUTION & THIRD-PARTY COPYRIGHT NOTICES
+===============================================================================
+
+The schemas included in this corpus are public, normative technical
+specifications authored and published by international standards development
+organizations (SDOs), government agencies, and industry consortiums.
+They are collected here strictly for automated conformance testing,
+regression benchmarking, and interoperability validation of the PolyXML
+compiler.
+
+Individual schemas retain all copyright notices, warranties, and terms of use
+stipulated by their respective authoring bodies:
+
+1. International Organization for Standardization (ISO)
+   - ISO 20022 Financial Services — Universal financial industry message scheme
+     (camt.054.001.08, pacs.008.001.09, pain.001.001.10).
+     Copyright (c) ISO / European Payments Council.
+   - ISO 15118 Road vehicles — Vehicle-to-Grid (V2G) communication interface.
+     Copyright (c) ISO / CharIN e.V.
+
+2. World Wide Web Consortium (W3C)
+   - XML Schema 1.0 Normative Schema Definition (XMLSchema.xsd, xml.xsd).
+   - XML Digital Signature (xmldsig-core-schema.xsd).
+   - XML Encryption (xenc-schema.xsd).
+   - XML Linking Language (xlink-2003-12-31.xsd).
+   - Extensible HyperText Markup Language (fhir-xhtml.xsd).
+   Copyright (c) World Wide Web Consortium (MIT, ERCIM, Keio, Beihang).
+   Distributed under the W3C Software and Document Notice and License:
+   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+
+3. OASIS Open
+   - Universal Business Language (UBL) Version 2.1.
+   - Security Assertion Markup Language (SAML) Version 2.0.
+   - ebXML Messaging Services (ebMS) Version 3.0 / AS4 Profile.
+   - Customer Information Quality (CIQ) xAL Version 2.0.
+   Copyright (c) OASIS Open. All Rights Reserved.
+   Distributed under the OASIS Intellectual Property Rights (IPR) Policy.
+
+4. Health Level Seven International (HL7)
+   - Clinical Document Architecture (CDA) Release 2.1.
+   - Fast Healthcare Interoperability Resources (FHIR) Release 4 (v4.0.1).
+   Copyright (c) 2011+ HL7 International.
+   Distributed under the HL7 permissive license terms.
+
+5. Object Management Group (OMG)
+   - Business Process Model and Notation (BPMN) Version 2.0.
+   Copyright (c) Object Management Group, Inc.
+
+6. International Swaps and Derivatives Association (ISDA)
+   - Financial products Markup Language (FpML) Version 5.12.
+   Copyright (c) International Swaps and Derivatives Association, Inc.
+
+7. XBRL International
+   - Extensible Business Reporting Language (XBRL) Recommendation 2.1.
+   Copyright (c) 2003-2013 XBRL International Inc.
+
+8. International Civil Aviation Organization (ICAO) & FAA
+   - Flight Information Exchange Model (FIXM) Version 4.0 and
+     FAA National Airspace System (NAS) Extension Version 4.0.
+   Copyright (c) FIXM Strategy Team / Federal Aviation Administration (FAA).
+
+9. European Committee for Standardization (CEN)
+   - NeTEx (Network Timetable Exchange) CEN/TS 16614.
+   - SIRI (Service Interface for Real Time Information) CEN/TS 15531.
+   Copyright (c) CEN European Committee for Standardization.
+
+10. railML.org
+    - Railway Markup Language (railML) Version 2.4.
+    Copyright (c) railML.org (Creative Commons / railML license).
+
+11. Open Geospatial Consortium (OGC)
+    - Keyhole Markup Language (KML) Version 2.2.
+    - Geography Markup Language (GML) Version 3.2.1 / ISO 19136.
+    Copyright (c) Open Geospatial Consortium (OGC).
+
+12. United States Department of Defense (DoD) & NATO
+    - Universal Command and Control Interface (UCI) Version 2.5.
+    Public domain / United States Government Work.

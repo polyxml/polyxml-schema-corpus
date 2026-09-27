@@ -1,27 +1,42 @@
-# PolyXML Industry Schema Corpus & Benchmark Suite
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/polyxml/PolyXML/main/docs/assets/brand/logo_polyxml_banner.png" alt="PolyXML" width="1000">
+</h1>
 
-[![PolyXML](https://img.shields.io/badge/PolyXML-Compiler-blue)](https://github.com/polyxml/PolyXML)
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+<p align="center">
+  <strong>PolyXML Industry Schema Corpus & Multi-Language Benchmark Suite</strong><br>
+  <em>20 Battle-Tested Enterprise Standards • 45 Modules • 6,800+ Owned Types</em>
+</p>
 
-A curated collection of real-world, battle-tested enterprise XML Schema (XSD) suites spanning banking, healthcare, transit, aviation, capital markets, defense, geospatial, and regulatory domains. Used for stress testing, regression validation, and performance benchmarking of the [PolyXML](https://github.com/polyxml/PolyXML) multi-language code generation compiler.
+<p align="center">
+  <a href="https://github.com/polyxml/PolyXML"><img src="https://img.shields.io/badge/PolyXML-Compiler-blue.svg?logo=rust" alt="PolyXML Compiler"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
+  <a href="NOTICE"><img src="https://img.shields.io/badge/Attribution-NOTICE-blue.svg" alt="Attribution: NOTICE"></a>
+  <a href="https://github.com/polyxml/PolyXML/actions"><img src="https://img.shields.io/github/actions/workflow/status/polyxml/PolyXML/ci.yml?branch=main&label=CI&logo=github" alt="CI"></a>
+  <a href="#included-industry-suites"><img src="https://img.shields.io/badge/Standards-20%20Suites-orange.svg" alt="20 Standards"></a>
+  <a href="#included-industry-suites"><img src="https://img.shields.io/badge/Types-6%2C800%2B-blueviolet.svg" alt="6,800+ Types"></a>
+</p>
 
 ---
 
-## Why an Industry Schema Corpus?
+A curated collection of real-world, battle-tested enterprise XML Schema (XSD) suites spanning banking, healthcare, transit, aviation, capital markets, defense, geospatial, and regulatory domains. Used for stress testing, regression validation, and performance benchmarking of the **[PolyXML](https://github.com/polyxml/PolyXML)** multi-language code generation compiler.
 
-Across open-source XSD generator trackers, certain widely adopted industry schemas are notorious for failing compilation, hanging in infinite loops, or triggering out-of-memory errors. These real-world enterprise schemas stress every corner of the W3C XML Schema 1.0/1.1 specifications:
+---
+
+## 🏛️ Why an Industry Schema Corpus?
+
+Across open-source XSD generator trackers, certain widely adopted industry schemas are notorious for failing compilation, hanging in infinite loops, or triggering out-of-memory errors. These real-world enterprise schemas stress every corner of the W3C XML Schema 1.0 and 1.1 specifications:
 
 - **Circular Type Graphs & Self-Referential Types**: Flight trajectories, process graphs, and linked asset events (handled via Tarjan Strongly Connected Component detection).
 - **Deep Inheritance & Polymorphic Hierarchies**: Multi-level `xs:extension` inheritance trees (e.g. 6+ levels deep in BPMN 2.0 and NeTEx).
 - **Multi-Module Cross-Namespace Imports**: Shared cryptographic and metadata roots (e.g. W3C `xmldsig`, `xmlenc`, `xlink`, `xAL`) imported across protocol versions.
 - **Extreme Scale & Facet Density**: Massive industrial standards with thousands of types (e.g. NeTEx with 2,400+ types, HL7 CDA with 1,450+ types, UBL with 1,000+ types).
-- **Multi-Megabyte Monolithic Schemas**: Schemas such as NATO UCI (8.0 MB single file) and HL7 FHIR (2.6 MB).
+- **Multi-Megabyte Monolithic Schemas**: Massive schema files such as NATO UCI (8.0 MB single file) and HL7 FHIR (2.6 MB).
 
 This corpus ensures PolyXML reliably compiles and generates clean, idiomatic code across all **7 target languages** (Rust, TypeScript, Python, Go, C#, Java, and C++) without crashing or producing conflicting type declarations.
 
 ---
 
-## Included Industry Suites
+## 📦 Included Industry Suites
 
 | Domain | Standard / Organization | Key Schemas | Complexity Characteristics |
 | :--- | :--- | :--- | :--- |
@@ -38,7 +53,7 @@ This corpus ensures PolyXML reliably compiles and generates clean, idiomatic cod
 | **Transit / Timetables** | CEN NeTEx (CEN/TS 16614) | `NeTEx_publication_timetable.xsd` | European standard for public transport static data, timetables, and stop topology. Colossal scale: **2,400+ types, 720+ root elements**. |
 | **Transit / Telemetry** | CEN SIRI (CEN/TS 15531) | `siri_all_framework-v2.0.xsd` | Service Interface for Real Time Information across European public transport operators. |
 | **Transit / Rail** | railML 2.4 | `railML.xsd`<br>`infrastructure.xsd` | Railway Markup Language for rail network infrastructure, rolling stock, and interlocking timetables. |
-| **Defense / Unmanned Systems** | US DoD / NATO UCI v2.5 | `UCI_MessageDefinitions_v2_5_0.xsd` | Universal Command and Control Interface for autonomous and unmanned aerial systems. **8.0 MB** monolithic schema. |
+| **Defense / Autonomous Systems** | US DoD / NATO UCI v2.5 | `UCI_MessageDefinitions_v2_5_0.xsd` | Universal Command and Control Interface for autonomous and unmanned aerial systems. **8.0 MB** monolithic schema. |
 | **BPM / Workflow** | OMG BPMN 2.0 | `BPMN20.xsd`<br>`Semantic.xsd` | Business Process Model and Notation. Deep extension inheritance (`tBaseElement` &rarr; `tFlowElement` &rarr; `tFlowNode` &rarr; `tTask`), heavy `xs:substitutionGroup` usage. |
 | **Geospatial / GIS** | OGC KML 2.2 | `ogckml22.xsd`<br>`atom-author-link.xsd` | Open Geospatial Consortium Keyhole Markup Language (Google Earth, GIS features). 216+ types, 276 elements, OASIS CIQ address integration. |
 | **Geospatial / GIS** | OGC GML 3.2.1 (ISO 19136) | `gml_extract_all_objects_v_3_2_1.xsd` | Geography Markup Language foundation for geographic coordinate systems, topologies, and feature geometries. |
@@ -48,7 +63,7 @@ This corpus ensures PolyXML reliably compiles and generates clean, idiomatic cod
 
 ---
 
-## Directory Structure
+## 📁 Directory Structure
 
 ```
 polyxml-schema-corpus/
@@ -72,13 +87,14 @@ polyxml-schema-corpus/
 │   └── w3c-xmlschema/         # Normative W3C XML Schema definition
 ├── polyxml.toml               # Multi-module workspace configuration (45 modules)
 ├── runner.py                  # Automated validation and benchmark harness
-├── LICENSE                    # Apache-2.0
+├── LICENSE                    # MIT License
+├── NOTICE                     # Standards attribution & third-party copyright notices
 └── README.md
 ```
 
 ---
 
-## Usage
+## ⚡ Usage
 
 ### 1. Run the Validation & Benchmark Suite
 
@@ -126,22 +142,7 @@ polyxml build
 
 ---
 
-## Standards & Attribution
+## ⚖️ Standards Attribution & License
 
-The XML schemas included in this corpus are normative specifications published by international standards bodies:
-- **ISO 20022**: International Organization for Standardization / European Payments Council.
-- **ISO 15118**: International Organization for Standardization / CharIN.
-- **OASIS**: Universal Business Language (UBL), SAML, ebMS/AS4, CIQ.
-- **OMG**: Object Management Group (BPMN 2.0).
-- **HL7**: Health Level Seven International (CDA, FHIR).
-- **ISDA**: International Swaps and Derivatives Association (FpML).
-- **XBRL**: XBRL International.
-- **ICAO / FAA / Eurocontrol**: Flight Information Exchange Model (FIXM).
-- **CEN**: European Committee for Standardization (NeTEx, SIRI).
-- **railML.org**: Railway Markup Language initiative.
-- **OGC**: Open Geospatial Consortium (GML, KML).
-- **W3C**: World Wide Web Consortium (XML Schema, XMLDSIG, XMLEnc, XLink, XHTML).
-
-## License
-
-This repository and its tooling scripts are licensed under the [Apache License, Version 2.0](LICENSE). Normative XSD schemas retain the notices and terms of their respective publishing bodies.
+- **Repository Tooling & Automation**: Licensed under the [MIT License](LICENSE).
+- **Normative XML Schemas**: Authored by respective international standards bodies (ISO, OASIS, W3C, OMG, HL7, ISDA, XBRL, ICAO/FAA, CEN, railML.org, OGC). Retain all copyright notices, warranties, and terms of use stipulated by their publishing bodies. See [NOTICE](NOTICE) for full attribution details.

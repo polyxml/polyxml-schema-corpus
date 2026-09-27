@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """PolyXML Industry Schema Corpus & Benchmark Runner
 
-Automates validation, codegen, and compilation benchmarking across notorious
-real-world enterprise XML schemas (ISO 20022 SEPA, ISO 15118 EV Charging,
-BPMN 2.0, HL7 CDA).
+Automates validation, codegen, and compilation benchmarking across 20
+notorious real-world enterprise XML schemas (ISO 20022 SEPA, OASIS UBL,
+HL7 FHIR, HL7 CDA, ISO 15118 EV Charging, BPMN 2.0, ISDA FpML, CEN NeTEx,
+ICAO/FAA FIXM, NATO UCI, XBRL, SAML 2.0, railML, etc.).
+Licensed under MIT.
 """
 
 from __future__ import annotations
