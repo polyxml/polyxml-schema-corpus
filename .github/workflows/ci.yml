@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-benchmark:
+    name: Validate Industry Schema Corpus
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout polyxml-schema-corpus
+        uses: actions/checkout@v4
+
+      - name: Checkout PolyXML compiler
+        uses: actions/checkout@v4
+        with:
+          repository: polyxml/PolyXML
+          path: PolyXML
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: PolyXML
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile PolyXML CLI (Release)
+        run: |
+          cargo build --release -p polyxml-cli --manifest-path PolyXML/Cargo.toml
+          echo "POLYXML_BIN=$GITHUB_WORKSPACE/PolyXML/target/release/polyxml" >> $GITHUB_ENV
+
+      - name: Run Schema Validation & Module Graph Verification
+        run: |
+          python3 runner.py --bin "$POLYXML_BIN"
