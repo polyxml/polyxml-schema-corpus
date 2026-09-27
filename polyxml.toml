@@ -1,0 +1,73 @@
+[workspace]
+name = "industry_corpus"
+output_base_dir = "./generated"
+go_module = "polyxml/corpus"
+
+[modules.iso20022_camt054]
+schemas = ["schemas/iso20022/camt.054.001.08.xsd"]
+
+[modules.iso20022_pacs008]
+schemas = ["schemas/iso20022/pacs.008.001.09.xsd"]
+
+[modules.iso15118_xmldsig]
+schemas = ["schemas/iso15118/xmldsig-core-schema.xsd"]
+
+[modules.iso15118_v2g]
+schemas = [
+    "schemas/iso15118/V2G_CI_MsgDataTypes.xsd",
+    "schemas/iso15118/V2G_CI_MsgHeader.xsd",
+    "schemas/iso15118/V2G_CI_MsgBody.xsd",
+    "schemas/iso15118/V2G_CI_MsgDef.xsd",
+    "schemas/iso15118/V2G_CI_AppProtocol.xsd",
+]
+depends_on = ["iso15118_xmldsig"]
+
+[modules.bpmn20]
+schemas = [
+    "schemas/bpmn20/DC.xsd",
+    "schemas/bpmn20/DI.xsd",
+    "schemas/bpmn20/BPMNDI.xsd",
+    "schemas/bpmn20/Semantic.xsd",
+    "schemas/bpmn20/BPMN20.xsd",
+]
+
+[modules.hl7_cda]
+schemas = [
+    "schemas/hl7-cda/coreschemas/voc.xsd",
+    "schemas/hl7-cda/coreschemas/datatypes-base.xsd",
+    "schemas/hl7-cda/coreschemas/datatypes.xsd",
+    "schemas/hl7-cda/coreschemas/infrastructureRoot.xsd",
+    "schemas/hl7-cda/coreschemas/NarrativeBlock.xsd",
+    "schemas/hl7-cda/POCD_MT000040UV02.xsd",
+    "schemas/hl7-cda/CDA.xsd",
+]
+
+[[generate]]
+target = "rust"
+output = "rust"
+
+[[generate]]
+target = "typescript"
+output = "ts"
+
+[[generate]]
+target = "python"
+output = "python"
+
+[[generate]]
+target = "go"
+output = "go"
+
+[[generate]]
+target = "csharp"
+output = "csharp"
+
+[[generate]]
+target = "java"
+output = "java"
+package = "polyxml.corpus"
+
+[[generate]]
+target = "cpp"
+output = "cpp"
+package = "polyxml::corpus"
