@@ -162,9 +162,30 @@ def run_dry_run(polyxml: str) -> bool:
         return False
 
 
+def run_codegen(polyxml: str) -> bool:
+    print("\n" + "=" * 60)
+    print("STEP 3: Full End-to-End Multi-Language Codegen (polyxml build)")
+    print("=" * 60)
+    cmd = [polyxml, "build", "--config", str(ROOT / "polyxml.toml")]
+    start = time.perf_counter()
+    proc = subprocess.run(cmd, cwd=str(ROOT), capture_output=True, text=True)
+    elapsed = time.perf_counter() - start
+    if proc.returncode == 0:
+        print(f"✓ All 7 target languages generated into ./generated/ in {elapsed:.2f}s")
+        return True
+    else:
+        print(f"✗ Codegen build failed ({elapsed:.2f}s):\n{proc.stderr}")
+        return False
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="PolyXML Industry Schema Corpus Runner")
     parser.add_argument("--bin", help="Explicit path to polyxml binary")
+    parser.add_argument(
+        "--codegen",
+        action="store_true",
+        help="Run full multi-language code generation across all 7 targets into ./generated/",
+    )
     args = parser.parse_args()
 
     polyxml = args.bin or find_polyxml()
@@ -172,14 +193,19 @@ def main() -> None:
 
     val_ok = run_validate(polyxml)
     build_ok = run_dry_run(polyxml)
+    codegen_ok = True
+    if args.codegen:
+        codegen_ok = run_codegen(polyxml)
 
     print("\n" + "=" * 60)
     print("SUMMARY")
     print("=" * 60)
     print(f"Validation: {'PASSED' if val_ok else 'FAILED'}")
     print(f"Module Resolution & Graph: {'PASSED' if build_ok else 'FAILED'}")
+    if args.codegen:
+        print(f"Full Codegen (7 Languages): {'PASSED' if codegen_ok else 'FAILED'}")
 
-    if not (val_ok and build_ok):
+    if not (val_ok and build_ok and codegen_ok):
         sys.exit(1)
 
 
