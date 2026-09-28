@@ -32,7 +32,9 @@ Across open-source XSD generator trackers, certain widely adopted industry schem
 - **Extreme Scale & Facet Density**: Massive industrial standards with thousands of types (e.g. NeTEx with 2,400+ types, HL7 CDA with 1,450+ types, UBL with 1,000+ types).
 - **Multi-Megabyte Monolithic Schemas**: Massive schema files such as NATO UCI (8.0 MB single file) and HL7 FHIR (2.6 MB).
 
-This corpus ensures PolyXML reliably compiles and generates clean, idiomatic code across all **7 target languages** (Rust, TypeScript, Python, Go, C#, Java, and C++) without crashing or producing conflicting type declarations.
+The default validation run checks schema parsing and module ownership. A separate
+UCI check generates code and compiles five destination languages; Rust and C++
+large-module compilation are tracked in the linked PolyXML issues.
 
 ---
 
@@ -87,6 +89,7 @@ polyxml-schema-corpus/
 │   └── w3c-xmlschema/         # Normative W3C XML Schema definition
 ├── polyxml.toml               # Multi-module workspace configuration (45 modules)
 ├── runner.py                  # Automated validation and benchmark harness
+├── scripts/check_uci_codegen.py # Bounded UCI generated-code compile check
 ├── LICENSE                    # MIT License
 ├── NOTICE                     # Standards attribution & third-party copyright notices
 └── README.md
@@ -95,6 +98,20 @@ polyxml-schema-corpus/
 ---
 
 ## ⚡ Usage
+
+### UCI generated-code compilation
+
+With Python 3.12+, Go, TypeScript (`tsc`), Java, and .NET 8 installed, run:
+
+```bash
+python3 scripts/check_uci_codegen.py --bin ../PolyXML/target/debug/polyxml
+```
+
+The script generates the four-schema UCI module into a temporary directory,
+compiles one language at a time, and uses PolyXML's memory-cap wrapper when it
+is available. Select a target with `--lang python` (repeat the option for
+several targets). Full Rust and C++ UCI compilation is tracked in
+[PolyXML issue #92](https://github.com/polyxml/PolyXML/issues/92).
 
 ### 1. Run the Validation & Benchmark Suite
 
