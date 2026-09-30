@@ -22,8 +22,7 @@ SCHEMAS = (
     "uci_entity_core.xsd",
     "UCI_MessageDefinitions_v2_5_0.xsd",
 )
-ALL_LANGUAGES = ("python", "go", "typescript", "java", "csharp", "rust")
-DEFAULT_LANGUAGES = ("python", "go", "typescript", "java", "csharp")
+LANGUAGES = ("python", "go", "typescript", "java", "csharp", "rust")
 OUTPUTS = {"python": "python", "go": "go", "typescript": "ts", "java": "java", "csharp": "csharp", "rust": "rs"}
 
 
@@ -61,11 +60,11 @@ def manifest(lang: str) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--bin", type=Path, required=True, help="PolyXML CLI executable")
-    parser.add_argument("--lang", choices=ALL_LANGUAGES, action="append", help="Target to check; repeat to select several")
+    parser.add_argument("--lang", choices=LANGUAGES, action="append", help="Target to check; repeat to select several")
     parser.add_argument("--timeout", type=int, default=120, help="Seconds allowed for each command")
     args = parser.parse_args()
     compiler = args.bin.resolve(strict=True)
-    selected = args.lang or DEFAULT_LANGUAGES
+    selected = args.lang or LANGUAGES
     memcap = ROOT.parent / "PolyXML" / "scripts" / "memcap.sh"
     if not memcap.is_file():
         parser.error(f"memory cap wrapper not found: {memcap}")
