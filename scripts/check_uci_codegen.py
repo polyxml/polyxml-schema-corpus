@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Generate and compile the UCI module one target at a time.
 
-Rust and C++ are intentionally excluded until PolyXML can split their large
-UCI compilation units. This check keeps all output in a temporary directory.
+C++ is intentionally excluded until PolyXML can split large C++ compilation
+units. Rust compilation units are automatically split into topological chunks.
+This check keeps all output in a temporary directory.
 """
 
 from __future__ import annotations
@@ -21,16 +22,21 @@ SCHEMAS = (
     "uci_entity_core.xsd",
     "UCI_MessageDefinitions_v2_5_0.xsd",
 )
-LANGUAGES = ("python", "go", "typescript", "java", "csharp")
-OUTPUTS = {"python": "python", "go": "go", "typescript": "ts", "java": "java", "csharp": "csharp"}
+ALL_LANGUAGES = ("python", "go", "typescript", "java", "csharp", "rust")
+DEFAULT_LANGUAGES = ("python", "go", "typescript", "java", "csharp")
+OUTPUTS = {"python": "python", "go": "go", "typescript": "ts", "java": "java", "csharp": "csharp", "rust": "rs"}
 
 
-def run(command: list[str], *, cwd: Path, timeout: int, memcap: Path) -> None:
+def run(command: list[str], *, cwd: Path, timeout: int, memcap: Path, env_extra: dict[str, str] | None = None) -> None:
     command = [str(memcap), *command]
     print("$", " ".join(command), flush=True)
     env = os.environ.copy()
     env.setdefault("POLYXML_MEMCAP_PCT", "35")
     env.setdefault("GOMAXPROCS", "2")
+    env.setdefault("CARGO_BUILD_JOBS", "2")
+    env.setdefault("CARGO_TARGET_DIR", str(ROOT.parent / "PolyXML" / "target"))
+    if env_extra:
+        env.update(env_extra)
     result = subprocess.run(command, cwd=cwd, env=env, capture_output=True, text=True, timeout=timeout)
     if result.returncode:
         raise RuntimeError(
@@ -55,11 +61,11 @@ def manifest(lang: str) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--bin", type=Path, required=True, help="PolyXML CLI executable")
-    parser.add_argument("--lang", choices=LANGUAGES, action="append", help="Target to check; repeat to select several")
+    parser.add_argument("--lang", choices=ALL_LANGUAGES, action="append", help="Target to check; repeat to select several")
     parser.add_argument("--timeout", type=int, default=120, help="Seconds allowed for each command")
     args = parser.parse_args()
     compiler = args.bin.resolve(strict=True)
-    selected = args.lang or LANGUAGES
+    selected = args.lang or DEFAULT_LANGUAGES
     memcap = ROOT.parent / "PolyXML" / "scripts" / "memcap.sh"
     if not memcap.is_file():
         parser.error(f"memory cap wrapper not found: {memcap}")
@@ -89,7 +95,7 @@ def main() -> None:
                 classes.mkdir(exist_ok=True)
                 command = ["javac", "-J-Xmx1500m", "-Xmaxerrs", "10", "-d", str(classes), f"@{work / 'java-files.txt'}"]
                 cwd = work
-            else:
+            elif lang == "csharp":
                 project = work / "UciCheck.csproj"
                 project.write_text(
                     '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net8.0</TargetFramework>'
@@ -98,7 +104,26 @@ def main() -> None:
                 )
                 command = ["dotnet", "build", str(project), "--ignore-failed-sources", "-p:UseSharedCompilation=false"]
                 cwd = work
-            run(command, cwd=cwd, timeout=args.timeout, memcap=memcap)
+            elif lang == "rust":
+                polyxml_core = ROOT.parent / "PolyXML" / "crates" / "polyxml-core"
+                target_dir = ROOT.parent / "PolyXML" / "target"
+                cargo_toml = work / "generated" / "rs" / "Cargo.toml"
+                cargo_toml.write_text(
+                    f'[package]\nname = "uci_check"\nversion = "0.1.0"\nedition = "2021"\n\n'
+                    f'[lib]\npath = "defense_uci/mod.rs"\n\n'
+                    f'[dependencies]\n'
+                    f'polyxml = {{ path = "{polyxml_core}" }}\n'
+                    f'quick-xml = {{ version = "0.42", features = ["serialize"] }}\n'
+                    f'serde = {{ version = "1.0", features = ["derive"] }}\n'
+                    f'serde_json = "1.0"\n'
+                    f'regex = "1.11"\n'
+                )
+                command = ["cargo", "check", "--lib", "-j", "2", "--target-dir", str(target_dir)]
+                cwd = work / "generated" / "rs"
+            else:
+                raise ValueError(f"Unsupported target: {lang}")
+            env_extra = {"POLYXML_MEMCAP_PCT": "50"} if lang == "rust" else None
+            run(command, cwd=cwd, timeout=args.timeout, memcap=memcap, env_extra=env_extra)
     print("\nAll selected UCI targets compiled.")
 
 
