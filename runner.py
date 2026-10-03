@@ -5,7 +5,8 @@ Times schema validation and module-graph dry runs across 20
 notorious real-world enterprise XML schemas (ISO 20022 SEPA, OASIS UBL,
 HL7 FHIR, HL7 CDA, ISO 15118 EV Charging, BPMN 2.0, ISDA FpML, CEN NeTEx,
 ICAO/FAA FIXM, NATO UCI, XBRL, SAML 2.0, railML, etc.).
-Does not emit generated source or compile destination languages. Use
+The default path does not emit source; --codegen emits source but never
+compiles destination languages. Use
 scripts/check_module_codegen.py for bounded generated-code checks.
 Licensed under MIT.
 """
@@ -13,7 +14,6 @@ Licensed under MIT.
 from __future__ import annotations
 
 import argparse
-import os
 import shutil
 import subprocess
 import sys
@@ -125,7 +125,9 @@ def find_polyxml() -> str:
     if which:
         return which
 
-    sys.exit("Error: 'polyxml' binary not found. Install it or build PolyXML in ../PolyXML.")
+    sys.exit(
+        "Error: 'polyxml' binary not found. Install it or build PolyXML in ../PolyXML."
+    )
 
 
 def run_validate(polyxml: str) -> bool:
@@ -137,7 +139,7 @@ def run_validate(polyxml: str) -> bool:
         print(f"\n[Suite] {suite} ({len(files)} files)")
         cmd = [polyxml, "validate"] + [str(ROOT / f) for f in files]
         start = time.perf_counter()
-        proc = subprocess.run(cmd, capture_output=True, text=True)
+        proc = subprocess.run(cmd, capture_output=True, text=True, check=False)
         elapsed = (time.perf_counter() - start) * 1000
         if proc.returncode == 0:
             print(f"  ✓ Validated in {elapsed:.2f}ms")
@@ -153,7 +155,9 @@ def run_dry_run(polyxml: str) -> bool:
     print("=" * 60)
     cmd = [polyxml, "build", "--dry-run", "--config", str(ROOT / "polyxml.toml")]
     start = time.perf_counter()
-    proc = subprocess.run(cmd, cwd=str(ROOT), capture_output=True, text=True)
+    proc = subprocess.run(
+        cmd, cwd=str(ROOT), capture_output=True, text=True, check=False
+    )
     elapsed = (time.perf_counter() - start) * 1000
     if proc.returncode == 0:
         print(proc.stdout.strip())
@@ -170,7 +174,9 @@ def run_codegen(polyxml: str) -> bool:
     print("=" * 60)
     cmd = [polyxml, "build", "--config", str(ROOT / "polyxml.toml")]
     start = time.perf_counter()
-    proc = subprocess.run(cmd, cwd=str(ROOT), capture_output=True, text=True)
+    proc = subprocess.run(
+        cmd, cwd=str(ROOT), capture_output=True, text=True, check=False
+    )
     elapsed = time.perf_counter() - start
     if proc.returncode == 0:
         print(f"✓ All 7 target languages generated into ./generated/ in {elapsed:.2f}s")
@@ -181,7 +187,9 @@ def run_codegen(polyxml: str) -> bool:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="PolyXML Industry Schema Corpus Runner")
+    parser = argparse.ArgumentParser(
+        description="PolyXML Industry Schema Corpus Runner"
+    )
     parser.add_argument("--bin", help="Explicit path to polyxml binary")
     parser.add_argument(
         "--codegen",

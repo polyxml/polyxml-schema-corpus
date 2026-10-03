@@ -1,0 +1,20 @@
+[workspace]
+name = "corpus-check"
+output_base_dir = "generated"
+go_module = "polyxml/corpus-check"
+
+[modules.geospatial_gml]
+schemas = ["schemas/transit-netex/gml/gml_extract_all_objects_v_3_2_1.xsd"]
+depends_on = []
+
+[modules.transit_siri]
+schemas = ["schemas/transit-siri/siri/siri_all_framework-v2.0.xsd"]
+depends_on = []
+
+[modules.transit_netex]
+schemas = ["schemas/transit-netex/NeTEx_publication_timetable.xsd"]
+depends_on = ["geospatial_gml", "transit_siri"]
+
+[[generate]]
+target = "python"
+output = "python"

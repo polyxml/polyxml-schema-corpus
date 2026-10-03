@@ -1,0 +1,6 @@
+*** Error compiling '/tmp/polyxml-corpus-check-8a56lp67/generated/python/transit_netex/transit_netex.py'...
+  File "/tmp/polyxml-corpus-check-8a56lp67/generated/python/transit_netex/transit_netex.py", line 140598
+    """A Direction of a ROUTE. One of a restricted set of values. Default is "Outbound""""
+                                                                                         ^
+SyntaxError: unterminated string literal (detected at line 140598)
+

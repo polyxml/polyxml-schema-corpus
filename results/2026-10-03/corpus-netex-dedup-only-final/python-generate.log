@@ -1,0 +1,5 @@
+Loading manifest: /tmp/polyxml-corpus-check-77z1tuar/polyxml.toml
+Compiling module [geospatial_gml]: /tmp/polyxml-corpus-check-77z1tuar/schemas/transit-netex/gml/gml_extract_all_objects_v_3_2_1.xsd
+Compiling module [transit_siri]: /tmp/polyxml-corpus-check-77z1tuar/schemas/transit-siri/siri/siri_all_framework-v2.0.xsd
+Compiling module [transit_netex]: /tmp/polyxml-corpus-check-77z1tuar/schemas/transit-netex/NeTEx_publication_timetable.xsd
+Error: Imported type {http://www.siri.org.uk/siri}CapabilitiesRequestStructureItem has no owning [modules.<name>] entry

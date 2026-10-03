@@ -109,7 +109,7 @@ is required locally; CI uses the system manager through passwordless sudo.
 
 ```bash
 python3 scripts/check_module_codegen.py --bin ../PolyXML/target/debug/polyxml \
-  -m defense_uci --output /tmp/uci-compile-results
+  -m defense_uci --memory-mib 12000 --output /tmp/uci-compile-results
 python3 scripts/check_module_codegen.py --bin ../PolyXML/target/debug/polyxml \
   -m ubl_invoice -l python --output /tmp/ubl-python-results
 ```
@@ -121,11 +121,14 @@ Repeat `-l` / `--lang` to select targets; the default is all seven.
 and accepts the same options (including required `--output`).
 
 Every generation and compile command runs in a separate systemd scope with
-`MemoryMax=3500M` and `MemorySwapMax=0`. The ten-minute timeout stops the entire
+`MemoryMax=3500M` by default and `MemorySwapMax=0`. UCI Rust needs the larger
+12,000 MiB budget used by its scheduled/manual CI job; local full-UCI runs
+should pass `--memory-mib 12000` with sufficient headroom. The ten-minute timeout stops the entire
 scope, including compiler children. The cap must leave at least 1 GiB available
 for the host; no uncapped fallback is permitted. `--memory-mib` and `--timeout`
 allow deliberate budget changes. Rust checks explicitly enable `split_units = true` with 250-type chunks;
-chunking is opt-in in PolyXML. Rust/Go builds use one worker; Java's heap
+chunking is opt-in in PolyXML. Rust checks disable debug info and incremental
+compilation to avoid unnecessary compiler memory overhead. Rust/Go builds use one worker; Java's heap
 is additionally limited to 2200 MiB. `--system` selects CI's system manager
 and runs compilers as the invoking user. Missing tools fail before generation;
 `--allow-missing` is for local partial runs only and records explicit skips.
@@ -136,7 +139,9 @@ and machine-readable elapsed times/exit statuses. Generated source and build
 products are temporary. RSS is a process measurement, not total cgroup memory;
 the kernel cap covers the whole tree. These are syntax/compile checks, not XML
 runtime round trips. Any failure or timeout returns nonzero; a failed target
-stops that module run and remains visible in CI artifacts.
+stops that module run and remains visible in CI artifacts by default.
+`--keep-going` checks the remaining targets while retaining a nonzero final exit
+status; scheduled/manual CI uses it to collect all seven outcomes.
 
 PR/push CI checks `hl7_cda` and `ubl_invoice` Python. Weekly and manual CI
 runs all seven languages for `defense_uci`, `hl7_cda`, `ubl_invoice`,

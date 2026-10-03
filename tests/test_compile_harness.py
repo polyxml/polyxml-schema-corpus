@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location(
     "harness", Path(__file__).resolve().parents[1] / "scripts/check_module_codegen.py"
@@ -38,6 +39,57 @@ class ManifestTests(unittest.TestCase):
             harness.closure(
                 {"a": {"depends_on": ["b"]}, "b": {"depends_on": ["a"]}}, "a"
             )
+
+
+class OrchestrationTests(unittest.TestCase):
+    def test_keep_going_collects_other_targets_but_returns_failure(self):
+        for keep_going in (False, True):
+            with tempfile.TemporaryDirectory() as directory:
+                output = Path(directory) / "results"
+                labels = []
+
+                def execute(runner, command, cwd, label, recorded=labels):
+                    recorded.append(label)
+                    if label == "python-generate":
+                        raise RuntimeError("deliberate generation failure")
+                    if label == "go-generate":
+                        source = cwd / "generated/go"
+                        source.mkdir(parents=True)
+                        (source / "models.go").write_text("package models\n")
+
+                argv = [
+                    "check",
+                    "--bin",
+                    "/bin/true",
+                    "--core",
+                    directory,
+                    "-m",
+                    "defense_uci",
+                    "-l",
+                    "python",
+                    "-l",
+                    "go",
+                    "--output",
+                    str(output),
+                ]
+                if keep_going:
+                    argv.append("--keep-going")
+                with (
+                    patch.object(sys, "argv", argv),
+                    patch.object(harness.shutil, "which", return_value="/bin/true"),
+                    patch.object(harness.BoundedRunner, "run", new=execute),
+                ):
+                    self.assertEqual(harness.main(), 1)
+                self.assertEqual(
+                    labels,
+                    ["preflight", "python-generate", "go-generate", "go-compile"]
+                    if keep_going
+                    else ["preflight", "python-generate"],
+                )
+                self.assertEqual(
+                    json.loads((output / "failures.json").read_text())[0]["language"],
+                    "python",
+                )
 
 
 class CgroupTests(unittest.TestCase):

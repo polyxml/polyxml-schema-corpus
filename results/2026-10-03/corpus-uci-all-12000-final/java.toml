@@ -1,0 +1,13 @@
+[workspace]
+name = "corpus-check"
+output_base_dir = "generated"
+go_module = "polyxml/corpus-check"
+
+[modules.defense_uci]
+schemas = ["schemas/defense-uci/UCI_Versioning_v2_5_0.xsd", "schemas/defense-uci/UCI_SecurityMarkings_v2_5_0.xsd", "schemas/defense-uci/uci_entity_core.xsd", "schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd"]
+depends_on = []
+
+[[generate]]
+target = "java"
+output = "java"
+package = "org.polyxml.corpus"

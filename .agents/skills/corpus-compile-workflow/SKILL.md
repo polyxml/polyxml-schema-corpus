@@ -24,3 +24,11 @@ Rust chunking is opt-in (`split_units = true`, `chunk_size = 250` in the
 generated manifest), not automatic. Inspect emitted file counts and preserve
 this setting in regression tests; a monolithic run does not test the split
 strategy. Both strategies still share one cargo check crate.
+
+UCI's complete Rust codec/Serde check needs ~11.2 GiB process RSS. Use the
+12000 MiB documented CI/local budget with at least 1 GiB additional available
+headroom. Other heavy modules retain the 3500 MiB default. Rust compile checks
+disable debug info and incremental compilation; they keep codecs and Serde.
+Use --keep-going to collect every target outcome serially; any target failure
+still produces a nonzero final exit and a retained failures.json. Scheduled
+CI uses this mode. Never label failed targets as skipped or passing.

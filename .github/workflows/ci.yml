@@ -49,7 +49,9 @@ jobs:
 
       - name: Run Schema Validation & Module Graph Verification
         run: |
-          python3 runner.py --bin "$POLYXML_BIN"
+          sudo systemd-run --scope -p MemoryMax=12000M -p MemorySwapMax=0 \
+            sudo -u "$USER" env "PATH=$PATH" timeout --kill-after=10s 600 \
+            python3 -u runner.py --bin "$POLYXML_BIN"
 
   compile-representative:
     name: Compile ${{ matrix.module }} / Python
@@ -95,12 +97,22 @@ jobs:
     name: Compile ${{ matrix.module }} / all seven targets
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    timeout-minutes: 155
+    timeout-minutes: 180
     strategy:
       fail-fast: false
       max-parallel: 1
       matrix:
-        module: [defense_uci, hl7_cda, ubl_invoice, transit_netex, finance_fpml]
+        include:
+          - module: defense_uci
+            memory: 12000
+          - module: hl7_cda
+            memory: 3500
+          - module: ubl_invoice
+            memory: 3500
+          - module: transit_netex
+            memory: 3500
+          - module: finance_fpml
+            memory: 3500
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -140,7 +152,7 @@ jobs:
         run: >-
           python3 scripts/check_module_codegen.py --system
           --bin PolyXML/target/debug/polyxml --core PolyXML/crates/polyxml-core
-          -m "${{ matrix.module }}" --output compile-results
+          -m "${{ matrix.module }}" --keep-going --memory-mib "${{ matrix.memory }}" --output compile-results
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -76,7 +76,9 @@ class BoundedRunner:
         unit = f"corpus-check-{uuid.uuid4().hex}.scope"
         log, stats = self.output / f"{label}.log", self.output / f"{label}.time"
         env = os.environ.copy()
-        env.update(CARGO_BUILD_JOBS="1", GOMAXPROCS="1", LC_ALL="C")
+        env.update(
+            CARGO_BUILD_JOBS="1", CARGO_INCREMENTAL="0", GOMAXPROCS="1", LC_ALL="C"
+        )
         env.pop("CARGO_TARGET_DIR", None)
         bounded = self.prefix + [
             "systemd-run",
@@ -93,6 +95,7 @@ class BoundedRunner:
             "env",
             f"PATH={env['PATH']}",
             "CARGO_BUILD_JOBS=1",
+            "CARGO_INCREMENTAL=0",
             "GOMAXPROCS=1",
             "LC_ALL=C",
             "/usr/bin/time",
@@ -244,7 +247,7 @@ def compile_command(language: str, work: Path, core: Path) -> tuple[list[str], P
             "-p:UseSharedCompilation=false",
         ], work
     (source / "Cargo.toml").write_text(
-        '[package]\nname="corpus_check"\nversion="0.1.0"\nedition="2021"\n[workspace]\n[lib]\npath="mod.rs"\n[dependencies]\npolyxml={path='
+        '[package]\nname="corpus_check"\nversion="0.1.0"\nedition="2021"\n[profile.dev]\ndebug=0\nincremental=false\n[workspace]\n[lib]\npath="mod.rs"\n[dependencies]\npolyxml={path='
         + json.dumps(str(core))
         + '}\nquick-xml={version="0.42",features=["serialize"]}\nserde={version="1",features=["derive"]}\nserde_json="1"\nregex="1"\n'
     )
@@ -261,6 +264,11 @@ def main() -> int:
     parser.add_argument("-l", "--lang", choices=LANGUAGES, action="append")
     parser.add_argument("--memory-mib", type=int, default=3500)
     parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument(
+        "--keep-going",
+        action="store_true",
+        help="Check remaining targets after failure; still exit nonzero",
+    )
     parser.add_argument(
         "--system",
         action="store_true",
@@ -298,6 +306,7 @@ def main() -> int:
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     runner = BoundedRunner(output, args.memory_mib, args.timeout, args.system)
+    failures = []
     try:
         # Fail closed if the selected manager cannot enforce a cgroup limit.
         runner.run(["/bin/true"], ROOT, "preflight")
@@ -324,35 +333,51 @@ def main() -> int:
                 if language in missing:
                     print(f"SKIP {language}: missing {TOOLS[language]}", flush=True)
                     continue
-                config = manifest(modules, names, language)
-                (work / "polyxml.toml").write_text(config)
-                (output / f"{language}.toml").write_text(config)
-                runner.run(
-                    [str(compiler), "build", "--config", str(work / "polyxml.toml")],
-                    work,
-                    f"{language}-generate",
-                )
-                files = [
-                    path
-                    for path in (work / "generated" / language).rglob("*")
-                    if path.is_file()
-                ]
-                if not files:
-                    raise RuntimeError(f"{language}: no generated files")
-                (output / f"{language}-files.json").write_text(
-                    json.dumps(
-                        {
-                            "count": len(files),
-                            "bytes": sum(path.stat().st_size for path in files),
-                        },
-                        indent=2,
+                try:
+                    config = manifest(modules, names, language)
+                    (work / "polyxml.toml").write_text(config)
+                    (output / f"{language}.toml").write_text(config)
+                    runner.run(
+                        [
+                            str(compiler),
+                            "build",
+                            "--config",
+                            str(work / "polyxml.toml"),
+                        ],
+                        work,
+                        f"{language}-generate",
                     )
-                    + "\n"
-                )
-                command, cwd = compile_command(language, work, core)
-                runner.run(command, cwd, f"{language}-compile")
+                    files = [
+                        path
+                        for path in (work / "generated" / language).rglob("*")
+                        if path.is_file()
+                    ]
+                    if not files:
+                        raise RuntimeError(f"{language}: no generated files")
+                    (output / f"{language}-files.json").write_text(
+                        json.dumps(
+                            {
+                                "count": len(files),
+                                "bytes": sum(path.stat().st_size for path in files),
+                            },
+                            indent=2,
+                        )
+                        + "\n"
+                    )
+                    command, cwd = compile_command(language, work, core)
+                    runner.run(command, cwd, f"{language}-compile")
+                except (RuntimeError, subprocess.SubprocessError) as exc:
+                    failures.append({"language": language, "error": str(exc)})
+                    (output / "failures.json").write_text(
+                        json.dumps(failures, indent=2) + "\n"
+                    )
+                    if not args.keep_going:
+                        raise
     except (RuntimeError, subprocess.SubprocessError) as exc:
         print(str(exc), file=sys.stderr)
+        return 1
+    if failures:
+        print(f"{len(failures)} target(s) failed. Logs: {output}", file=sys.stderr)
         return 1
     print(f"All available selected targets passed. Logs: {output}")
     return 0

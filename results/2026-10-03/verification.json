@@ -17,5 +17,13 @@
     "instances_total": 28
   },
   "core_checks": "format, strict Clippy, codegen/schema/CLI, seven-target smoke, Python lint and 112 tests with 100% statement/branch coverage passed",
-  "csharp_runtime": "DOTNET_ROLL_FORWARD=Major; runtime 10, net8.0 target"
+  "csharp_runtime": "DOTNET_ROLL_FORWARD=Major; runtime 10, net8.0 target",
+  "larger_machine_followup": {
+    "compiler_source_commit": "031ab535f122880d0afb6ae27abdef4ac5a4c999",
+    "compiler_version_during_local_checks": "0.34.0 (source fixes before version-only release rebase)",
+    "uci_all_targets": "pass; 12000 MiB cap; peak Rust process RSS 11729812 KiB",
+    "w3c_CType": "31/31 schemas, 23/28 instances; same five baseline failures",
+    "full_gate": "workspace fmt/strict Clippy/Rust tests, seven-language smoke, 112 Python tests at 100% statement and branch coverage, 507 Xerces UPA decisions, strict documentation build passed",
+    "harness_tests": 6
+  }
 }

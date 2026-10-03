@@ -1,0 +1,42 @@
+[
+  {
+    "label": "preflight",
+    "command": [
+      "/bin/true"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.082,
+    "peak_rss_kib": 1544,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "python-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-8a56lp67/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 26.748,
+    "peak_rss_kib": 2028052,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "python-compile",
+    "command": [
+      "python3",
+      "-m",
+      "compileall",
+      "-q",
+      "/tmp/polyxml-corpus-check-8a56lp67/generated/python"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.579,
+    "peak_rss_kib": 494416,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  }
+]
