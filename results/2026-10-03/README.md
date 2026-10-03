@@ -135,3 +135,11 @@ suites and the 46-module graph now pass** at 12000 MiB, swap disabled, within
 a ten-minute timeout. Raw verification logs are in `validation-followup/`.
 The preceding validation failures are historical; generated-code compilation
 failures in #135 remain separate and unresolved.
+
+The standard corpus workflow is fully green in GitHub CI:
+https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37111897398 .
+This verifies the full 20-suite validation, 46-module graph, CDA/UBL Python,
+and system-manager harness tests with the published fixes. PolyXML #134 and
+#136 are closed. The fresh heavy matrix is
+https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37111901914 ;
+#135 continues to track its separate generated-code failures.

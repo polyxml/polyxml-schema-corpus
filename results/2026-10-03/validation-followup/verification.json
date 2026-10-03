@@ -10,5 +10,9 @@
   "runner_result": "pass",
   "w3c_CType": "31/31 schemas, 23/28 instance round trips; same five baseline failures",
   "compiler_gate": "workspace tests, fmt/strict Clippy, seven-language smoke, 112 Python tests at 100% statement/branch coverage, 507 Xerces UPA decisions, strict docs all pass",
-  "harness_tests": 6
+  "harness_tests": 6,
+  "github_ci": {
+    "run": "https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37111897398",
+    "result": "all jobs pass: full validation, 46-module graph, CDA/UBL Python, system-manager harness tests"
+  }
 }
