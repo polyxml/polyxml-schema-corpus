@@ -143,3 +143,9 @@ and system-manager harness tests with the published fixes. PolyXML #134 and
 #136 are closed. The fresh heavy matrix is
 https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37111901914 ;
 #135 continues to track its separate generated-code failures.
+
+The fresh UCI job also passes all seven targets with the validation follow-up
+compiler: https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37111901914 .
+Its raw artifact is retained in `corpus-uci-ci-validation-followup/`. PolyXML's
+full cross-platform workflow passes at
+https://github.com/polyxml/PolyXML/actions/runs/37111768689 .

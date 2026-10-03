@@ -14,5 +14,16 @@
   "github_ci": {
     "run": "https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37111897398",
     "result": "all jobs pass: full validation, 46-module graph, CDA/UBL Python, system-manager harness tests"
+  },
+  "fresh_uci_ci": {
+    "run": "https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37111901914",
+    "result": "all seven generation and compilation targets pass",
+    "memory_mib": 12000,
+    "rust_peak_rss_kib": 12007388,
+    "rust_elapsed_seconds": 157.534
+  },
+  "polyxml_ci": {
+    "run": "https://github.com/polyxml/PolyXML/actions/runs/37111768689",
+    "result": "all cross-platform jobs pass"
   }
 }
