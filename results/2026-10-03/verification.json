@@ -25,5 +25,17 @@
     "w3c_CType": "31/31 schemas, 23/28 instances; same five baseline failures",
     "full_gate": "workspace fmt/strict Clippy/Rust tests, seven-language smoke, 112 Python tests at 100% statement and branch coverage, 507 Xerces UPA decisions, strict documentation build passed",
     "harness_tests": 6
+  },
+  "uci_github_ci": {
+    "run": "https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37109687233",
+    "job_id": 111165037159,
+    "compiler_commit": "031ab535f122880d0afb6ae27abdef4ac5a4c999",
+    "compiler_version": "0.34.1 (fixes subsequently released as 0.34.2)",
+    "artifact": "compile-defense_uci-all",
+    "artifact_id": 11269501545,
+    "result": "all seven generation/compile targets pass",
+    "memory_mib": 12000,
+    "rust_peak_process_rss_kib": 11978164,
+    "rust_elapsed_seconds": 173.076
   }
 }

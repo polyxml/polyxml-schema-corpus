@@ -1,0 +1,19 @@
+{
+  "module": "defense_uci",
+  "closure": [
+    "defense_uci"
+  ],
+  "compiler": "/home/runner/work/polyxml-schema-corpus/polyxml-schema-corpus/PolyXML/target/debug/polyxml",
+  "compiler_sha256": "8cb102264df24ac4653cdcbde69a227e31ce6768fc52dae112f0fc2df4733b35",
+  "languages": [
+    "python",
+    "go",
+    "cpp",
+    "java",
+    "typescript",
+    "csharp",
+    "rust"
+  ],
+  "skipped": [],
+  "check": "syntax/compile; no runtime round trips"
+}

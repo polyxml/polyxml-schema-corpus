@@ -1,6 +1,6 @@
 # Bounded corpus checks — 2026-10-03
 
-Latest: UCI passes all seven targets locally at 12000 MiB using the compiler
+Latest: UCI passes all seven targets locally and in GitHub CI at 12000 MiB using the compiler
 fixes published in PolyXML 031ab53. NeTEx Python passes at 3500 MiB after UPA
 source deduplication, module ownership, and quoted-docstring fixes. These checks
 verify compilation, not runtime XML conformance. Detailed outcomes and historical
@@ -108,7 +108,13 @@ inheritance, and Rust missing lifetimes. NeTEx results above have the same
 duplicate-choice and alias categories, plus the bounded Rust OOM. These are
 follow-up generator bugs, not harness skips.
 
-The manual seven-target CI matrix is running at
+UCI passed all seven targets in the manual CI matrix at
 https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37109687233 .
-Ordinary PR CI already passed both CDA/UBL Python checks and system-manager
-harness regression tests.
+Its raw artifact is retained in `corpus-uci-ci-success`. Rust took 173.076s
+and peaked at 11978164 KiB process RSS under the 12000 MiB cap. The CI compiler
+checkout was exactly 031ab535f122880d0afb6ae27abdef4ac5a4c999 (CLI 0.34.1;
+subsequently released as 0.34.2). Corpus issues #1 and #3 are closed.
+The remaining heavy jobs continue to collect their independent failures.
+Ordinary PR/push CI passed both CDA/UBL Python checks and system-manager
+harness regression tests. Full validation remains red; its failures and
+heavy-module generator failures are tracked in PolyXML #134, #135, and #136.

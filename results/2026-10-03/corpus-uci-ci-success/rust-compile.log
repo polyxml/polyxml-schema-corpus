@@ -1,0 +1,1089 @@
+    Updating crates.io index
+     Locking 34 packages to highest compatible versions
+ Downloading crates ...
+  Downloaded unicode-ident v1.0.26
+  Downloaded siphasher v1.0.4
+  Downloaded syn v3.0.6
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling syn v3.0.6
+   Compiling serde_core v1.0.229
+    Checking lexical-util v1.0.7
+    Checking memchr v2.8.3
+   Compiling serde v1.0.229
+   Compiling serde_derive v1.0.229
+   Compiling zmij v1.0.23
+    Checking siphasher v1.0.4
+    Checking phf_shared v0.14.0
+    Checking aho-corasick v1.1.5
+    Checking lexical-write-integer v1.0.6
+    Checking lexical-parse-integer v1.0.6
+    Checking regex-syntax v0.8.11
+   Compiling serde_json v1.0.151
+    Checking fastrand v2.5.0
+   Compiling thiserror v2.0.21
+    Checking phf_generator v0.14.0
+    Checking regex-automata v0.4.18
+    Checking lexical-parse-float v1.0.6
+    Checking lexical-write-float v1.0.6
+   Compiling thiserror-impl v2.0.21
+    Checking itoa v1.0.18
+    Checking memo-map v0.3.4
+    Checking minijinja v2.24.0
+    Checking lexical-core v1.0.6
+    Checking regex v1.13.1
+    Checking phf_codegen v0.14.0
+    Checking quick-xml v0.42.0
+    Checking smallvec v1.16.2
+    Checking heck v0.5.0
+    Checking polyxml v0.34.1 (/home/runner/work/polyxml-schema-corpus/polyxml-schema-corpus/PolyXML/crates/polyxml-core)
+    Checking corpus_check v0.1.0 (/tmp/polyxml-corpus-check-kogpb72k/generated/rust)
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:8825:21
+     |
+8821 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+8825 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+     |
+     = note: `#[warn(unreachable_patterns)]` (part of `#[warn(unused)]`) on by default
+
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:8844:21
+     |
+8840 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+8844 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:9108:21
+     |
+9104 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+9108 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:9127:21
+     |
+9123 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+9127 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10427:21
+      |
+10423 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10427 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10431:21
+      |
+10423 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10431 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10454:21
+      |
+10450 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10454 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10458:21
+      |
+10450 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10458 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10625:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10625 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10629:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10629 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10633:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10633 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10637:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10637 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10641:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10641 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10645:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10645 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10649:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10649 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10653:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10653 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10670:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10670 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10674:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10674 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10678:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10678 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10682:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10682 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10686:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10686 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10690:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10690 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10694:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10694 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10698:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10698 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:11218:70
+      |
+11214 |                     "FOV_Setting" | "AutoZoom" | "IncrementalChange" => {
+      |                                                  ------------------- matches all the relevant values
+...
+11218 |                     "FocusSetting" | "AutoFocus" | "AutoFocusZoom" | "IncrementalChange" => {
+      |                                                                      ^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:11243:70
+      |
+11239 |                     "FOV_Setting" | "AutoZoom" | "IncrementalChange" => {
+      |                                                  ------------------- matches all the relevant values
+...
+11243 |                     "FocusSetting" | "AutoFocus" | "AutoFocusZoom" | "IncrementalChange" => {
+      |                                                                      ^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:37577:21
+      |
+37573 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+37577 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:37601:21
+      |
+37597 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+37601 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:38046:21
+      |
+38042 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+38046 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:38086:21
+      |
+38082 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+38086 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_10.rs:23055:21
+      |
+23051 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+23055 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_10.rs:23109:21
+      |
+23105 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+23109 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:15370:21
+      |
+15366 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ------------------------------------------ matches all the relevant values
+...
+15370 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:15399:21
+      |
+15395 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ------------------------------------------ matches all the relevant values
+...
+15399 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:25556:21
+      |
+25552 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+25556 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:25618:21
+      |
+25614 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+25618 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_12.rs:3925:21
+     |
+3915 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     --------------------------------- matches all the relevant values
+...
+3925 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_12.rs:3965:21
+     |
+3959 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     --------------------------------- matches all the relevant values
+...
+3965 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_12.rs:19676:21
+      |
+19586 |                     "EntityID" | "TrackNumber" => {
+      |                     -------------------------- matches all the relevant values
+...
+19676 |                     "EntityID" | "TrackNumber" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_12.rs:19755:21
+      |
+19707 |                     "EntityID" | "TrackNumber" => {
+      |                     -------------------------- matches all the relevant values
+...
+19755 |                     "EntityID" | "TrackNumber" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_13.rs:26861:21
+      |
+26857 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ------------------------------------------------------------------------------------------- matches all the relevant values
+...
+26861 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_13.rs:26874:21
+      |
+26870 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ------------------------------------------------------------------------------------------- matches all the relevant values
+...
+26874 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:42593:21
+      |
+42563 | ...   "EntityID" | "EmitterID" | "SystemID" | "SignalID" | "RecordID" | "MeasurementID" | "IFF_MeasurementID" | "IFF_MeasurementAndDataID" => {
+      |       ------------------------------------------------------------------------------------------------------------------------------------ matches all the relevant values
+...
+42593 | ...   "SystemID" => {
+      |       ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:42625:21
+      |
+42607 | ...   "EntityID" | "EmitterID" | "SystemID" | "SignalID" | "RecordID" | "MeasurementID" | "IFF_MeasurementID" | "IFF_MeasurementAndDataID" => {
+      |       ------------------------------------------------------------------------------------------------------------------------------------ matches all the relevant values
+...
+42625 | ...   "SystemID" => {
+      |       ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44133:21
+      |
+44129 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44133 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44137:21
+      |
+44129 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44137 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44154:21
+      |
+44150 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44154 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44158:21
+      |
+44150 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44158 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:27933:21
+      |
+27920 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+27933 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:27958:21
+      |
+27920 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+27958 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:28093:21
+      |
+28081 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+28093 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:28111:21
+      |
+28081 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+28111 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43924:53
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                              ------------------ matches all the relevant values
+...
+43924 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                                     ^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43920:21
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches all the relevant values
+...
+43920 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43928:21
+      |
+43928 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:43928:21
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+43924 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+43928 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43932:21
+      |
+43932 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:43932:21
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+43924 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+43932 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44074:53
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                              ------------------ matches all the relevant values
+...
+44074 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                                     ^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44070:21
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches all the relevant values
+...
+44070 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44078:21
+      |
+44078 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:44078:21
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+44074 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+44078 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44082:21
+      |
+44082 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:44082:21
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+44074 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+44082 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:36753:21
+      |
+36737 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+36753 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:36834:21
+      |
+36818 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+36834 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:37484:21
+      |
+37468 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+37484 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:37565:21
+      |
+37549 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+37565 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:39027:21
+      |
+39023 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ------------------------------------------------------------------------------------------------------------- matches all the relevant values
+...
+39027 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:39060:21
+      |
+39056 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ------------------------------------------------------------------------------------------------------------- matches all the relevant values
+...
+39060 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:15402:21
+      |
+15398 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+15402 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:15451:21
+      |
+15447 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+15451 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:17658:21
+      |
+17654 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+17658 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:17683:21
+      |
+17679 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+17683 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:31257:21
+      |
+31249 |                     "StandardFrame" | "OrbitingObjectRelative" => {
+      |                     ------------------------------------------ matches all the relevant values
+...
+31257 |                     "StandardFrame" | "OrbitingObjectRelative" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:31366:21
+      |
+31358 |                     "StandardFrame" | "OrbitingObjectRelative" => {
+      |                     ------------------------------------------ matches all the relevant values
+...
+31366 |                     "StandardFrame" | "OrbitingObjectRelative" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:33215:58
+      |
+33211 |                     "LOS_AzEl" | "WGS" | "ECEF_Kinematics" => {
+      |                                          ----------------- matches all the relevant values
+...
+33215 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:33254:58
+      |
+33250 |                     "LOS_AzEl" | "WGS" | "ECEF_Kinematics" => {
+      |                                          ----------------- matches all the relevant values
+...
+33254 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:33939:21
+      |
+33935 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ------------------------------------------------ matches all the relevant values
+...
+33939 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:33984:21
+      |
+33980 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ------------------------------------------------ matches all the relevant values
+...
+33984 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:36390:58
+      |
+36386 |                     "LOS_AzEl" | "LOS_Equatorial" | "Orbital" | "WGS" | "ECEF_Kinematics" => {
+      |                                                                         ----------------- matches all the relevant values
+...
+36390 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:36453:58
+      |
+36449 |                     "LOS_AzEl" | "LOS_Equatorial" | "Orbital" | "WGS" | "ECEF_Kinematics" => {
+      |                                                                         ----------------- matches all the relevant values
+...
+36453 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:37537:58
+      |
+37533 |                     "LOS_AzEl" | "LOS_Equatorial" | "Orbital" | "WGS" | "ECEF_Kinematics" => {
+      |                                                                         ----------------- matches all the relevant values
+...
+37537 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:37602:58
+      |
+37598 |                     "LOS_AzEl" | "LOS_Equatorial" | "Orbital" | "WGS" | "ECEF_Kinematics" => {
+      |                                                                         ----------------- matches all the relevant values
+...
+37602 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:37893:58
+      |
+37885 |                     "LOS_AzEl" | "LOS_Equatorial" | "Orbital" | "WGS" | "ECEF_Kinematics" => {
+      |                                                                         ----------------- matches all the relevant values
+...
+37893 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:37948:58
+      |
+37940 |                     "LOS_AzEl" | "LOS_Equatorial" | "Orbital" | "WGS" | "ECEF_Kinematics" => {
+      |                                                                         ----------------- matches all the relevant values
+...
+37948 |                     "Kinematics" | "OrbitalKinematics" | "ECEF_Kinematics" => {
+      |                                                          ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> defense_uci/chunk_20.rs:988:21
+    |
+984 |                     "General" | "Hazard" | "Reference" | "Station" | "Emergency" => {
+    |                     ------------------------------------------------------------ matches all the relevant values
+...
+988 |                     "Emergency" | "Hazard" => {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_20.rs:1005:21
+     |
+1001 |                     "General" | "Hazard" | "Reference" | "Station" | "Emergency" => {
+     |                     ------------------------------------------------------------ matches all the relevant values
+...
+1005 |                     "Emergency" | "Hazard" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_20.rs:1711:21
+     |
+1707 |                     "General" | "Hazard" | "Reference" | "Station" | "Emergency" => {
+     |                     ------------------------------------------------------------ matches all the relevant values
+...
+1711 |                     "Emergency" | "Hazard" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_20.rs:1782:21
+     |
+1778 |                     "General" | "Hazard" | "Reference" | "Station" | "Emergency" => {
+     |                     ------------------------------------------------------------ matches all the relevant values
+...
+1782 |                     "Emergency" | "Hazard" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:15071:21
+      |
+15067 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ------------------------------------------------ matches all the relevant values
+...
+15071 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:15120:21
+      |
+15116 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ------------------------------------------------ matches all the relevant values
+...
+15120 |                     "Orbital" | "WGS" | "DeltaOrbitalPlaneTolerance" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:24311:21
+      |
+24307 |                     "OpVolumeID" | "VolumeDefinition" => {
+      |                     --------------------------------- matches all the relevant values
+...
+24311 |                     "OpVolumeID" | "VolumeDefinition" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:24324:21
+      |
+24320 |                     "OpVolumeID" | "VolumeDefinition" => {
+      |                     --------------------------------- matches all the relevant values
+...
+24324 |                     "OpVolumeID" | "VolumeDefinition" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:31183:21
+      |
+31170 |                     "TaskID" | "Target" => {
+      |                     ------------------- matches all the relevant values
+...
+31183 |                     "TaskID" => {
+      |                     ^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:31237:21
+      |
+31225 |                     "TaskID" | "Target" => {
+      |                     ------------------- matches all the relevant values
+...
+31237 |                     "TaskID" => {
+      |                     ^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:36482:35
+      |
+36470 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |       ---------- matches all the relevant values
+...
+36482 | ...   "AirVolume" | "EntityID" => {
+      |                     ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:36518:35
+      |
+36506 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |       ---------- matches all the relevant values
+...
+36518 | ...   "AirVolume" | "EntityID" => {
+      |                     ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:38629:35
+      |
+38621 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |       ---------- matches all the relevant values
+...
+38629 | ...   "AirVolume" | "EntityID" => {
+      |                     ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:38661:35
+      |
+38653 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |       ---------- matches all the relevant values
+...
+38661 | ...   "AirVolume" | "EntityID" => {
+      |                     ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:39830:21
+      |
+39826 | ...   "SystemID" | "EntityID" => {
+      |                    ---------- matches all the relevant values
+...
+39830 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |       ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:39830:34
+      |
+39826 | ...   "SystemID" | "EntityID" => {
+      |       ---------- matches all the relevant values
+...
+39830 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |                    ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:39834:21
+      |
+39834 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID" | "PointTarget" | "OrbitPointTarget" | "ZoneTarget" | "VolumeTarget" | "LineTarget" => {
+      |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_20.rs:39834:21
+      |
+39826 | ...   "SystemID" | "EntityID" => {
+      |       ----------------------- matches some of the same values
+...
+39830 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID" | "PointTarget" | "OrbitPointTarget" | "ZoneTarget" | "VolumeTarget" | "LineTarget" => {
+      |       ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- matches some of the same values
+...
+39834 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID" | "PointTarget" | "OrbitPointTarget" | "ZoneTarget" | "VolumeTarget" | "LineTarget" => {
+      |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:39883:21
+      |
+39879 | ...   "SystemID" | "EntityID" => {
+      |                    ---------- matches all the relevant values
+...
+39883 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |       ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:39883:34
+      |
+39879 | ...   "SystemID" | "EntityID" => {
+      |       ---------- matches all the relevant values
+...
+39883 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID...
+      |                    ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_20.rs:39887:21
+      |
+39887 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID" | "PointTarget" | "OrbitPointTarget" | "ZoneTarget" | "VolumeTarget" | "LineTarget" => {
+      |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_20.rs:39887:21
+      |
+39879 | ...   "SystemID" | "EntityID" => {
+      |       ----------------------- matches some of the same values
+...
+39883 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID" | "PointTarget" | "OrbitPointTarget" | "ZoneTarget" | "VolumeTarget" | "LineTarget" => {
+      |       ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- matches some of the same values
+...
+39887 | ...   "EntityID" | "SystemID" | "OperatorLocationOfInterestID" | "SignalID" | "OpPointID" | "OpZoneID" | "OpVolumeID" | "OpLineID" | "PointTarget" | "OrbitPointTarget" | "ZoneTarget" | "VolumeTarget" | "LineTarget" => {
+      |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+    --> defense_uci/chunk_21.rs:2873:21
+     |
+2869 |                     "OpZoneID" | "ZoneDefinition" => {
+     |                     ----------------------------- matches all the relevant values
+...
+2873 |                     "OpZoneID" | "ZoneDefinition" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_21.rs:2886:21
+     |
+2882 |                     "OpZoneID" | "ZoneDefinition" => {
+     |                     ----------------------------- matches all the relevant values
+...
+2886 |                     "OpZoneID" | "ZoneDefinition" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_21.rs:16668:21
+      |
+16660 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+16668 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_21.rs:16703:21
+      |
+16695 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+16703 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_21.rs:17054:21
+      |
+17046 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+17054 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_21.rs:17089:21
+      |
+17081 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+17089 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_21.rs:31742:83
+      |
+31734 | ...   "SecurityInformation" => {
+      |       --------------------- matches all the relevant values
+...
+31742 | ...   "Source" | "Geospatial" | "SourceGeospatial" | "FileFormat" | "SecurityInformation" | "DateTimeRange" | "QueryFilter" | "Pr...
+      |                                                                     ^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_21.rs:31759:83
+      |
+31751 | ...   "SecurityInformation" => {
+      |       --------------------- matches all the relevant values
+...
+31759 | ...   "Source" | "Geospatial" | "SourceGeospatial" | "FileFormat" | "SecurityInformation" | "DateTimeRange" | "QueryFilter" | "Pr...
+      |                                                                     ^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: `corpus_check` (lib) generated 110 warnings
+    Finished `dev` profile [unoptimized] target(s) in 2m 52s

@@ -148,6 +148,13 @@ runs all seven languages for `defense_uci`, `hl7_cda`, `ubl_invoice`,
 `transit_netex`, and `finance_fpml`, with heavy matrix jobs serialized.
 The original validation/dry-run job remains separate.
 
+Published [2026-10-03 results](results/2026-10-03/README.md) show UCI passing
+all seven targets locally and in GitHub CI at 12000 MiB. Other heavy modules have remaining
+[compiler failures](https://github.com/polyxml/PolyXML/issues/135); full-corpus
+validation also exposes [inline global attribute support](https://github.com/polyxml/PolyXML/issues/134)
+and [schema-for-schemas validation](https://github.com/polyxml/PolyXML/issues/136).
+The scheduled matrix retains these failures in its artifacts.
+
 Harness regression tests (including real user-cgroup limit and timeout checks):
 
 ```bash
