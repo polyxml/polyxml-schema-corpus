@@ -1,0 +1,43 @@
+[
+  {
+    "label": "preflight",
+    "command": [
+      "/bin/true"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.04,
+    "peak_rss_kib": 1544,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "csharp-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-eutcgc40/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.544,
+    "peak_rss_kib": 99092,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "csharp-compile",
+    "command": [
+      "dotnet",
+      "build",
+      "/tmp/polyxml-corpus-check-eutcgc40/Check.csproj",
+      "--disable-build-servers",
+      "-m:1",
+      "-p:UseSharedCompilation=false"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 18.241,
+    "peak_rss_kib": 1322720,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  }
+]

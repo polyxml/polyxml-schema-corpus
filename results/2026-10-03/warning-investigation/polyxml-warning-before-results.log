@@ -1,0 +1,66 @@
+memcap: <=4549 MiB (35% of 12997 MiB available) [systemd MemoryMax, swap off]
+warning: unreachable pattern
+   --> src/models.rs:229:21
+    |
+225 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ---------------------------------------- matches all the relevant values
+...
+229 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+    |
+    = note: `#[warn(unreachable_patterns)]` (part of `#[warn(unused)]`) on by default
+
+warning: unreachable pattern
+   --> src/models.rs:233:21
+    |
+225 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ---------------------------------------- matches all the relevant values
+...
+233 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> src/models.rs:237:21
+    |
+225 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ---------------------------------------- matches all the relevant values
+...
+237 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> src/models.rs:250:21
+    |
+246 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ---------------------------------------- matches all the relevant values
+...
+250 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> src/models.rs:254:21
+    |
+246 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ---------------------------------------- matches all the relevant values
+...
+254 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> src/models.rs:258:21
+    |
+246 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ---------------------------------------- matches all the relevant values
+...
+258 |                     "Percentage" | "NumberOfSteps" | "Label" => {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+Err(SchemaError("Missing required field 'StartingPosition'"))
+/tmp/polyxml-warning-baseline/csharp/Inheritance.cs(49,17): warning CS0108: 'SpecialAssignment.ShouldSerializeNameOfClass()' hides inherited member 'Assignment.ShouldSerializeNameOfClass()'. Use the new keyword if hiding was intended. [/tmp/polyxml-warning-baseline/csharp/App.csproj]
+/tmp/polyxml-warning-baseline/csharp/Inheritance.cs(44,6): warning CS0657: 'property' is not a valid attribute location for this declaration. Valid attribute locations for this declaration are 'param'. All attributes in this block will be ignored. [/tmp/polyxml-warning-baseline/csharp/App.csproj]
+/tmp/polyxml-warning-baseline/csharp/Inheritance.cs(17,6): warning CS0657: 'property' is not a valid attribute location for this declaration. Valid attribute locations for this declaration are 'param'. All attributes in this block will be ignored. [/tmp/polyxml-warning-baseline/csharp/App.csproj]
+/tmp/polyxml-warning-baseline/csharp/Inheritance.cs(44,88): warning CS8907: Parameter 'NameOfClass' is unread. Did you forget to use it to initialize the property with that name? [/tmp/polyxml-warning-baseline/csharp/App.csproj]
+/tmp/polyxml-warning-baseline/csharp/Inheritance.cs(17,84): warning CS8907: Parameter 'NameOfClass' is unread. Did you forget to use it to initialize the property with that name? [/tmp/polyxml-warning-baseline/csharp/App.csproj]
+base=attribute derived=attribute
+<?xml version="1.0" encoding="utf-8"?>
+<Assignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" nameOfClass="attribute" />

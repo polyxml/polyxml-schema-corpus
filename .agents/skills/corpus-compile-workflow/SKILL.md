@@ -42,3 +42,11 @@ Dublin Core/railML closures include it through declared dependencies. Keep the
 W3C meta-schema XML import pointed at its existing sibling xml.xsd mirror;
 compiler imports do not fetch HTTP schemas implicitly. Verify the full runner
 after changing schema ownership as well as selected generated-code closures.
+
+When reviewing generated compiler warnings, preserve their categories and run
+minimal XML round trips before suppressing them. PolyXML 08db594 removed all
+110 UCI Rust unreachable-pattern warnings by preserving named choice wrappers;
+the full split codec/Serde compile still passes at 12000 MiB (~11.21 GiB RSS).
+C# inherited identifier collisions can lose XML elements even when records
+compile. Reserve ancestor identifiers in the generator and check both styles.
+A warning-free target compile does not imply whole-corpus runtime conformance.

@@ -1,0 +1,10 @@
+memcap: <=8171 MiB (60% of 13619 MiB available) [systemd MemoryMax, swap off]
+   Compiling polyxml v0.34.3 (/home/bailey/github/PolyXML/crates/polyxml-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.22s
+     Running tests/test_qualified_attributes.rs (target/debug/deps/test_qualified_attributes-ac49f87913d6e77b)
+
+running 1 test
+test inherited_attribute_and_distinct_element_keep_separate_property_names ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 6.52s
+

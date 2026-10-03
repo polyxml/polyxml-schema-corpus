@@ -1,0 +1,42 @@
+memcap: <=8270 MiB (60% of 13784 MiB available) [systemd MemoryMax, swap off]
+   Compiling polyxml v0.34.3 (/home/bailey/github/PolyXML/crates/polyxml-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.58s
+     Running tests/test_qualified_attributes.rs (target/debug/deps/test_qualified_attributes-ac49f87913d6e77b)
+
+running 3 tests
+test global_attribute_references_round_trip_by_namespace ... ok
+test imported_inline_global_attribute_enum_round_trips ... ok
+test inherited_attribute_and_distinct_element_keep_separate_property_names ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 15.86s
+
+     Running tests/test_rust_codegen.rs (target/debug/deps/test_rust_codegen-a05383c635344294)
+
+running 24 tests
+test binary_lexical_values_compile_and_round_trip_in_owned_and_borrowed_modes ... ok
+test multiline_docs_and_raw_field_names_are_valid_source ... ok
+test named_choice_wrappers_round_trip_without_unreachable_dispatch ... ok
+test test_rust_attribute_codec_loop_syntax ... ok
+test test_rust_choice_union_codegen ... ok
+test test_rust_codecs_codegen ... ok
+test test_rust_digit_prefixed_module_sanitization ... ok
+test test_rust_enum_and_methods ... ok
+test test_rust_extension_base_cycle_cut ... ok
+test test_rust_extension_codecs_decode_and_encode_base_fields ... ok
+test test_rust_extension_inlines_base_fields ... ok
+test test_rust_identifier_sanitization ... ok
+test test_rust_owned_codegen ... ok
+test test_rust_phf_dispatch_emission ... ok
+test test_rust_phf_dispatch_union_groups_branch_tags ... ok
+test test_rust_phf_dispatch_uniquifies_like_field_metas ... ok
+test test_rust_read_element_text_accumulates_refs_and_cdata ... ok
+test test_rust_recursive_cycle_boxing ... ok
+test test_rust_rkyv_derives ... ok
+test test_rust_simple_content_extension_shadow_rule ... ok
+test test_rust_simple_content_text_codec ... ok
+test test_rust_simple_type_cycle_resilience ... ok
+test test_rust_topological_scc_chunking ... ok
+test test_rust_zero_copy_codegen ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 28.18s
+

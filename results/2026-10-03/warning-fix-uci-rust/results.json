@@ -1,0 +1,42 @@
+[
+  {
+    "label": "preflight",
+    "command": [
+      "/bin/true"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.073,
+    "peak_rss_kib": 1544,
+    "memory_mib": 12000,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "rust-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-q_sjvqoa/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.196,
+    "peak_rss_kib": 103508,
+    "memory_mib": 12000,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "rust-compile",
+    "command": [
+      "cargo",
+      "check",
+      "--lib",
+      "-j",
+      "1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 146.379,
+    "peak_rss_kib": 11750404,
+    "memory_mib": 12000,
+    "timeout_seconds": 600
+  }
+]

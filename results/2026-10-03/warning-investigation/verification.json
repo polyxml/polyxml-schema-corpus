@@ -1,0 +1,28 @@
+{
+  "baseline_compiler": "a3b0fd3",
+  "fixed_compiler": "08db594",
+  "workspace_gate": "pass",
+  "python_tests": 112,
+  "python_statement_and_branch_coverage": 100,
+  "seven_target_smoke": "pass",
+  "upa_xerces_decisions": 507,
+  "strict_docs": "pass",
+  "independent_xsd_fixture_validation": "pass",
+  "csharp_warning_errors": [
+    "CS0108",
+    "CS8866",
+    "CS0657",
+    "CS8907"
+  ],
+  "csharp_runtime": "net8.0 fixtures on .NET 10 (DOTNET_ROLL_FORWARD=Major)",
+  "w3c_CType": {
+    "schemas": "31/31",
+    "roundtrips": "23/28",
+    "known_failures_unchanged": 5
+  },
+  "corpus": {
+    "uci_rust": "pass, zero warnings, 12000 MiB cap",
+    "uci_csharp": "pass, zero warnings, 3500 MiB cap",
+    "netex_csharp": "fail, 72 errors, 81 CS0109 warnings, targeted CS0108 absent"
+  }
+}

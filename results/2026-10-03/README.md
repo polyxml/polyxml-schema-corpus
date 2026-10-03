@@ -1,5 +1,39 @@
 # Bounded corpus checks — 2026-10-03
 
+## Generated warning follow-up
+
+PolyXML `08db594` fixes Rust named-choice wrappers and C# inherited property
+name collisions. `warning-investigation/` retains the unmodified 0.34.3
+baseline evidence, full passing workspace/smoke gates and runtime regressions.
+The baseline Rust decoder rejects independently validated XML; baseline C#
+records silently drop a distinct child element sharing an ancestor's normalized
+property name. This is a behavior fix, not warning suppression.
+
+`warning-fix-uci-rust/` checks the complete four-schema UCI module with codecs
+and Serde enabled: **pass with zero warnings**, compared with 110 unreachable
+patterns previously. The serial Rust check took 146.379 seconds and reached
+11,750,404 KiB peak process RSS (11.21 GiB), within MemoryMax=12000M,
+MemorySwapMax=0. Generation used 103,508 KiB. Metadata records the CLI hash.
+
+The W3C CType sample remains 31/31 schema compilations and 23/28 instance
+round trips, with the same five existing failures. Local C# regression fixtures
+target net8.0 and execute on .NET 10 with Major roll-forward. Regression tests
+promote the relevant compiler warnings to errors and verify actual XML/JSON
+values across three inheritance levels in record and class modes.
+
+`warning-fix-uci-csharp/` also passes the complete UCI C# compile at 3500 MiB
+with zero warnings (18.241 seconds; 1,322,720 KiB peak compiler RSS).
+`warning-fix-netex-csharp/` generates the complete NeTEx closure in 20.98 seconds,
+using 2,021,684 KiB, then **fails compilation** with 72 existing model errors:
+duplicate types/members/XmlRoot attributes and unresolved names. The targeted
+CS0108 inherited-name warning is absent. This is not a successful NeTEx build.
+There are 81 CS0109 warnings about unnecessary `new` on Validate methods;
+resolve the base-model errors and check inherited validation before changing
+those modifiers. A failed build cannot establish NeTEx runtime correctness.
+These remaining compile problems stay tracked in PolyXML #135.
+
+The historical compile outcomes below retain their original compiler versions.
+
 Latest: UCI passes all seven targets locally and in GitHub CI at 12000 MiB using the compiler
 fixes published in PolyXML 031ab53. NeTEx Python passes at 3500 MiB after UPA
 source deduplication, module ownership, and quoted-docstring fixes. These checks
