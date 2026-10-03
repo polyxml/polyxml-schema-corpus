@@ -1,0 +1,6 @@
+Loading manifest: /tmp/polyxml-corpus-check-nup_tjcl/polyxml.toml
+Compiling module [defense_uci]: /tmp/polyxml-corpus-check-nup_tjcl/schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd
+Compiling module [defense_uci]: /tmp/polyxml-corpus-check-nup_tjcl/schemas/defense-uci/UCI_SecurityMarkings_v2_5_0.xsd
+Compiling module [defense_uci]: /tmp/polyxml-corpus-check-nup_tjcl/schemas/defense-uci/UCI_Versioning_v2_5_0.xsd
+Compiling module [defense_uci]: /tmp/polyxml-corpus-check-nup_tjcl/schemas/defense-uci/uci_entity_core.xsd
+Module build finished successfully.

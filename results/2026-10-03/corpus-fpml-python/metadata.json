@@ -1,0 +1,12 @@
+{
+  "module": "finance_fpml",
+  "closure": [
+    "finance_fpml"
+  ],
+  "compiler": "/home/bailey/github/PolyXML/target/debug/polyxml",
+  "languages": [
+    "python"
+  ],
+  "skipped": [],
+  "check": "syntax/compile; no runtime round trips"
+}

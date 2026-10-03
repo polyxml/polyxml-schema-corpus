@@ -1,0 +1,18 @@
+{
+  "module": "defense_uci",
+  "closure": [
+    "defense_uci"
+  ],
+  "compiler": "/home/bailey/github/PolyXML/target/debug/polyxml",
+  "languages": [
+    "python",
+    "go",
+    "typescript",
+    "java",
+    "csharp",
+    "rust",
+    "cpp"
+  ],
+  "skipped": [],
+  "check": "syntax/compile; no runtime round trips"
+}

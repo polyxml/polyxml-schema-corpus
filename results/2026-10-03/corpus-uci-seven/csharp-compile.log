@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  Restored /tmp/polyxml-corpus-check-2jyf5phn/Check.csproj (in 436 ms).
+/tmp/polyxml-corpus-check-2jyf5phn/generated/csharp/defense_uci/DefenseUci.cs(116710,139): error CS8866: Record member 'Generated.DefenseUci.QueryPet.Equals' must be a readable instance property or field of type 'Generated.DefenseUci.QueryEqualsType?' to match positional parameter 'Equals'. [/tmp/polyxml-corpus-check-2jyf5phn/Check.csproj]
+/tmp/polyxml-corpus-check-2jyf5phn/generated/csharp/defense_uci/DefenseUci.cs(116710,6): warning CS0657: 'property' is not a valid attribute location for this declaration. Valid attribute locations for this declaration are 'param'. All attributes in this block will be ignored. [/tmp/polyxml-corpus-check-2jyf5phn/Check.csproj]
+
+Build FAILED.
+
+/tmp/polyxml-corpus-check-2jyf5phn/generated/csharp/defense_uci/DefenseUci.cs(116710,6): warning CS0657: 'property' is not a valid attribute location for this declaration. Valid attribute locations for this declaration are 'param'. All attributes in this block will be ignored. [/tmp/polyxml-corpus-check-2jyf5phn/Check.csproj]
+/tmp/polyxml-corpus-check-2jyf5phn/generated/csharp/defense_uci/DefenseUci.cs(116710,139): error CS8866: Record member 'Generated.DefenseUci.QueryPet.Equals' must be a readable instance property or field of type 'Generated.DefenseUci.QueryEqualsType?' to match positional parameter 'Equals'. [/tmp/polyxml-corpus-check-2jyf5phn/Check.csproj]
+    1 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:05.69

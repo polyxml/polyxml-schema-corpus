@@ -33,8 +33,9 @@ Across open-source XSD generator trackers, certain widely adopted industry schem
 - **Multi-Megabyte Monolithic Schemas**: Massive schema files such as NATO UCI (8.0 MB single file) and HL7 FHIR (2.6 MB).
 
 The default validation run checks schema parsing and module ownership. A separate
-UCI check generates code and compiles five destination languages; Rust and C++
-large-module compilation are tracked in the linked PolyXML issues.
+parameterized check generates source and compiles seven destination languages
+serially under a hard cgroup memory limit. Scheduled/manual CI checks UCI, CDA,
+UBL Invoice, NeTEx, and FpML; ordinary PR CI checks CDA and UBL Python syntax.
 
 ---
 
@@ -89,7 +90,8 @@ polyxml-schema-corpus/
 │   └── w3c-xmlschema/         # Normative W3C XML Schema definition
 ├── polyxml.toml               # Multi-module workspace configuration (45 modules)
 ├── runner.py                  # Automated validation and benchmark harness
-├── scripts/check_uci_codegen.py # Bounded UCI generated-code compile check
+├── scripts/check_module_codegen.py # Parameterized bounded compile check
+├── scripts/check_uci_codegen.py # UCI compatibility entry point
 ├── LICENSE                    # MIT License
 ├── NOTICE                     # Standards attribution & third-party copyright notices
 └── README.md
@@ -99,19 +101,58 @@ polyxml-schema-corpus/
 
 ## ⚡ Usage
 
-### UCI generated-code compilation
+### Bounded generated-code compilation
 
-With Python 3.12+, Go, TypeScript (`tsc`), Java, and .NET 8 installed, run:
+Install Python 3.12+, Go, g++ (C++20), Java 25, TypeScript 5 (`tsc`),
+.NET 8 SDK, and Rust. Linux with cgroup v2 and a working systemd user manager
+is required locally; CI uses the system manager through passwordless sudo.
 
 ```bash
-python3 scripts/check_uci_codegen.py --bin ../PolyXML/target/debug/polyxml
+python3 scripts/check_module_codegen.py --bin ../PolyXML/target/debug/polyxml \
+  -m defense_uci --memory-mib 12000 --output /tmp/uci-compile-results
+python3 scripts/check_module_codegen.py --bin ../PolyXML/target/debug/polyxml \
+  -m ubl_invoice -l python --output /tmp/ubl-python-results
 ```
 
-The script generates the four-schema UCI module into a temporary directory,
-compiles one language at a time, and uses PolyXML's memory-cap wrapper when it
-is available. Select a target with `--lang python` (repeat the option for
-several targets). Full Rust and C++ UCI compilation is tracked in
-[PolyXML issue #92](https://github.com/polyxml/PolyXML/issues/92).
+The harness reads the selected module and its transitive dependencies from
+`polyxml.toml`, emits actual source, and checks one language at a time.
+Repeat `-l` / `--lang` to select targets; the default is all seven.
+`check_uci_codegen.py` remains a compatibility entry point selecting `defense_uci`
+and accepts the same options (including required `--output`).
+
+Every generation and compile command runs in a separate systemd scope with
+`MemoryMax=3500M` by default and `MemorySwapMax=0`. UCI Rust needs the larger
+12,000 MiB budget used by its scheduled/manual CI job; local full-UCI runs
+should pass `--memory-mib 12000` with sufficient headroom. The ten-minute timeout stops the entire
+scope, including compiler children. The cap must leave at least 1 GiB available
+for the host; no uncapped fallback is permitted. `--memory-mib` and `--timeout`
+allow deliberate budget changes. Rust checks explicitly enable `split_units = true` with 250-type chunks;
+chunking is opt-in in PolyXML. Rust checks disable debug info and incremental
+compilation to avoid unnecessary compiler memory overhead. Rust/Go builds use one worker; Java's heap
+is additionally limited to 2200 MiB. `--system` selects CI's system manager
+and runs compilers as the invoking user. Missing tools fail before generation;
+`--allow-missing` is for local partial runs only and records explicit skips.
+
+The output directory must be new. It retains manifests, generated file counts
+and bytes, full command logs, GNU time resource reports (peak process RSS),
+and machine-readable elapsed times/exit statuses. Generated source and build
+products are temporary. RSS is a process measurement, not total cgroup memory;
+the kernel cap covers the whole tree. These are syntax/compile checks, not XML
+runtime round trips. Any failure or timeout returns nonzero; a failed target
+stops that module run and remains visible in CI artifacts by default.
+`--keep-going` checks the remaining targets while retaining a nonzero final exit
+status; scheduled/manual CI uses it to collect all seven outcomes.
+
+PR/push CI checks `hl7_cda` and `ubl_invoice` Python. Weekly and manual CI
+runs all seven languages for `defense_uci`, `hl7_cda`, `ubl_invoice`,
+`transit_netex`, and `finance_fpml`, with heavy matrix jobs serialized.
+The original validation/dry-run job remains separate.
+
+Harness regression tests (including real user-cgroup limit and timeout checks):
+
+```bash
+python3 -m unittest discover -s tests -v
+```
 
 ### 1. Run the Validation & Benchmark Suite
 

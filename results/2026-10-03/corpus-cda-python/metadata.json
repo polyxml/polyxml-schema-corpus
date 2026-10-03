@@ -1,0 +1,12 @@
+{
+  "module": "hl7_cda",
+  "closure": [
+    "hl7_cda"
+  ],
+  "compiler": "/home/bailey/github/PolyXML/target/debug/polyxml",
+  "languages": [
+    "python"
+  ],
+  "skipped": [],
+  "check": "syntax/compile; no runtime round trips"
+}

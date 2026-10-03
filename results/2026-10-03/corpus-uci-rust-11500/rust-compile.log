@@ -1,0 +1,967 @@
+    Updating crates.io index
+     Locking 34 packages to highest compatible versions
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling syn v3.0.6
+   Compiling serde_core v1.0.229
+    Checking memchr v2.8.3
+    Checking lexical-util v1.0.7
+   Compiling serde v1.0.229
+   Compiling serde_derive v1.0.229
+    Checking siphasher v1.0.4
+   Compiling zmij v1.0.23
+    Checking phf_shared v0.14.0
+    Checking lexical-write-integer v1.0.6
+    Checking lexical-parse-integer v1.0.6
+    Checking aho-corasick v1.1.5
+    Checking fastrand v2.5.0
+    Checking regex-syntax v0.8.11
+   Compiling thiserror v2.0.21
+   Compiling serde_json v1.0.151
+    Checking regex-automata v0.4.18
+    Checking phf_generator v0.14.0
+    Checking lexical-parse-float v1.0.6
+    Checking lexical-write-float v1.0.6
+   Compiling thiserror-impl v2.0.21
+    Checking itoa v1.0.18
+    Checking memo-map v0.3.4
+    Checking minijinja v2.24.0
+    Checking lexical-core v1.0.6
+    Checking phf_codegen v0.14.0
+    Checking regex v1.13.1
+    Checking quick-xml v0.42.0
+    Checking heck v0.5.0
+    Checking smallvec v1.16.2
+    Checking polyxml v0.34.0 (/home/bailey/github/PolyXML/crates/polyxml-core)
+    Checking corpus_check v0.1.0 (/tmp/polyxml-corpus-check-926txtoe/generated/rust)
+error[E0308]: mismatched types
+     --> defense_uci/chunk_05.rs:25996:22
+      |
+25970 |                         var_aa_code.push(text);
+      |                         -----------      ---- this argument has type `Cow<'_, str>`...
+      |                         |
+      |                         ... which causes `var_aa_code` to have type `Vec<Cow<'_, str>>`
+...
+25996 |             aa_code: var_aa_code,
+      |                      ^^^^^^^^^^^ expected `Vec<Cow<'_, [u8]>>`, found `Vec<Cow<'_, str>>`
+      |
+      = note: expected struct `Vec<Cow<'a, [u8]>>`
+                 found struct `Vec<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_05.rs:25997:26
+      |
+25974 |                         var_bds_address.push(text);
+      |                         ---------------      ---- this argument has type `Cow<'_, str>`...
+      |                         |
+      |                         ... which causes `var_bds_address` to have type `Vec<Cow<'_, str>>`
+...
+25997 |             bds_address: var_bds_address,
+      |                          ^^^^^^^^^^^^^^^ expected `Vec<Cow<'_, [u8]>>`, found `Vec<Cow<'_, str>>`
+      |
+      = note: expected struct `Vec<Cow<'a, [u8]>>`
+                 found struct `Vec<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_05.rs:26047:59
+      |
+26047 |             writer.write_event(Event::Text(BytesText::new(item.as_ref())))?;
+      |                                            -------------- ^^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+      |                                            |
+      |                                            arguments to this function are incorrect
+      |
+      = note: expected reference `&str`
+                 found reference `&[u8]`
+note: associated function defined here
+     --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+      |
+  586 |     pub fn new(content: &'i str) -> Self {
+      |            ^^^
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_05.rs:26052:59
+      |
+26052 |             writer.write_event(Event::Text(BytesText::new(item.as_ref())))?;
+      |                                            -------------- ^^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+      |                                            |
+      |                                            arguments to this function are incorrect
+      |
+      = note: expected reference `&str`
+                 found reference `&[u8]`
+note: associated function defined here
+     --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+      |
+  586 |     pub fn new(content: &'i str) -> Self {
+      |            ^^^
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_06.rs:11340:32
+      |
+11299 |                         var_ehs_bds_registers.push(text);
+      |                         ---------------------      ---- this argument has type `Cow<'_, str>`...
+      |                         |
+      |                         ... which causes `var_ehs_bds_registers` to have type `Vec<Cow<'_, str>>`
+...
+11340 |             ehs_bds_registers: var_ehs_bds_registers,
+      |                                ^^^^^^^^^^^^^^^^^^^^^ expected `Vec<Cow<'_, [u8]>>`, found `Vec<Cow<'_, str>>`
+      |
+      = note: expected struct `Vec<Cow<'a, [u8]>>`
+                 found struct `Vec<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_06.rs:11426:59
+      |
+11426 |             writer.write_event(Event::Text(BytesText::new(item.as_ref())))?;
+      |                                            -------------- ^^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+      |                                            |
+      |                                            arguments to this function are incorrect
+      |
+      = note: expected reference `&str`
+                 found reference `&[u8]`
+note: associated function defined here
+     --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+      |
+  586 |     pub fn new(content: &'i str) -> Self {
+      |            ^^^
+
+error[E0308]: mismatched types
+   --> defense_uci/chunk_07.rs:574:52
+    |
+574 |                 Ok(AtomicValueType::HexBinaryValue(text))
+    |                    ------------------------------- ^^^^ expected `Cow<'_, [u8]>`, found `Cow<'_, str>`
+    |                    |
+    |                    arguments to this enum variant are incorrect
+    |
+    = note: expected enum `Cow<'_, [u8]>`
+               found enum `Cow<'_, str>`
+note: tuple variant defined here
+   --> defense_uci/chunk_07.rs:459:5
+    |
+459 |     HexBinaryValue(Cow<'a, [u8]>),
+    |     ^^^^^^^^^^^^^^
+
+error[E0308]: mismatched types
+   --> defense_uci/chunk_07.rs:731:63
+    |
+731 |                 writer.write_event(Event::Text(BytesText::new(val.as_ref())))?;
+    |                                                -------------- ^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+    |                                                |
+    |                                                arguments to this function are incorrect
+    |
+    = note: expected reference `&str`
+               found reference `&[u8]`
+note: associated function defined here
+   --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+    |
+586 |     pub fn new(content: &'i str) -> Self {
+    |            ^^^
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_10.rs:34550:29
+      |
+34518 |                         var_spectral_image = Some(text);
+      |                         ------------------ here the type of `var_spectral_image` is inferred to be `std::option::Option<Cow<'_, str>>`
+...
+34550 |             spectral_image: var_spectral_image,
+      |                             ^^^^^^^^^^^^^^^^^^ expected `Option<Cow<'_, [u8]>>`, found `Option<Cow<'_, str>>`
+      |
+      = note: expected enum `Option<Cow<'a, [u8]>>`
+                 found enum `Option<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_10.rs:34613:59
+      |
+34613 |             writer.write_event(Event::Text(BytesText::new(val.as_ref())))?;
+      |                                            -------------- ^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+      |                                            |
+      |                                            arguments to this function are incorrect
+      |
+      = note: expected reference `&str`
+                 found reference `&[u8]`
+note: associated function defined here
+     --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+      |
+  586 |     pub fn new(content: &'i str) -> Self {
+      |            ^^^
+
+error[E0308]: mismatched types
+    --> defense_uci/chunk_11.rs:6344:19
+     |
+6283 |                         var_data = Some(text);
+     |                         -------- here the type of `var_data` is inferred to be `std::option::Option<Cow<'_, str>>`
+...
+6344 |             data: var_data,
+     |                   ^^^^^^^^ expected `Option<Cow<'_, [u8]>>`, found `Option<Cow<'_, str>>`
+     |
+     = note: expected enum `Option<Cow<'a, [u8]>>`
+                found enum `Option<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+    --> defense_uci/chunk_11.rs:6450:59
+     |
+6450 |             writer.write_event(Event::Text(BytesText::new(val.as_ref())))?;
+     |                                            -------------- ^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+     |                                            |
+     |                                            arguments to this function are incorrect
+     |
+     = note: expected reference `&str`
+                found reference `&[u8]`
+note: associated function defined here
+    --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+     |
+ 586 |     pub fn new(content: &'i str) -> Self {
+     |            ^^^
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_11.rs:12865:38
+      |
+12830 |                         var_subsystem_stream_binary = Some(text);
+      |                         --------------------------- here the type of `var_subsystem_stream_binary` is inferred to be `std::option::Option<Cow<'_, str>>`
+...
+12865 |             subsystem_stream_binary: var_subsystem_stream_binary,
+      |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `Option<Cow<'_, [u8]>>`, found `Option<Cow<'_, str>>`
+      |
+      = note: expected enum `Option<Cow<'a, [u8]>>`
+                 found enum `Option<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_11.rs:12946:59
+      |
+12946 |             writer.write_event(Event::Text(BytesText::new(val.as_ref())))?;
+      |                                            -------------- ^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+      |                                            |
+      |                                            arguments to this function are incorrect
+      |
+      = note: expected reference `&str`
+                 found reference `&[u8]`
+note: associated function defined here
+     --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+      |
+  586 |     pub fn new(content: &'i str) -> Self {
+      |            ^^^
+
+error[E0308]: mismatched types
+    --> defense_uci/chunk_16.rs:2659:25
+     |
+2586 |                         var_sha_2_hash = Some(text);
+     |                         -------------- here the type of `var_sha_2_hash` is inferred to be `std::option::Option<Cow<'_, str>>`
+...
+2659 |             sha_2_hash: var_sha_2_hash,
+     |                         ^^^^^^^^^^^^^^ expected `Option<Cow<'_, [u8]>>`, found `Option<Cow<'_, str>>`
+     |
+     = note: expected enum `Option<Cow<'a, [u8]>>`
+                found enum `Option<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+    --> defense_uci/chunk_16.rs:2762:59
+     |
+2762 |             writer.write_event(Event::Text(BytesText::new(val.as_ref())))?;
+     |                                            -------------- ^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+     |                                            |
+     |                                            arguments to this function are incorrect
+     |
+     = note: expected reference `&str`
+                found reference `&[u8]`
+note: associated function defined here
+    --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+     |
+ 586 |     pub fn new(content: &'i str) -> Self {
+     |            ^^^
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_19.rs:44893:25
+      |
+44767 |                         var_sha_2_hash = Some(text);
+      |                         -------------- here the type of `var_sha_2_hash` is inferred to be `std::option::Option<Cow<'_, str>>`
+...
+44893 |             sha_2_hash: var_sha_2_hash,
+      |                         ^^^^^^^^^^^^^^ expected `Option<Cow<'_, [u8]>>`, found `Option<Cow<'_, str>>`
+      |
+      = note: expected enum `Option<Cow<'a, [u8]>>`
+                 found enum `Option<Cow<'_, str>>`
+
+error[E0308]: mismatched types
+     --> defense_uci/chunk_19.rs:45046:59
+      |
+45046 |             writer.write_event(Event::Text(BytesText::new(val.as_ref())))?;
+      |                                            -------------- ^^^^^^^^^^^^ expected `&str`, found `&[u8]`
+      |                                            |
+      |                                            arguments to this function are incorrect
+      |
+      = note: expected reference `&str`
+                 found reference `&[u8]`
+note: associated function defined here
+     --> /home/bailey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quick-xml-0.42.0/src/events/mod.rs:586:12
+      |
+  586 |     pub fn new(content: &'i str) -> Self {
+      |            ^^^
+
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:8825:21
+     |
+8821 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+8825 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+     |
+     = note: `#[warn(unreachable_patterns)]` (part of `#[warn(unused)]`) on by default
+
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:8844:21
+     |
+8840 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+8844 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:9108:21
+     |
+9104 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+9108 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_04.rs:9127:21
+     |
+9123 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ------------------------------ matches all the relevant values
+...
+9127 |                     "Percentage" | "NumberOfSteps" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10427:21
+      |
+10423 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10427 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10431:21
+      |
+10423 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10431 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10454:21
+      |
+10450 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10454 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10458:21
+      |
+10450 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10458 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10625:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10625 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10629:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10629 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10633:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10633 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10637:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10637 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10641:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10641 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10645:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10645 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10649:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10649 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10653:21
+      |
+10621 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10653 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10670:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10670 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10674:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10674 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10678:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10678 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10682:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10682 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10686:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10686 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10690:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10690 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10694:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10694 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:10698:21
+      |
+10666 |                     "Controls" | "Setting" => {
+      |                     ---------------------- matches all the relevant values
+...
+10698 |                     "Controls" | "Setting" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:11218:70
+      |
+11214 |                     "FOV_Setting" | "AutoZoom" | "IncrementalChange" => {
+      |                                                  ------------------- matches all the relevant values
+...
+11218 |                     "FocusSetting" | "AutoFocus" | "AutoFocusZoom" | "IncrementalChange" => {
+      |                                                                      ^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:11243:70
+      |
+11239 |                     "FOV_Setting" | "AutoZoom" | "IncrementalChange" => {
+      |                                                  ------------------- matches all the relevant values
+...
+11243 |                     "FocusSetting" | "AutoFocus" | "AutoFocusZoom" | "IncrementalChange" => {
+      |                                                                      ^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:37577:21
+      |
+37573 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+37577 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:37601:21
+      |
+37597 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+37601 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:38046:21
+      |
+38042 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+38046 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_09.rs:38086:21
+      |
+38082 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+38086 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_10.rs:23055:21
+      |
+23051 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+23055 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_10.rs:23109:21
+      |
+23105 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+23109 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:15370:21
+      |
+15366 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ------------------------------------------ matches all the relevant values
+...
+15370 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:15399:21
+      |
+15395 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ------------------------------------------ matches all the relevant values
+...
+15399 |                     "UserIO_ID" | "RF_UserLinkID" | "CryptoID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:25556:21
+      |
+25552 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+25556 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_11.rs:25618:21
+      |
+25614 |                     "Taper" | "Spoil" => {
+      |                     ----------------- matches all the relevant values
+...
+25618 |                     "Taper" | "Spoil" => {
+      |                     ^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_12.rs:3925:21
+     |
+3915 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     --------------------------------- matches all the relevant values
+...
+3925 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> defense_uci/chunk_12.rs:3965:21
+     |
+3959 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     --------------------------------- matches all the relevant values
+...
+3965 |                     "IPv4_Endpoint" | "IPv6_Endpoint" => {
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_12.rs:19676:21
+      |
+19586 |                     "EntityID" | "TrackNumber" => {
+      |                     -------------------------- matches all the relevant values
+...
+19676 |                     "EntityID" | "TrackNumber" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_12.rs:19755:21
+      |
+19707 |                     "EntityID" | "TrackNumber" => {
+      |                     -------------------------- matches all the relevant values
+...
+19755 |                     "EntityID" | "TrackNumber" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_13.rs:26861:21
+      |
+26857 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ------------------------------------------------------------------------------------------- matches all the relevant values
+...
+26861 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_13.rs:26874:21
+      |
+26870 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ------------------------------------------------------------------------------------------- matches all the relevant values
+...
+26874 |                     "EffectID" | "ActionID" | "TaskID" | "CapabilityCommandID" | "ResponseID" | "CommSupportID" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:42593:21
+      |
+42563 | ...   "EntityID" | "EmitterID" | "SystemID" | "SignalID" | "RecordID" | "MeasurementID" | "IFF_MeasurementID" | "IFF_MeasurementAndDataID" => {
+      |       ------------------------------------------------------------------------------------------------------------------------------------ matches all the relevant values
+...
+42593 | ...   "SystemID" => {
+      |       ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:42625:21
+      |
+42607 | ...   "EntityID" | "EmitterID" | "SystemID" | "SignalID" | "RecordID" | "MeasurementID" | "IFF_MeasurementID" | "IFF_MeasurementAndDataID" => {
+      |       ------------------------------------------------------------------------------------------------------------------------------------ matches all the relevant values
+...
+42625 | ...   "SystemID" => {
+      |       ^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44133:21
+      |
+44129 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44133 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44137:21
+      |
+44129 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44137 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44154:21
+      |
+44150 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44154 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_14.rs:44158:21
+      |
+44150 |                     "ByInstance" | "ByIdentity" => {
+      |                     --------------------------- matches all the relevant values
+...
+44158 |                     "ByInstance" | "ByIdentity" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:27933:21
+      |
+27920 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+27933 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:27958:21
+      |
+27920 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+27958 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:28093:21
+      |
+28081 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+28093 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:28111:21
+      |
+28081 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ----------------------------------------- matches all the relevant values
+...
+28111 |                     "CountryName" | "OperatorUniqueAssetName" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43924:53
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                              ------------------ matches all the relevant values
+...
+43924 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                                     ^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43920:21
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches all the relevant values
+...
+43920 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43928:21
+      |
+43928 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:43928:21
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+43924 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+43928 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:43932:21
+      |
+43932 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:43932:21
+      |
+43887 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+43924 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+43932 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44074:53
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                              ------------------ matches all the relevant values
+...
+44074 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                                                     ^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44070:21
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches all the relevant values
+...
+44070 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44078:21
+      |
+44078 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:44078:21
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+44074 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+44078 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_15.rs:44082:21
+      |
+44082 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+      |
+note: multiple earlier patterns match some of the same values
+     --> defense_uci/chunk_15.rs:44082:21
+      |
+44054 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ------------------------------------------- matches some of the same values
+...
+44074 |                     "ForeignGovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     -------------------------------------------------- matches some of the same values
+...
+44082 |                     "GovernmentIdentifier" | "NATO_SpecialWord" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ collectively making this unreachable
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:36753:21
+      |
+36737 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+36753 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:36834:21
+      |
+36818 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+36834 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:37484:21
+      |
+37468 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+37484 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:37565:21
+      |
+37549 |                     "AngleValue" | "AngleValueRange" => {
+      |                     -------------------------------- matches all the relevant values
+...
+37565 |                     "AngleValue" | "AngleValueRange" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:39027:21
+      |
+39023 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ------------------------------------------------------------------------------------------------------------- matches all the relevant values
+...
+39027 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_18.rs:39060:21
+      |
+39056 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ------------------------------------------------------------------------------------------------------------- matches all the relevant values
+...
+39060 | ...       "EntityID" | "SystemID" | "OpPointID" | "OpLineID" | "OpZoneID" | "OpVolumeID" | "DMPI_ID" | "SignalReportID" => {
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:15402:21
+      |
+15398 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+15402 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:15451:21
+      |
+15447 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+15451 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:17658:21
+      |
+17654 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+17658 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> defense_uci/chunk_19.rs:17683:21
+      |
+17679 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     -------------------------------------- matches all the relevant values
+...
+17683 |                     "ByInstance" | "ByIdentity" | "ByPlan" => {
+      |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no value can reach this
+

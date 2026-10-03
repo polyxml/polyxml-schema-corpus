@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -40,9 +42,119 @@ jobs:
 
       - name: Compile PolyXML CLI (Release)
         run: |
-          cargo build --release -p polyxml-cli --manifest-path PolyXML/Cargo.toml
+          sudo systemd-run --scope -p MemoryMax=3500M -p MemorySwapMax=0 \
+            sudo -u "$USER" env "PATH=$PATH" timeout --kill-after=10s 600 \
+            cargo build --release -j 1 -p polyxml-cli --manifest-path PolyXML/Cargo.toml
           echo "POLYXML_BIN=$GITHUB_WORKSPACE/PolyXML/target/release/polyxml" >> $GITHUB_ENV
 
       - name: Run Schema Validation & Module Graph Verification
         run: |
-          python3 runner.py --bin "$POLYXML_BIN"
+          sudo systemd-run --scope -p MemoryMax=12000M -p MemorySwapMax=0 \
+            sudo -u "$USER" env "PATH=$PATH" timeout --kill-after=10s 600 \
+            python3 -u runner.py --bin "$POLYXML_BIN"
+
+  compile-representative:
+    name: Compile ${{ matrix.module }} / Python
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        module: [hl7_cda, ubl_invoice]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: polyxml/PolyXML
+          path: PolyXML
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: PolyXML
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify harness limits and cleanup
+        run: CORPUS_TEST_SYSTEM=1 python3 -m unittest discover -s tests -v
+      - name: Build CLI under a hard memory cap
+        run: >-
+          sudo systemd-run --scope -p MemoryMax=3500M -p MemorySwapMax=0
+          sudo -u "$USER" env "PATH=$PATH" timeout --kill-after=10s 600
+          cargo build -j 1 -p polyxml-cli --manifest-path PolyXML/Cargo.toml
+      - name: Generate and compile dependency closure
+        run: >-
+          python3 scripts/check_module_codegen.py --system
+          --bin PolyXML/target/debug/polyxml --core PolyXML/crates/polyxml-core
+          -m "${{ matrix.module }}" -l python --output compile-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compile-${{ matrix.module }}-python
+          path: compile-results
+
+  compile-heavy:
+    name: Compile ${{ matrix.module }} / all seven targets
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - module: defense_uci
+            memory: 12000
+          - module: hl7_cda
+            memory: 3500
+          - module: ubl_invoice
+            memory: 3500
+          - module: transit_netex
+            memory: 3500
+          - module: finance_fpml
+            memory: 3500
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: polyxml/PolyXML
+          path: PolyXML
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: PolyXML
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24.x"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --global typescript@5
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "25"
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - run: sudo apt-get update && sudo apt-get install -y g++ time
+      - name: Verify harness limits and cleanup
+        run: CORPUS_TEST_SYSTEM=1 python3 -m unittest discover -s tests -v
+      - name: Build CLI under a hard memory cap
+        run: >-
+          sudo systemd-run --scope -p MemoryMax=3500M -p MemorySwapMax=0
+          sudo -u "$USER" env "PATH=$PATH" timeout --kill-after=10s 600
+          cargo build -j 1 -p polyxml-cli --manifest-path PolyXML/Cargo.toml
+      - name: Generate and compile dependency closure serially
+        run: >-
+          python3 scripts/check_module_codegen.py --system
+          --bin PolyXML/target/debug/polyxml --core PolyXML/crates/polyxml-core
+          -m "${{ matrix.module }}" --keep-going --memory-mib "${{ matrix.memory }}" --output compile-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compile-${{ matrix.module }}-all
+          path: compile-results

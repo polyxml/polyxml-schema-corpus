@@ -1,0 +1,16 @@
+[workspace]
+name = "corpus-check"
+output_base_dir = "generated"
+go_module = "polyxml/corpus-check"
+
+[modules.iso15118_xmldsig]
+schemas = ["schemas/iso15118/xmldsig-core-schema.xsd"]
+depends_on = []
+
+[modules.finance_fpml]
+schemas = ["schemas/finance-fpml/fpml-main-5-12.xsd"]
+depends_on = ["iso15118_xmldsig"]
+
+[[generate]]
+target = "python"
+output = "python"

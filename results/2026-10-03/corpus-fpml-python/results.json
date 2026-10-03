@@ -1,0 +1,27 @@
+[
+  {
+    "label": "preflight",
+    "command": [
+      "/bin/true"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.041,
+    "peak_rss_kib": 1608,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "python-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-obw961ck/polyxml.toml"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 1.335,
+    "peak_rss_kib": 181220,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  }
+]
