@@ -1,0 +1,21 @@
+{
+  "compiler_commit_with_csharp_fix": "a25aa4939b6b962ad0fa2df16e94ccd339c06817",
+  "fixed_compiler_sha256": "45b6d4f2f21f125b81ce71f237f8c1a9fcfa71ac650f6fc82308e829c4458773",
+  "tool_versions": {
+    "python": "Python 3.14.4",
+    "go": "go version go1.26.0 linux/amd64",
+    "cpp": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "java": "javac 25.0.4.1",
+    "typescript": "Version 5.9.3",
+    "csharp": "10.0.112",
+    "rust": "rustc 1.99.0 (b940084d7 2026-09-28)"
+  },
+  "w3c_CType": {
+    "schemas_pass": 31,
+    "schemas_total": 31,
+    "instances_pass": 23,
+    "instances_total": 28
+  },
+  "core_checks": "format, strict Clippy, codegen/schema/CLI, seven-target smoke, Python lint and 112 tests with 100% statement/branch coverage passed",
+  "csharp_runtime": "DOTNET_ROLL_FORWARD=Major; runtime 10, net8.0 target"
+}

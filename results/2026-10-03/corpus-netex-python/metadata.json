@@ -1,0 +1,14 @@
+{
+  "module": "transit_netex",
+  "closure": [
+    "geospatial_gml",
+    "transit_siri",
+    "transit_netex"
+  ],
+  "compiler": "/home/bailey/github/PolyXML/target/debug/polyxml",
+  "languages": [
+    "python"
+  ],
+  "skipped": [],
+  "check": "syntax/compile; no runtime round trips"
+}

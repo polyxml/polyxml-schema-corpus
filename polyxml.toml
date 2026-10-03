@@ -173,6 +173,7 @@ depends_on = ["aviation_fixm"]
 
 [modules.finance_fpml]
 schemas = ["schemas/finance-fpml/fpml-main-5-12.xsd"]
+depends_on = ["iso15118_xmldsig"]
 
 [modules.geospatial_gml]
 schemas = ["schemas/transit-netex/gml/gml_extract_all_objects_v_3_2_1.xsd"]

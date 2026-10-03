@@ -1,0 +1,4 @@
+Loading manifest: /tmp/polyxml-corpus-check-t9l5ssy8/polyxml.toml
+Compiling module [iso15118_xmldsig]: /tmp/polyxml-corpus-check-t9l5ssy8/schemas/iso15118/xmldsig-core-schema.xsd
+Compiling module [finance_fpml]: /tmp/polyxml-corpus-check-t9l5ssy8/schemas/finance-fpml/fpml-main-5-12.xsd
+Module build finished successfully.

@@ -1,0 +1,9 @@
+Loading manifest: /tmp/polyxml-corpus-check-ub30li8n/polyxml.toml
+Compiling module [hl7_cda]: /tmp/polyxml-corpus-check-ub30li8n/schemas/hl7-cda/CDA.xsd
+Compiling module [hl7_cda]: /tmp/polyxml-corpus-check-ub30li8n/schemas/hl7-cda/POCD_MT000040UV02.xsd
+Compiling module [hl7_cda]: /tmp/polyxml-corpus-check-ub30li8n/schemas/hl7-cda/coreschemas/NarrativeBlock.xsd
+Compiling module [hl7_cda]: /tmp/polyxml-corpus-check-ub30li8n/schemas/hl7-cda/coreschemas/datatypes-base.xsd
+Compiling module [hl7_cda]: /tmp/polyxml-corpus-check-ub30li8n/schemas/hl7-cda/coreschemas/datatypes.xsd
+Compiling module [hl7_cda]: /tmp/polyxml-corpus-check-ub30li8n/schemas/hl7-cda/coreschemas/infrastructureRoot.xsd
+Compiling module [hl7_cda]: /tmp/polyxml-corpus-check-ub30li8n/schemas/hl7-cda/coreschemas/voc.xsd
+Module build finished successfully.

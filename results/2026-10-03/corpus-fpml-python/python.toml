@@ -1,0 +1,12 @@
+[workspace]
+name = "corpus-check"
+output_base_dir = "generated"
+go_module = "polyxml/corpus-check"
+
+[modules.finance_fpml]
+schemas = ["schemas/finance-fpml/fpml-main-5-12.xsd"]
+depends_on = []
+
+[[generate]]
+target = "python"
+output = "python"

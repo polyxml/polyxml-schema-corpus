@@ -1,0 +1,3 @@
+Loading manifest: /tmp/polyxml-corpus-check-obw961ck/polyxml.toml
+Compiling module [finance_fpml]: /tmp/polyxml-corpus-check-obw961ck/schemas/finance-fpml/fpml-main-5-12.xsd
+Error: Imported type {http://www.w3.org/2000/09/xmldsig#}CanonicalizationMethodType has no owning [modules.<name>] entry
