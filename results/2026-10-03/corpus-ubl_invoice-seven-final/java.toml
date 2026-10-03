@@ -1,0 +1,57 @@
+[workspace]
+name = "corpus-check"
+output_base_dir = "generated"
+go_module = "polyxml/corpus-check"
+
+[modules.ubl_ccts]
+schemas = ["schemas/ubl-2.1/common/CCTS_CCT_SchemaModule-2.1.xsd"]
+depends_on = []
+
+[modules.ubl_udt]
+schemas = ["schemas/ubl-2.1/common/UBL-UnqualifiedDataTypes-2.1.xsd"]
+depends_on = ["ubl_ccts"]
+
+[modules.ubl_qdt]
+schemas = ["schemas/ubl-2.1/common/UBL-QualifiedDataTypes-2.1.xsd"]
+depends_on = ["ubl_udt"]
+
+[modules.ubl_cbc]
+schemas = ["schemas/ubl-2.1/common/UBL-CommonBasicComponents-2.1.xsd"]
+depends_on = ["ubl_qdt", "ubl_udt"]
+
+[modules.ubl_signature_basic]
+schemas = ["schemas/ubl-2.1/common/UBL-SignatureBasicComponents-2.1.xsd"]
+depends_on = ["ubl_udt"]
+
+[modules.ubl_signature_aggregate]
+schemas = ["schemas/ubl-2.1/common/UBL-SignatureAggregateComponents-2.1.xsd"]
+depends_on = ["ubl_signature_basic", "ubl_cbc"]
+
+[modules.iso15118_xmldsig]
+schemas = ["schemas/iso15118/xmldsig-core-schema.xsd"]
+depends_on = []
+
+[modules.etsi_xades]
+schemas = ["schemas/ubl-2.1/common/UBL-XAdESv132-2.1.xsd", "schemas/ubl-2.1/common/UBL-XAdESv141-2.1.xsd"]
+depends_on = ["iso15118_xmldsig"]
+
+[modules.ubl_signature]
+schemas = ["schemas/ubl-2.1/common/UBL-CommonSignatureComponents-2.1.xsd"]
+depends_on = ["ubl_signature_aggregate", "ubl_cbc", "etsi_xades"]
+
+[modules.ubl_extensions]
+schemas = ["schemas/ubl-2.1/common/UBL-CommonExtensionComponents-2.1.xsd", "schemas/ubl-2.1/common/UBL-ExtensionContentDataType-2.1.xsd"]
+depends_on = ["ubl_cbc", "ubl_signature"]
+
+[modules.ubl_cac]
+schemas = ["schemas/ubl-2.1/common/UBL-CommonAggregateComponents-2.1.xsd"]
+depends_on = ["ubl_cbc", "ubl_extensions"]
+
+[modules.ubl_invoice]
+schemas = ["schemas/ubl-2.1/maindoc/UBL-Invoice-2.1.xsd"]
+depends_on = ["ubl_cac", "ubl_cbc", "ubl_extensions"]
+
+[[generate]]
+target = "java"
+output = "java"
+package = "org.polyxml.corpus"

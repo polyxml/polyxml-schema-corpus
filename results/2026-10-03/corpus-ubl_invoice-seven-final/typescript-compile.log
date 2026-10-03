@@ -1,0 +1,14 @@
+generated/typescript/etsi_xades/etsi_xades.ts(95,50): error TS2304: Cannot find name 'Base64Binary'.
+generated/typescript/etsi_xades/etsi_xades.ts(128,41): error TS2304: Cannot find name 'AnyUri'.
+generated/typescript/iso15118_xmldsig/iso15118_xmldsig.ts(225,45): error TS2304: Cannot find name 'Base64Binary'.
+generated/typescript/ubl_ccts/ubl_ccts.ts(17,37): error TS2304: Cannot find name 'Decimal'.
+generated/typescript/ubl_ccts/ubl_ccts.ts(33,43): error TS2304: Cannot find name 'Base64Binary'.
+generated/typescript/ubl_ccts/ubl_ccts.ts(53,35): error TS2304: Cannot find name 'NormalizedString'.
+generated/typescript/ubl_ccts/ubl_ccts.ts(91,41): error TS2304: Cannot find name 'NormalizedString'.
+generated/typescript/ubl_ccts/ubl_ccts.ts(127,38): error TS2304: Cannot find name 'Decimal'.
+generated/typescript/ubl_ccts/ubl_ccts.ts(143,38): error TS2304: Cannot find name 'Decimal'.
+generated/typescript/ubl_ccts/ubl_ccts.ts(158,39): error TS2304: Cannot find name 'Decimal'.
+generated/typescript/ubl_qdt/index.ts(1,15): error TS2306: File '/tmp/polyxml-corpus-check-cnenjdlj/generated/typescript/ubl_qdt/ubl_qdt.ts' is not a module.
+generated/typescript/ubl_signature_aggregate/ubl_signature_aggregate.ts(20,15): error TS2304: Cannot find name 'SignatureType'.
+generated/typescript/ubl_udt/ubl_udt.ts(63,39): error TS2304: Cannot find name 'DateTime'.
+generated/typescript/ubl_udt/ubl_udt.ts(255,35): error TS2304: Cannot find name 'Time'.

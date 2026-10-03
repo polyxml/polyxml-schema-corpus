@@ -66,3 +66,49 @@ that fix, Python compilation exposed a quoted-docstring syntax error, fixed
 with an AST regression covering both Python backends. Subsequent results below
 record the final outcomes. Intermediate cache-budget experiments were canceled
 and removed from the implementation because they hurt shared-include reuse.
+
+Final NeTEx outcomes in `corpus-netex-seven-final`: all seven source-generation
+steps pass at 3500 MiB. Python compilation passes. Go fails on methods whose
+receiver is an interface alias (`AbstractObject`); C++ has missing simple-union
+type declarations (`NameOrNilReason` etc.); Java/C# contain duplicate nested
+choice names; TypeScript has missing primitive aliases and interfaces extending
+unions. Rust compilation exceeds the 3500 MiB cap. `--keep-going` records all
+six failures and still exits nonzero.
+
+The final complete compiler gate and W3C sample logs are retained alongside the
+raw checks. The W3C sample matches the baseline: 31/31 schemas, 23/28 instances
+with the same five pre-existing Python round-trip failures.
+
+The complete validation/dry-run runner was also checked against the rebuilt
+latest CLI (0.34.1 source on main) at 12000 MiB. It completes without OOM but
+fails four validation suites: FHIR and AS4 resolve `xml:lang` as a type rather
+than a global attribute; XBRL similarly fails on `xlink:type`; the W3C
+meta-schema rejects its named `xs:openAttrs` type as an unknown built-in. The
+full module graph stops at FHIR's same unresolved attribute. The full log is
+`complete-validation-final.log`; these failures are not compilation passes.
+
+## Remaining heavy modules on the rebuilt latest CLI
+
+All generation steps pass at 3500 MiB; compiler failures remain nonzero and
+retain complete logs. `hl7_cda`, `ubl_invoice`, and `finance_fpml` were checked
+serially using the rebuilt compiler from 031ab53 (CLI version 0.34.1).
+
+| Module | Python | Go | C++ | Java | TypeScript | C# | Rust |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| hl7_cda | pass | fail | fail | pass | pass | fail | fail |
+| ubl_invoice | pass | fail | fail | fail | fail | fail | fail |
+| finance_fpml | pass | fail | fail | fail | fail | fail | fail |
+
+CDA fails on Go declarations colliding with enum constants, missing C++ type
+aliases, C# root/name collisions, and Rust codec conversions. UBL exposes
+module import qualification/missing signature types, C++ alias/header collisions,
+TypeScript primitive aliases, C# ambiguous imported names, and Rust codec issues.
+FpML exposes duplicate choice branch names in Go/C++/Java/C#, TypeScript union
+inheritance, and Rust missing lifetimes. NeTEx results above have the same
+duplicate-choice and alias categories, plus the bounded Rust OOM. These are
+follow-up generator bugs, not harness skips.
+
+The manual seven-target CI matrix is running at
+https://github.com/polyxml/polyxml-schema-corpus/actions/runs/37109687233 .
+Ordinary PR CI already passed both CDA/UBL Python checks and system-manager
+harness regression tests.

@@ -1,0 +1,25 @@
+  Determining projects to restore...
+  Restored /tmp/polyxml-corpus-check-cnenjdlj/Check.csproj (in 154 ms).
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(69,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_invoice/UblInvoice.cs(67,162): error CS0104: 'PartyType' is an ambiguous reference between 'Generated.UblCac.PartyType' and 'Generated.UblCbc.PartyType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_invoice/UblInvoice.cs(70,186): error CS0104: 'PartyType' is an ambiguous reference between 'Generated.UblCac.PartyType' and 'Generated.UblCbc.PartyType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_extensions/UblExtensions.cs(114,146): error CS0104: 'NameType' is an ambiguous reference between 'Generated.UblCbc.NameType' and 'Generated.UblUdt.NameType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_signature_aggregate/UblSignatureAggregate.cs(31,122): error CS0246: The type or namespace name 'SignatureType' could not be found (are you missing a using directive or an assembly reference?) [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(4332,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(1139,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(4775,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+
+Build FAILED.
+
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(69,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_invoice/UblInvoice.cs(67,162): error CS0104: 'PartyType' is an ambiguous reference between 'Generated.UblCac.PartyType' and 'Generated.UblCbc.PartyType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_invoice/UblInvoice.cs(70,186): error CS0104: 'PartyType' is an ambiguous reference between 'Generated.UblCac.PartyType' and 'Generated.UblCbc.PartyType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_extensions/UblExtensions.cs(114,146): error CS0104: 'NameType' is an ambiguous reference between 'Generated.UblCbc.NameType' and 'Generated.UblUdt.NameType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_signature_aggregate/UblSignatureAggregate.cs(31,122): error CS0246: The type or namespace name 'SignatureType' could not be found (are you missing a using directive or an assembly reference?) [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(4332,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(1139,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+/tmp/polyxml-corpus-check-cnenjdlj/generated/csharp/ubl_cac/UblCac.cs(4775,148): error CS0104: 'ValueType' is an ambiguous reference between 'Generated.UblCbc.ValueType' and 'System.ValueType' [/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj]
+    0 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:02.99

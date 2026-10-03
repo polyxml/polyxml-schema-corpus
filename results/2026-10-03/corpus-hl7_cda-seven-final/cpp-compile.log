@@ -1,0 +1,28 @@
+In file included from /tmp/polyxml-corpus-check-nvfe0gjk/check.cpp:1:
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:679:48: error: 'EntityNamePartQualifier' was not declared in this scope
+  679 | using SetEntityNamePartQualifier = std::vector<EntityNamePartQualifier>;
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:679:71: error: template argument 1 is invalid
+  679 | using SetEntityNamePartQualifier = std::vector<EntityNamePartQualifier>;
+      |                                                                       ^
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:679:71: error: template argument 2 is invalid
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:679:41: error: '<expression error>' in namespace 'std' does not name a type
+  679 | using SetEntityNamePartQualifier = std::vector<EntityNamePartQualifier>;
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:681:38: error: 'EntityNameUse' was not declared in this scope
+  681 | using SetEntityNameUse = std::vector<EntityNameUse>;
+      |                                      ^~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:681:51: error: template argument 1 is invalid
+  681 | using SetEntityNameUse = std::vector<EntityNameUse>;
+      |                                                   ^
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:681:51: error: template argument 2 is invalid
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:681:31: error: '<expression error>' in namespace 'std' does not name a type
+  681 | using SetEntityNameUse = std::vector<EntityNameUse>;
+      |                               ^~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:683:41: error: 'PostalAddressUse' was not declared in this scope
+  683 | using SetPostalAddressUse = std::vector<PostalAddressUse>;
+      |                                         ^~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-nvfe0gjk/generated/cpp/hl7_cda/hl7_cda.hpp:683:57: error: template argument 1 is invalid
+  683 | using SetPostalAddressUse = std::vector<PostalAddressUse>;
+      |                                                         ^
+compilation terminated due to -fmax-errors=10.

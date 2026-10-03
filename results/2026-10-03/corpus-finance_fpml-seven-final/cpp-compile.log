@@ -1,0 +1,62 @@
+In file included from /tmp/polyxml-corpus-check-6wb005w8/check.cpp:1:
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29040:8: error: redefinition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemBarrier'
+29040 | struct CommodityOptionItemBarrier {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29035:8: note: previous definition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemBarrier'
+29035 | struct CommodityOptionItemBarrier {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29120:8: error: redefinition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemEffectiveDate'
+29120 | struct CommodityOptionItemEffectiveDate {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29005:8: note: previous definition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemEffectiveDate'
+29005 | struct CommodityOptionItemEffectiveDate {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29140:8: error: redefinition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemEuropeanExercise'
+29140 | struct CommodityOptionItemEuropeanExercise {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29070:8: note: previous definition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemEuropeanExercise'
+29070 | struct CommodityOptionItemEuropeanExercise {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29145:8: error: redefinition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemBermudaExercise'
+29145 | struct CommodityOptionItemBermudaExercise {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29075:8: note: previous definition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemBermudaExercise'
+29075 | struct CommodityOptionItemBermudaExercise {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29150:8: error: redefinition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemAmericanExercise'
+29150 | struct CommodityOptionItemAmericanExercise {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:29080:8: note: previous definition of 'struct polyxml::corpus::finance_fpml::CommodityOptionItemAmericanExercise'
+29080 | struct CommodityOptionItemAmericanExercise {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:31159:7: error: conflicting declaration 'using polyxml::corpus::finance_fpml::CreditEventNotice = struct polyxml::corpus::finance_fpml::CreditEventNoticeDocument'
+31159 | using CreditEventNotice = CreditEventNoticeDocument;
+      |       ^~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:16457:8: note: previous declaration as 'struct polyxml::corpus::finance_fpml::CreditEventNotice'
+16457 | struct CreditEventNotice {
+      |        ^~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:31177:7: error: conflicting declaration 'using polyxml::corpus::finance_fpml::FailureToPay = struct polyxml::corpus::finance_fpml::FailureToPayEvent'
+31177 | using FailureToPay = FailureToPayEvent;
+      |       ^~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:19266:8: note: previous declaration as 'struct polyxml::corpus::finance_fpml::FailureToPay'
+19266 | struct FailureToPay {
+      |        ^~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:31179:7: error: conflicting declaration 'using polyxml::corpus::finance_fpml::FallbackReferencePrice = struct polyxml::corpus::finance_fpml::FxFallbackReferencePrice'
+31179 | using FallbackReferencePrice = FxFallbackReferencePrice;
+      |       ^~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:9463:8: note: previous declaration as 'struct polyxml::corpus::finance_fpml::FallbackReferencePrice'
+ 9463 | struct FallbackReferencePrice {
+      |        ^~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:31194:7: error: conflicting declaration 'using polyxml::corpus::finance_fpml::LoanAllocation = struct polyxml::corpus::finance_fpml::LoanAllocationEvent'
+31194 | using LoanAllocation = LoanAllocationEvent;
+      |       ^~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:24221:8: note: previous declaration as 'struct polyxml::corpus::finance_fpml::LoanAllocation'
+24221 | struct LoanAllocation : public LoanAllocationSummary {
+      |        ^~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:31202:7: error: conflicting declaration 'using polyxml::corpus::finance_fpml::LoanTrade = struct polyxml::corpus::finance_fpml::LoanTradeEvent'
+31202 | using LoanTrade = LoanTradeEvent;
+      |       ^~~~~~~~~
+/tmp/polyxml-corpus-check-6wb005w8/generated/cpp/finance_fpml/finance_fpml.hpp:23333:8: note: previous declaration as 'struct polyxml::corpus::finance_fpml::LoanTrade'
+23333 | struct LoanTrade : public LoanTradeSummary {
+      |        ^~~~~~~~~
+compilation terminated due to -fmax-errors=10.

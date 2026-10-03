@@ -1,0 +1,18 @@
+[
+  {
+    "language": "go",
+    "error": "go-compile failed (1); full log: /tmp/corpus-hl7_cda-seven-final/go-compile.log"
+  },
+  {
+    "language": "cpp",
+    "error": "cpp-compile failed (1); full log: /tmp/corpus-hl7_cda-seven-final/cpp-compile.log"
+  },
+  {
+    "language": "csharp",
+    "error": "csharp-compile failed (1); full log: /tmp/corpus-hl7_cda-seven-final/csharp-compile.log"
+  },
+  {
+    "language": "rust",
+    "error": "rust-compile failed (101); full log: /tmp/corpus-hl7_cda-seven-final/rust-compile.log"
+  }
+]

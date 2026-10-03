@@ -1,0 +1,7 @@
+# polyxml/corpus-check/geospatial_gml
+geospatial_gml/geospatial_gml.go:3223:10: invalid receiver type AbstractObject (pointer or interface type)
+geospatial_gml/geospatial_gml.go:3228:9: invalid receiver type AbstractObject (pointer or interface type)
+FAIL	polyxml/corpus-check/geospatial_gml [build failed]
+FAIL	polyxml/corpus-check/transit_netex [build failed]
+?   	polyxml/corpus-check/transit_siri	[no test files]
+FAIL

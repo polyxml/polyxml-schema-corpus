@@ -32,3 +32,6 @@ disable debug info and incremental compilation; they keep codecs and Serde.
 Use --keep-going to collect every target outcome serially; any target failure
 still produces a nonzero final exit and a retained failures.json. Scheduled
 CI uses this mode. Never label failed targets as skipped or passing.
+
+Keep workflow concurrency groups separate by event name so routine main pushes
+do not cancel a weekly/manual heavy matrix partway through its serial checks.

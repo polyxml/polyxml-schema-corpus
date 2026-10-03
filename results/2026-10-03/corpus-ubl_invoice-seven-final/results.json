@@ -1,0 +1,217 @@
+[
+  {
+    "label": "preflight",
+    "command": [
+      "/bin/true"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.037,
+    "peak_rss_kib": 1544,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "python-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-cnenjdlj/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 6.139,
+    "peak_rss_kib": 49100,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "python-compile",
+    "command": [
+      "python3",
+      "-m",
+      "compileall",
+      "-q",
+      "/tmp/polyxml-corpus-check-cnenjdlj/generated/python"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.42,
+    "peak_rss_kib": 137264,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "go-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-cnenjdlj/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.475,
+    "peak_rss_kib": 49544,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "go-compile",
+    "command": [
+      "go",
+      "test",
+      "-p",
+      "1",
+      "./..."
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 4.596,
+    "peak_rss_kib": 387112,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "cpp-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-cnenjdlj/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.077,
+    "peak_rss_kib": 49204,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "cpp-compile",
+    "command": [
+      "g++",
+      "-std=c++20",
+      "-fsyntax-only",
+      "-fmax-errors=10",
+      "/tmp/polyxml-corpus-check-cnenjdlj/check.cpp"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 1.978,
+    "peak_rss_kib": 617344,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "java-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-cnenjdlj/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.475,
+    "peak_rss_kib": 49540,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "java-compile",
+    "command": [
+      "javac",
+      "-J-Xmx2200m",
+      "-Xmaxerrs",
+      "10",
+      "-d",
+      "/tmp/polyxml-corpus-check-cnenjdlj/classes",
+      "@/tmp/polyxml-corpus-check-cnenjdlj/java-files.txt"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 3.181,
+    "peak_rss_kib": 608436,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "typescript-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-cnenjdlj/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.68,
+    "peak_rss_kib": 49332,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "typescript-compile",
+    "command": [
+      "tsc",
+      "-p",
+      "/tmp/polyxml-corpus-check-cnenjdlj/tsconfig.json"
+    ],
+    "exit_code": 2,
+    "elapsed_seconds": 0.534,
+    "peak_rss_kib": 187652,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "csharp-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-cnenjdlj/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.476,
+    "peak_rss_kib": 49512,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "csharp-compile",
+    "command": [
+      "dotnet",
+      "build",
+      "/tmp/polyxml-corpus-check-cnenjdlj/Check.csproj",
+      "--disable-build-servers",
+      "-m:1",
+      "-p:UseSharedCompilation=false"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 3.186,
+    "peak_rss_kib": 265464,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "rust-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-cnenjdlj/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.777,
+    "peak_rss_kib": 49420,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "rust-compile",
+    "command": [
+      "cargo",
+      "check",
+      "--lib",
+      "-j",
+      "1"
+    ],
+    "exit_code": 101,
+    "elapsed_seconds": 46.922,
+    "peak_rss_kib": 3249936,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  }
+]

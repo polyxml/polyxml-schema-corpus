@@ -1,0 +1,39 @@
+  Determining projects to restore...
+  Restored /tmp/polyxml-corpus-check-6wb005w8/Check.csproj (in 156 ms).
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7376,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'EffectiveDate' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7296,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'Barrier' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7396,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'EuropeanExerciseBranch' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7401,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'BermudaExerciseBranch' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7406,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'AmericanExerciseBranch' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7376,39): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7296,33): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7396,48): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7401,47): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7406,48): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7378,16): error CS0111: Type 'CommodityOptionItem.EffectiveDate' already defines a member called 'EffectiveDate' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7298,16): error CS0111: Type 'CommodityOptionItem.Barrier' already defines a member called 'Barrier' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7398,16): error CS0111: Type 'CommodityOptionItem.EuropeanExerciseBranch' already defines a member called 'EuropeanExerciseBranch' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7403,16): error CS0111: Type 'CommodityOptionItem.BermudaExerciseBranch' already defines a member called 'BermudaExerciseBranch' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7408,16): error CS0111: Type 'CommodityOptionItem.AmericanExerciseBranch' already defines a member called 'AmericanExerciseBranch' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+
+Build FAILED.
+
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7376,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'EffectiveDate' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7296,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'Barrier' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7396,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'EuropeanExerciseBranch' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7401,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'BermudaExerciseBranch' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7406,26): error CS0102: The type 'CommodityOptionItem' already contains a definition for 'AmericanExerciseBranch' [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7376,39): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7296,33): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7396,48): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7401,47): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7406,48): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7378,16): error CS0111: Type 'CommodityOptionItem.EffectiveDate' already defines a member called 'EffectiveDate' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7298,16): error CS0111: Type 'CommodityOptionItem.Barrier' already defines a member called 'Barrier' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7398,16): error CS0111: Type 'CommodityOptionItem.EuropeanExerciseBranch' already defines a member called 'EuropeanExerciseBranch' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7403,16): error CS0111: Type 'CommodityOptionItem.BermudaExerciseBranch' already defines a member called 'BermudaExerciseBranch' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+/tmp/polyxml-corpus-check-6wb005w8/generated/csharp/finance_fpml/FinanceFpml.cs(7408,16): error CS0111: Type 'CommodityOptionItem.AmericanExerciseBranch' already defines a member called 'AmericanExerciseBranch' with the same parameter types [/tmp/polyxml-corpus-check-6wb005w8/Check.csproj]
+    0 Warning(s)
+    15 Error(s)
+
+Time Elapsed 00:00:03.58

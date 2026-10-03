@@ -1,0 +1,26 @@
+[
+  {
+    "language": "go",
+    "error": "go-compile failed (1); full log: /tmp/corpus-ubl_invoice-seven-final/go-compile.log"
+  },
+  {
+    "language": "cpp",
+    "error": "cpp-compile failed (1); full log: /tmp/corpus-ubl_invoice-seven-final/cpp-compile.log"
+  },
+  {
+    "language": "java",
+    "error": "java-compile failed (1); full log: /tmp/corpus-ubl_invoice-seven-final/java-compile.log"
+  },
+  {
+    "language": "typescript",
+    "error": "typescript-compile failed (2); full log: /tmp/corpus-ubl_invoice-seven-final/typescript-compile.log"
+  },
+  {
+    "language": "csharp",
+    "error": "csharp-compile failed (1); full log: /tmp/corpus-ubl_invoice-seven-final/csharp-compile.log"
+  },
+  {
+    "language": "rust",
+    "error": "rust-compile failed (101); full log: /tmp/corpus-ubl_invoice-seven-final/rust-compile.log"
+  }
+]

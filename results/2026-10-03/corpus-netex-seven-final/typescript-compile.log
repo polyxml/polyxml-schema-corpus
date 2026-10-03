@@ -1,0 +1,23 @@
+generated/typescript/geospatial_gml/geospatial_gml.ts(404,38): error TS2304: Cannot find name 'Double'.
+generated/typescript/transit_netex/transit_netex.ts(27024,54): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_netex/transit_netex.ts(27033,45): error TS2304: Cannot find name 'NormalizedString'.
+generated/typescript/transit_netex/transit_netex.ts(27164,47): error TS2304: Cannot find name 'NormalizedString'.
+generated/typescript/transit_netex/transit_netex.ts(27176,44): error TS2304: Cannot find name 'AnyUri'.
+generated/typescript/transit_netex/transit_netex.ts(27422,52): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_netex/transit_netex.ts(27459,46): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_netex/transit_netex.ts(28696,53): error TS2304: Cannot find name 'NormalizedString'.
+generated/typescript/transit_netex/transit_netex.ts(29815,48): error TS2304: Cannot find name 'NormalizedString'.
+generated/typescript/transit_netex/transit_netex.ts(30051,51): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_netex/transit_netex.ts(31182,63): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_netex/transit_netex.ts(34910,59): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_netex/transit_netex.ts(45161,52): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_siri/transit_siri.ts(171,50): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_siri/transit_siri.ts(285,52): error TS2304: Cannot find name 'NormalizedString'.
+generated/typescript/transit_siri/transit_siri.ts(329,43): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_siri/transit_siri.ts(358,57): error TS2304: Cannot find name 'Nmtoken'.
+generated/typescript/transit_siri/transit_siri.ts(363,57): error TS2304: Cannot find name 'Nmtoken'.
+generated/typescript/transit_siri/transit_siri.ts(411,47): error TS2304: Cannot find name 'Nmtokens'.
+generated/typescript/transit_siri/transit_siri.ts(458,49): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_siri/transit_siri.ts(646,57): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_siri/transit_siri.ts(697,60): error TS2312: An interface can only extend an object type or intersection of object types with statically known members.
+generated/typescript/transit_siri/transit_siri.ts(852,54): error TS2304: Cannot find name 'Nmtoken'.

@@ -1,0 +1,19 @@
+?   	polyxml/corpus-check/etsi_xades	[no test files]
+?   	polyxml/corpus-check/iso15118_xmldsig	[no test files]
+# polyxml/corpus-check/ubl_cac
+ubl_cac/ubl_cac.go:9:5: "bytes" imported and not used
+FAIL	polyxml/corpus-check/ubl_cac [build failed]
+?   	polyxml/corpus-check/ubl_cbc	[no test files]
+?   	polyxml/corpus-check/ubl_ccts	[no test files]
+# polyxml/corpus-check/ubl_extensions
+ubl_extensions/ubl_extensions.go:10:5: "bytes" imported and not used
+FAIL	polyxml/corpus-check/ubl_extensions [build failed]
+FAIL	polyxml/corpus-check/ubl_invoice [build failed]
+?   	polyxml/corpus-check/ubl_qdt	[no test files]
+# polyxml/corpus-check/ubl_signature_aggregate
+ubl_signature_aggregate/ubl_signature_aggregate.go:25:16: undefined: SignatureType
+FAIL	polyxml/corpus-check/ubl_signature [build failed]
+FAIL	polyxml/corpus-check/ubl_signature_aggregate [build failed]
+?   	polyxml/corpus-check/ubl_signature_basic	[no test files]
+?   	polyxml/corpus-check/ubl_udt	[no test files]
+FAIL

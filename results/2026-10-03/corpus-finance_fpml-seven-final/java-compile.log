@@ -1,0 +1,37 @@
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/CommodityOptionItem.java:28: error: record Barrier is already defined in interface CommodityOptionItem
+    record Barrier(CommodityBarrier value) implements CommodityOptionItem {}
+    ^
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/CommodityOptionItem.java:44: error: record EffectiveDate is already defined in interface CommodityOptionItem
+    record EffectiveDate(AdjustableOrRelativeDate value) implements CommodityOptionItem {}
+    ^
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/CommodityOptionItem.java:48: error: record EuropeanExerciseBranch is already defined in interface CommodityOptionItem
+    record EuropeanExerciseBranch(EuropeanExercise value) implements CommodityOptionItem {}
+    ^
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/CommodityOptionItem.java:49: error: record BermudaExerciseBranch is already defined in interface CommodityOptionItem
+    record BermudaExerciseBranch(BermudaExercise value) implements CommodityOptionItem {}
+    ^
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/CommodityOptionItem.java:50: error: record AmericanExerciseBranch is already defined in interface CommodityOptionItem
+    record AmericanExerciseBranch(AmericanExercise value) implements CommodityOptionItem {}
+    ^
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/String.java:16: error: cannot find symbol
+        if (value.length() > 255) throw new IllegalArgumentException("value maxLength is 255");
+                 ^
+  symbol:   method length()
+  location: variable value of type String
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/NormalizedString.java:16: error: cannot find symbol
+        if (value.length() < 0) throw new IllegalArgumentException("value minLength is 0");
+                 ^
+  symbol:   method length()
+  location: variable value of type String
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/PeriodEnum.java:14: error: incompatible types: java.lang.String cannot be converted to org.polyxml.corpus.finance_fpml.String
+    D("D"),
+      ^
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/PeriodEnum.java:15: error: incompatible types: java.lang.String cannot be converted to org.polyxml.corpus.finance_fpml.String
+    W("W"),
+      ^
+/tmp/polyxml-corpus-check-6wb005w8/generated/java/finance_fpml/PeriodEnum.java:16: error: incompatible types: java.lang.String cannot be converted to org.polyxml.corpus.finance_fpml.String
+    M("M"),
+      ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+10 errors
+only showing the first 10 errors, of 715 total; use -Xmaxerrs if you would like to see more

@@ -1,0 +1,2311 @@
+    Updating crates.io index
+     Locking 34 packages to highest compatible versions
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling syn v3.0.6
+   Compiling serde_core v1.0.229
+    Checking memchr v2.8.3
+    Checking lexical-util v1.0.7
+   Compiling serde v1.0.229
+   Compiling serde_derive v1.0.229
+   Compiling zmij v1.0.23
+    Checking siphasher v1.0.4
+    Checking phf_shared v0.14.0
+    Checking lexical-write-integer v1.0.6
+    Checking lexical-parse-integer v1.0.6
+    Checking aho-corasick v1.1.5
+   Compiling thiserror v2.0.21
+    Checking fastrand v2.5.0
+   Compiling serde_json v1.0.151
+    Checking regex-syntax v0.8.11
+    Checking regex-automata v0.4.18
+    Checking phf_generator v0.14.0
+    Checking lexical-parse-float v1.0.6
+    Checking lexical-write-float v1.0.6
+   Compiling thiserror-impl v2.0.21
+    Checking memo-map v0.3.4
+    Checking itoa v1.0.18
+    Checking minijinja v2.24.0
+    Checking lexical-core v1.0.6
+    Checking phf_codegen v0.14.0
+    Checking regex v1.13.1
+    Checking quick-xml v0.42.0
+    Checking smallvec v1.16.2
+    Checking heck v0.5.0
+    Checking polyxml v0.34.1 (/home/bailey/github/PolyXML/crates/polyxml-core)
+    Checking corpus_check v0.1.0 (/tmp/polyxml-corpus-check-nvfe0gjk/generated/rust)
+error[E0308]: `?` operator has incompatible types
+     --> hl7_cda/chunk_02.rs:11710:29
+      |
+11710 |         Self::parse_lexical(read_element_text(reader, &tag)?)
+      |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `String`, found `Cow<'_, str>`
+      |
+      = note: `?` operator cannot convert from `Cow<'_, str>` to `std::string::String`
+      = note: expected struct `std::string::String`
+                   found enum `Cow<'_, str>`
+help: try using a conversion method
+      |
+11710 |         Self::parse_lexical(read_element_text(reader, &tag)?.to_string())
+      |                                                             ++++++++++++
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:11898:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+11898 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:12210:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+12210 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:12688:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+12688 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:12970:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+12970 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:13491:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+13491 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:13760:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+13760 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:13928:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+13928 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:14159:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+14159 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_01::PostalAddressUse>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:15175:29
+      |
+15175 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_01::PostalAddressUse>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_01::PostalAddressUse>: std::fmt::Display`
+              which is required by `Vec<chunk_01::PostalAddressUse>: ToString`
+              `&Vec<chunk_01::PostalAddressUse>: std::fmt::Display`
+              which is required by `&Vec<chunk_01::PostalAddressUse>: ToString`
+              `[chunk_01::PostalAddressUse]: std::fmt::Display`
+              which is required by `[chunk_01::PostalAddressUse]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<TelecommunicationAddressUse>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:15892:29
+      |
+15892 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<TelecommunicationAddressUse>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<TelecommunicationAddressUse>: std::fmt::Display`
+              which is required by `Vec<TelecommunicationAddressUse>: ToString`
+              `&Vec<TelecommunicationAddressUse>: std::fmt::Display`
+              which is required by `&Vec<TelecommunicationAddressUse>: ToString`
+              `[TelecommunicationAddressUse]: std::fmt::Display`
+              which is required by `[TelecommunicationAddressUse]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_01::EntityNamePartQualifier>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:17478:29
+      |
+17478 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_01::EntityNamePartQualifier>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_01::EntityNamePartQualifier>: std::fmt::Display`
+              which is required by `Vec<chunk_01::EntityNamePartQualifier>: ToString`
+              `&Vec<chunk_01::EntityNamePartQualifier>: std::fmt::Display`
+              which is required by `&Vec<chunk_01::EntityNamePartQualifier>: ToString`
+              `[chunk_01::EntityNamePartQualifier]: std::fmt::Display`
+              which is required by `[chunk_01::EntityNamePartQualifier]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:17863:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+17863 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:18331:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+18331 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:18648:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+18648 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:18938:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+18938 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:19211:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+19211 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:19436:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+19436 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:19595:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+19595 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:19798:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+19798 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:20072:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+20072 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:20085:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+20085 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:20282:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+20282 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_01::EntityNameUse>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:21450:29
+      |
+21450 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_01::EntityNameUse>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_01::EntityNameUse>: std::fmt::Display`
+              which is required by `Vec<chunk_01::EntityNameUse>: ToString`
+              `&Vec<chunk_01::EntityNameUse>: std::fmt::Display`
+              which is required by `&Vec<chunk_01::EntityNameUse>: ToString`
+              `[chunk_01::EntityNameUse]: std::fmt::Display`
+              which is required by `[chunk_01::EntityNameUse]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:21733:29
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+...
+21733 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:21956:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+21956 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:22558:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+22558 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_01::EntityNameUse>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:23151:29
+      |
+23151 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_01::EntityNameUse>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_01::EntityNameUse>: std::fmt::Display`
+              which is required by `Vec<chunk_01::EntityNameUse>: ToString`
+              `&Vec<chunk_01::EntityNameUse>: std::fmt::Display`
+              which is required by `&Vec<chunk_01::EntityNameUse>: ToString`
+              `[chunk_01::EntityNameUse]: std::fmt::Display`
+              which is required by `[chunk_01::EntityNameUse]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_01::EntityNameUse>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:23589:29
+      |
+23589 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_01::EntityNameUse>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_01::EntityNameUse>: std::fmt::Display`
+              which is required by `Vec<chunk_01::EntityNameUse>: ToString`
+              `&Vec<chunk_01::EntityNameUse>: std::fmt::Display`
+              which is required by `&Vec<chunk_01::EntityNameUse>: ToString`
+              `[chunk_01::EntityNameUse]: std::fmt::Display`
+              which is required by `[chunk_01::EntityNameUse]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:23821:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+23821 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_02.rs:24203:29
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+...
+24203 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_03.rs:1934:29
+      |
+ 1934 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+     ::: hl7_cda/chunk_02.rs:17512:1
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Vec<i32>` in the current scope
+    --> hl7_cda/chunk_03.rs:2016:44
+     |
+2016 |                         let val = ListInt::decode_xml(reader, &e)?;
+     |                                            ^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+     |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no associated function or constant named `decode_xml_empty` found for struct `Vec<i32>` in the current scope
+    --> hl7_cda/chunk_03.rs:2033:44
+     |
+2033 |                         let val = ListInt::decode_xml_empty(&e)?;
+     |                                            ^^^^^^^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+     |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no method named `encode_xml` found for struct `Vec<i32>` in the current scope
+    --> hl7_cda/chunk_03.rs:2118:21
+     |
+2118 |         self.digits.encode_xml(writer, Some("digits"))?;
+     |                     ^^^^^^^^^^ method not found in `Vec<i32>`
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Vec<i32>` in the current scope
+    --> hl7_cda/chunk_03.rs:2185:44
+     |
+2185 |                         let val = ListInt::decode_xml(reader, &e)?;
+     |                                            ^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+     |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no associated function or constant named `decode_xml_empty` found for struct `Vec<i32>` in the current scope
+    --> hl7_cda/chunk_03.rs:2202:44
+     |
+2202 |                         let val = ListInt::decode_xml_empty(&e)?;
+     |                                            ^^^^^^^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+     |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no method named `encode_xml` found for struct `Vec<i32>` in the current scope
+    --> hl7_cda/chunk_03.rs:2287:21
+     |
+2287 |         self.digits.encode_xml(writer, Some("digits"))?;
+     |                     ^^^^^^^^^^ method not found in `Vec<i32>`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Uid<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_03.rs:2592:29
+      |
+ 2592 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+     ::: hl7_cda/chunk_02.rs:17512:1
+      |
+17512 | pub enum Uid<'a> {
+      | ---------------- doesn't satisfy `chunk_02::Uid<'_>: ToString` or `chunk_02::Uid<'_>: std::fmt::Display`
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `chunk_02::Uid<'_>: ToString`
+              `&chunk_02::Uid<'_>: std::fmt::Display`
+              which is required by `&chunk_02::Uid<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_03.rs:2855:29
+      |
+ 2855 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+     ::: hl7_cda/chunk_02.rs:11678:1
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_03.rs:3178:29
+      |
+ 3178 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+     ::: hl7_cda/chunk_02.rs:11678:1
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_03.rs:4521:29
+      |
+ 4521 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+     ::: hl7_cda/chunk_02.rs:11678:1
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_03.rs:4807:29
+      |
+ 4807 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+     ::: hl7_cda/chunk_02.rs:11678:1
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&chunk_02::Real2`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_03.rs:5125:29
+      |
+ 5125 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+     ::: hl7_cda/chunk_02.rs:11678:1
+      |
+11678 | pub enum Real2 {
+      | -------------- doesn't satisfy `chunk_02::Real2: ToString` or `chunk_02::Real2: std::fmt::Display`
+      |
+      = note: the following trait bounds were not satisfied:
+              `chunk_02::Real2: std::fmt::Display`
+              which is required by `chunk_02::Real2: ToString`
+              `&chunk_02::Real2: std::fmt::Display`
+              which is required by `&chunk_02::Real2: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Box<_, _>` in the current scope
+    --> hl7_cda/chunk_03.rs:9451:32
+     |
+9451 |                 let val = Box::decode_xml(reader, start)?;
+     |                                ^^^^^^^^^^ associated function or constant not found in `Box<_, _>`
+     |
+note: if you're trying to build a new `Box<_, _>` consider using one of the following associated functions:
+      Box::<T>::new
+      Box::<T>::new_uninit
+      Box::<T>::new_zeroed
+      Box::<T>::try_new
+      and 27 others
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/boxed.rs:288:4
+
+error[E0308]: `?` operator has incompatible types
+    --> hl7_cda/chunk_06.rs:7302:29
+     |
+7302 |         Self::parse_lexical(read_element_text(reader, &tag)?)
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `String`, found `Cow<'_, str>`
+     |
+     = note: `?` operator cannot convert from `Cow<'_, str>` to `std::string::String`
+     = note: expected struct `std::string::String`
+                  found enum `Cow<'_, str>`
+help: try using a conversion method
+     |
+7302 |         Self::parse_lexical(read_element_text(reader, &tag)?.to_string())
+     |                                                             ++++++++++++
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:7490:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+7490 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:7802:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+7802 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:8280:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+8280 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:8562:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+8562 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:9083:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+9083 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:9352:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+9352 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:9520:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+9520 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+    --> hl7_cda/chunk_06.rs:9751:29
+     |
+7270 | pub enum Real4 {
+     | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+9751 |             let val_s = val.to_string();
+     |                             ^^^^^^^^^
+     |
+     = note: the following trait bounds were not satisfied:
+             `Real4: std::fmt::Display`
+             which is required by `Real4: ToString`
+             `&Real4: std::fmt::Display`
+             which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+    --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+     = help: items from traits can only be used if the trait is implemented and in scope
+     = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+             candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_05::PostalAddressUse2>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:10767:29
+      |
+10767 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_05::PostalAddressUse2>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_05::PostalAddressUse2>: std::fmt::Display`
+              which is required by `Vec<chunk_05::PostalAddressUse2>: ToString`
+              `&Vec<chunk_05::PostalAddressUse2>: std::fmt::Display`
+              which is required by `&Vec<chunk_05::PostalAddressUse2>: ToString`
+              `[chunk_05::PostalAddressUse2]: std::fmt::Display`
+              which is required by `[chunk_05::PostalAddressUse2]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<TelecommunicationAddressUse2>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:11484:29
+      |
+11484 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<TelecommunicationAddressUse2>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<TelecommunicationAddressUse2>: std::fmt::Display`
+              which is required by `Vec<TelecommunicationAddressUse2>: ToString`
+              `&Vec<TelecommunicationAddressUse2>: std::fmt::Display`
+              which is required by `&Vec<TelecommunicationAddressUse2>: ToString`
+              `[TelecommunicationAddressUse2]: std::fmt::Display`
+              which is required by `[TelecommunicationAddressUse2]: ToString`
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Box<_, _>` in the current scope
+     --> hl7_cda/chunk_06.rs:11658:32
+      |
+11658 |                 let val = Box::decode_xml(reader, start)?;
+      |                                ^^^^^^^^^^ associated function or constant not found in `Box<_, _>`
+      |
+note: if you're trying to build a new `Box<_, _>` consider using one of the following associated functions:
+      Box::<T>::new
+      Box::<T>::new_uninit
+      Box::<T>::new_zeroed
+      Box::<T>::try_new
+      and 27 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/boxed.rs:288:4
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Box<_, _>` in the current scope
+     --> hl7_cda/chunk_06.rs:12264:32
+      |
+12264 |                 let val = Box::decode_xml(reader, start)?;
+      |                                ^^^^^^^^^^ associated function or constant not found in `Box<_, _>`
+      |
+note: if you're trying to build a new `Box<_, _>` consider using one of the following associated functions:
+      Box::<T>::new
+      Box::<T>::new_uninit
+      Box::<T>::new_zeroed
+      Box::<T>::try_new
+      and 27 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/boxed.rs:288:4
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_04::EntityNamePartQualifier2>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:14141:29
+      |
+14141 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_04::EntityNamePartQualifier2>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_04::EntityNamePartQualifier2>: std::fmt::Display`
+              which is required by `Vec<chunk_04::EntityNamePartQualifier2>: ToString`
+              `&Vec<chunk_04::EntityNamePartQualifier2>: std::fmt::Display`
+              which is required by `&Vec<chunk_04::EntityNamePartQualifier2>: ToString`
+              `[chunk_04::EntityNamePartQualifier2]: std::fmt::Display`
+              which is required by `[chunk_04::EntityNamePartQualifier2]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:14526:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+14526 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:14994:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+14994 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:15311:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+15311 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:15601:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+15601 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:15874:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+15874 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:16099:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+16099 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:16258:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+16258 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:16461:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+16461 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for enum `Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:16595:36
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- method `to_string` not found for this enum because it doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+16595 |         let val_s_root = self.root.to_string();
+      |                                    ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:21129:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+21129 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:21142:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+21142 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:21339:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+21339 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_04::EntityNameUse2>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:22507:29
+      |
+22507 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_04::EntityNameUse2>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_04::EntityNameUse2>: std::fmt::Display`
+              which is required by `Vec<chunk_04::EntityNameUse2>: ToString`
+              `&Vec<chunk_04::EntityNameUse2>: std::fmt::Display`
+              which is required by `&Vec<chunk_04::EntityNameUse2>: ToString`
+              `[chunk_04::EntityNameUse2]: std::fmt::Display`
+              which is required by `[chunk_04::EntityNameUse2]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:22790:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+22790 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:23013:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+23013 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:23615:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+23615 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_04::EntityNameUse2>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:24208:29
+      |
+24208 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_04::EntityNameUse2>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_04::EntityNameUse2>: std::fmt::Display`
+              which is required by `Vec<chunk_04::EntityNameUse2>: ToString`
+              `&Vec<chunk_04::EntityNameUse2>: std::fmt::Display`
+              which is required by `&Vec<chunk_04::EntityNameUse2>: ToString`
+              `[chunk_04::EntityNameUse2]: std::fmt::Display`
+              which is required by `[chunk_04::EntityNameUse2]: ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Vec<chunk_04::EntityNameUse2>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:24646:29
+      |
+24646 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^ method cannot be called on `&Vec<chunk_04::EntityNameUse2>` due to unsatisfied trait bounds
+      |
+      = note: the following trait bounds were not satisfied:
+              `Vec<chunk_04::EntityNameUse2>: std::fmt::Display`
+              which is required by `Vec<chunk_04::EntityNameUse2>: ToString`
+              `&Vec<chunk_04::EntityNameUse2>: std::fmt::Display`
+              which is required by `&Vec<chunk_04::EntityNameUse2>: ToString`
+              `[chunk_04::EntityNameUse2]: std::fmt::Display`
+              which is required by `[chunk_04::EntityNameUse2]: ToString`
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Box<_, _>` in the current scope
+     --> hl7_cda/chunk_06.rs:26355:40
+      |
+26355 |                         let val = Box::decode_xml(reader, &e)?;
+      |                                        ^^^^^^^^^^ associated function or constant not found in `Box<_, _>`
+      |
+note: if you're trying to build a new `Box<_, _>` consider using one of the following associated functions:
+      Box::<T>::new
+      Box::<T>::new_uninit
+      Box::<T>::new_zeroed
+      Box::<T>::try_new
+      and 27 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/boxed.rs:288:4
+
+error[E0599]: no associated function or constant named `decode_xml_empty` found for struct `Box<_, _>` in the current scope
+     --> hl7_cda/chunk_06.rs:26392:40
+      |
+26392 |                         let val = Box::decode_xml_empty(&e)?;
+      |                                        ^^^^^^^^^^^^^^^^ associated function or constant not found in `Box<_, _>`
+      |
+note: if you're trying to build a new `Box<_, _>` consider using one of the following associated functions:
+      Box::<T>::new
+      Box::<T>::new_uninit
+      Box::<T>::new_zeroed
+      Box::<T>::try_new
+      and 27 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/boxed.rs:288:4
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:34005:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+34005 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:34387:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+34387 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:36331:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+36331 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Vec<i32>` in the current scope
+     --> hl7_cda/chunk_06.rs:38148:45
+      |
+38148 |                         let val = ListInt2::decode_xml(reader, &e)?;
+      |                                             ^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+      |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no associated function or constant named `decode_xml_empty` found for struct `Vec<i32>` in the current scope
+     --> hl7_cda/chunk_06.rs:38165:45
+      |
+38165 |                         let val = ListInt2::decode_xml_empty(&e)?;
+      |                                             ^^^^^^^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+      |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no method named `encode_xml` found for struct `Vec<i32>` in the current scope
+     --> hl7_cda/chunk_06.rs:38250:21
+      |
+38250 |         self.digits.encode_xml(writer, Some("digits"))?;
+      |                     ^^^^^^^^^^ method not found in `Vec<i32>`
+
+error[E0599]: no associated function or constant named `decode_xml` found for struct `Vec<i32>` in the current scope
+     --> hl7_cda/chunk_06.rs:38317:45
+      |
+38317 |                         let val = ListInt2::decode_xml(reader, &e)?;
+      |                                             ^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+      |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no associated function or constant named `decode_xml_empty` found for struct `Vec<i32>` in the current scope
+     --> hl7_cda/chunk_06.rs:38334:45
+      |
+38334 |                         let val = ListInt2::decode_xml_empty(&e)?;
+      |                                             ^^^^^^^^^^^^^^^^ associated function or constant not found in `Vec<i32>`
+      |
+note: if you're trying to build a new `Vec<i32>` consider using one of the following associated functions:
+      Vec::<T>::new
+      Vec::<T>::with_capacity
+      Vec::<T>::try_with_capacity
+      Vec::<T>::from_raw_parts
+      and 7 others
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/alloc/src/vec/mod.rs:461:4
+
+error[E0599]: no method named `encode_xml` found for struct `Vec<i32>` in the current scope
+     --> hl7_cda/chunk_06.rs:38419:21
+      |
+38419 |         self.digits.encode_xml(writer, Some("digits"))?;
+      |                     ^^^^^^^^^^ method not found in `Vec<i32>`
+
+error[E0599]: the method `to_string` exists for reference `&Uid2<'a>`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:38724:29
+      |
+14175 | pub enum Uid2<'a> {
+      | ----------------- doesn't satisfy `Uid2<'_>: ToString` or `Uid2<'_>: std::fmt::Display`
+...
+38724 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Uid2<'_>: std::fmt::Display`
+              which is required by `Uid2<'_>: ToString`
+              `&Uid2<'_>: std::fmt::Display`
+              which is required by `&Uid2<'_>: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:38987:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+38987 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:39310:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+39310 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:40653:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+40653 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:40939:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+40939 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+error[E0599]: the method `to_string` exists for reference `&Real4`, but its trait bounds were not satisfied
+     --> hl7_cda/chunk_06.rs:41257:29
+      |
+ 7270 | pub enum Real4 {
+      | -------------- doesn't satisfy `Real4: ToString` or `Real4: std::fmt::Display`
+...
+41257 |             let val_s = val.to_string();
+      |                             ^^^^^^^^^
+      |
+      = note: the following trait bounds were not satisfied:
+              `Real4: std::fmt::Display`
+              which is required by `Real4: ToString`
+              `&Real4: std::fmt::Display`
+              which is required by `&Real4: ToString`
+note: the trait `std::fmt::Display` must be implemented
+     --> /rustc/b940084d7eb6a299eb4bfeb8e34901bc051e7ac4/library/core/src/fmt/mod.rs:1187:0
+      = help: items from traits can only be used if the trait is implemented and in scope
+      = note: the following trait defines an item `to_string`, perhaps you need to implement it:
+              candidate #1: `ToString`
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_02.rs:5208:21
+     |
+5204 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+5208 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+     |
+     = note: `#[warn(unreachable_patterns)]` (part of `#[warn(unused)]`) on by default
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_02.rs:5212:21
+     |
+5204 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+5212 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_02.rs:5233:21
+     |
+5229 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+5233 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_02.rs:5237:21
+     |
+5229 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+5237 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:13601:21
+      |
+13597 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+13601 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:13605:21
+      |
+13597 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+13605 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:13626:21
+      |
+13622 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+13626 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:13630:21
+      |
+13622 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+13630 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:14023:21
+      |
+14019 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+14023 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:14027:21
+      |
+14019 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+14027 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:14048:21
+      |
+14044 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+14048 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:14052:21
+      |
+14044 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+14052 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:20997:21
+      |
+20993 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+20997 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:21001:21
+      |
+20993 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+21001 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:21022:21
+      |
+21018 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+21022 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:21026:21
+      |
+21018 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+21026 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_02.rs:23442:22
+      |
+23439 |     #[serde(rename = "", default, skip_serializing_if = "Vec::is_empty")]
+      |                      -- matches all the relevant values
+...
+23442 |     #[serde(rename = "", default, skip_serializing_if = "Vec::is_empty")]
+      |                      ^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:2997:21
+     |
+2993 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+2997 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:3001:21
+     |
+2993 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+3001 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:3030:21
+     |
+3026 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+3030 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:3034:21
+     |
+3026 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+3034 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:3814:21
+     |
+3810 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+3814 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:3818:21
+     |
+3810 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+3818 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:3843:21
+     |
+3839 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+3843 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:3847:21
+     |
+3839 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+3847 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4641:21
+     |
+4637 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4641 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4645:21
+     |
+4637 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4645 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4670:21
+     |
+4666 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4670 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4674:21
+     |
+4666 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4674 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4951:21
+     |
+4947 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4951 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4955:21
+     |
+4947 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4955 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4980:21
+     |
+4976 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4980 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_03.rs:4984:21
+     |
+4976 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+4984 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> hl7_cda/chunk_06.rs:800:21
+    |
+796 |                     "width" | "high" => {
+    |                     ---------------- matches all the relevant values
+...
+800 |                     "high" => {
+    |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> hl7_cda/chunk_06.rs:804:21
+    |
+796 |                     "width" | "high" => {
+    |                     ---------------- matches all the relevant values
+...
+804 |                     "width" => {
+    |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> hl7_cda/chunk_06.rs:825:21
+    |
+821 |                     "width" | "high" => {
+    |                     ---------------- matches all the relevant values
+...
+825 |                     "high" => {
+    |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+   --> hl7_cda/chunk_06.rs:829:21
+    |
+821 |                     "width" | "high" => {
+    |                     ---------------- matches all the relevant values
+...
+829 |                     "width" => {
+    |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9193:21
+     |
+9189 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9193 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9197:21
+     |
+9189 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9197 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9218:21
+     |
+9214 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9218 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9222:21
+     |
+9214 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9222 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9615:21
+     |
+9611 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9615 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9619:21
+     |
+9611 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9619 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9640:21
+     |
+9636 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9640 |                     "high" => {
+     |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+    --> hl7_cda/chunk_06.rs:9644:21
+     |
+9636 |                     "width" | "high" => {
+     |                     ---------------- matches all the relevant values
+...
+9644 |                     "width" => {
+     |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:22054:21
+      |
+22050 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+22054 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:22058:21
+      |
+22050 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+22058 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:22079:21
+      |
+22075 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+22079 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:22083:21
+      |
+22075 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+22083 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:24499:22
+      |
+24496 |     #[serde(rename = "", default, skip_serializing_if = "Vec::is_empty")]
+      |                      -- matches all the relevant values
+...
+24499 |     #[serde(rename = "", default, skip_serializing_if = "Vec::is_empty")]
+      |                      ^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39129:21
+      |
+39125 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39129 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39133:21
+      |
+39125 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39133 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39162:21
+      |
+39158 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39162 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39166:21
+      |
+39158 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39166 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39946:21
+      |
+39942 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39946 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39950:21
+      |
+39942 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39950 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39975:21
+      |
+39971 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39975 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:39979:21
+      |
+39971 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+39979 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:40773:21
+      |
+40769 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+40773 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:40777:21
+      |
+40769 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+40777 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:40802:21
+      |
+40798 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+40802 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:40806:21
+      |
+40798 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+40806 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:41083:21
+      |
+41079 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+41083 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:41087:21
+      |
+41079 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+41087 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:41112:21
+      |
+41108 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+41112 |                     "high" => {
+      |                     ^^^^^^ no value can reach this
+
+warning: unreachable pattern
+     --> hl7_cda/chunk_06.rs:41116:21
+      |
+41108 |                     "width" | "high" => {
+      |                     ---------------- matches all the relevant values
+...
+41116 |                     "width" => {
+      |                     ^^^^^^^ no value can reach this
+
+Some errors have detailed explanations: E0308, E0599.
+For more information about an error, try `rustc --explain E0308`.
+warning: `corpus_check` (lib) generated 66 warnings
+error: could not compile `corpus_check` (lib) due to 94 previous errors; 66 warnings emitted

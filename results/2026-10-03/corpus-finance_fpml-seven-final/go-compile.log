@@ -1,0 +1,24 @@
+# polyxml/corpus-check/finance_fpml
+finance_fpml/finance_fpml.go:8157:10: duplicate case "barrier" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8152:10: previous case
+finance_fpml/finance_fpml.go:8237:10: duplicate case "effectiveDate" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8122:10: previous case
+finance_fpml/finance_fpml.go:8257:10: duplicate case "europeanExercise" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8187:10: previous case
+finance_fpml/finance_fpml.go:8262:10: duplicate case "bermudaExercise" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8192:10: previous case
+finance_fpml/finance_fpml.go:8267:10: duplicate case "americanExercise" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8197:10: previous case
+finance_fpml/finance_fpml.go:8426:18: duplicate case "barrier" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8419:18: previous case
+finance_fpml/finance_fpml.go:8538:18: duplicate case "effectiveDate" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8377:18: previous case
+finance_fpml/finance_fpml.go:8566:18: duplicate case "europeanExercise" (constant of type string) in expression switch
+	finance_fpml/finance_fpml.go:8468:18: previous case
+finance_fpml/finance_fpml.go:59077:6: OptionBase redeclared in this block
+	finance_fpml/finance_fpml.go:58801:6: other declaration of OptionBase
+finance_fpml/finance_fpml.go:59197:21: method OptionBase.Validate already declared at finance_fpml/finance_fpml.go:58809:21
+finance_fpml/finance_fpml.go:8566:18: too many errors
+FAIL	polyxml/corpus-check/finance_fpml [build failed]
+?   	polyxml/corpus-check/iso15118_xmldsig	[no test files]
+FAIL

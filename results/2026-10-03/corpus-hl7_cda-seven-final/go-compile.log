@@ -1,0 +1,24 @@
+# polyxml/corpus-check/hl7_cda
+hl7_cda/hl7_cda.go:802:6: ActClassBattery redeclared in this block
+	hl7_cda/hl7_cda.go:628:5: other declaration of ActClassBattery
+hl7_cda/hl7_cda.go:878:6: ActClassCategory redeclared in this block
+	hl7_cda/hl7_cda.go:631:5: other declaration of ActClassCategory
+hl7_cda/hl7_cda.go:954:6: ActClassCluster redeclared in this block
+	hl7_cda/hl7_cda.go:634:5: other declaration of ActClassCluster
+hl7_cda/hl7_cda.go:1028:6: ActClassComposition redeclared in this block
+	hl7_cda/hl7_cda.go:637:5: other declaration of ActClassComposition
+hl7_cda/hl7_cda.go:1108:6: ActClassContainer redeclared in this block
+	hl7_cda/hl7_cda.go:641:5: other declaration of ActClassContainer
+hl7_cda/hl7_cda.go:1252:6: ActClassDiet redeclared in this block
+	hl7_cda/hl7_cda.go:647:5: other declaration of ActClassDiet
+hl7_cda/hl7_cda.go:1391:6: ActClassExtract redeclared in this block
+	hl7_cda/hl7_cda.go:657:5: other declaration of ActClassExtract
+hl7_cda/hl7_cda.go:1453:6: ActClassFolder redeclared in this block
+	hl7_cda/hl7_cda.go:659:5: other declaration of ActClassFolder
+hl7_cda/hl7_cda.go:1490:6: ActClassGrouper redeclared in this block
+	hl7_cda/hl7_cda.go:661:5: other declaration of ActClassGrouper
+hl7_cda/hl7_cda.go:1768:6: ActClassPolicy redeclared in this block
+	hl7_cda/hl7_cda.go:680:5: other declaration of ActClassPolicy
+hl7_cda/hl7_cda.go:1768:6: too many errors
+FAIL	polyxml/corpus-check/hl7_cda [build failed]
+FAIL

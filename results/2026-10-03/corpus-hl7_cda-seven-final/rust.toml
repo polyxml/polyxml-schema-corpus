@@ -1,0 +1,14 @@
+[workspace]
+name = "corpus-check"
+output_base_dir = "generated"
+go_module = "polyxml/corpus-check"
+
+[modules.hl7_cda]
+schemas = ["schemas/hl7-cda/coreschemas/voc.xsd", "schemas/hl7-cda/coreschemas/datatypes-base.xsd", "schemas/hl7-cda/coreschemas/datatypes.xsd", "schemas/hl7-cda/coreschemas/infrastructureRoot.xsd", "schemas/hl7-cda/coreschemas/NarrativeBlock.xsd", "schemas/hl7-cda/POCD_MT000040UV02.xsd", "schemas/hl7-cda/CDA.xsd"]
+depends_on = []
+
+[[generate]]
+target = "rust"
+output = "rust"
+split_units = true
+chunk_size = 250

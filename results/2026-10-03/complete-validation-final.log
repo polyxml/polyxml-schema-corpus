@@ -1,0 +1,87 @@
+Running as unit: run-p127539-i127971.scope; invocation ID: 46b72122c4404f168f0bb010e6fbe824
+Using PolyXML binary: /home/bailey/github/PolyXML/target/debug/polyxml
+
+============================================================
+STEP 1: Validating schemas with polyxml validate
+============================================================
+
+[Suite] SEPA camt.054 (ISO 20022) (1 files)
+  ✓ Validated in 72.71ms
+
+[Suite] SEPA pacs.008 (ISO 20022) (1 files)
+  ✓ Validated in 42.96ms
+
+[Suite] SEPA pain.001 (ISO 20022) (1 files)
+  ✓ Validated in 45.90ms
+
+[Suite] ISO 15118 EV Charging (6 files)
+  ✓ Validated in 83.35ms
+
+[Suite] BPMN 2.0 (OMG) (5 files)
+  ✓ Validated in 46.09ms
+
+[Suite] HL7 CDA R2.1 (7 files)
+  ✓ Validated in 212.66ms
+
+[Suite] HL7 FHIR R4 (2 files)
+  ✗ FAILED (15.31ms):
+Error: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-fhir/fhir-xhtml.xsd: Resolution error: Unresolved type {http://www.w3.org/XML/1998/namespace}lang at line 2
+
+
+[Suite] OASIS UBL 2.1 (2 files)
+  ✓ Validated in 857.80ms
+
+[Suite] W3C XML Schema (1 files)
+  ✗ FAILED (2.56ms):
+Error: /home/bailey/github/polyxml-schema-corpus/schemas/w3c-xmlschema/XMLSchema.xsd: Resolution error: Unknown built-in type xs:openAttrs at line 123
+
+
+[Suite] OASIS SAML 2.0 (2 files)
+  ✓ Validated in 39.66ms
+
+[Suite] XBRL 2.1 Financial Filings (1 files)
+  ✗ FAILED (16.16ms):
+Error: /home/bailey/github/polyxml-schema-corpus/schemas/regulatory-xbrl/xbrl-instance-2003-12-31.xsd: Resolution error: Unresolved type {http://www.w3.org/1999/xlink}type at line 73
+
+
+[Suite] OGC KML 2.2 (1 files)
+  ✓ Validated in 66.71ms
+
+[Suite] OGC GML 3.2.1 (ISO 19136) (1 files)
+  ✓ Validated in 19.06ms
+
+[Suite] FIXM 4.0 (ICAO & FAA Aviation) (5 files)
+  ✓ Validated in 252.34ms
+
+[Suite] FpML 5.12 (ISDA Derivatives) (1 files)
+  ✓ Validated in 1109.37ms
+
+[Suite] Transit SIRI (CEN) (1 files)
+  ✓ Validated in 45.89ms
+
+[Suite] Transit NeTEx (CEN Timetables) (1 files)
+  ✓ Validated in 18246.27ms
+
+[Suite] Transit RailML 2.4 (1 files)
+  ✓ Validated in 130.26ms
+
+[Suite] OASIS ebMS 3.0 / AS4 (1 files)
+  ✗ FAILED (10.58ms):
+Error: /home/bailey/github/polyxml-schema-corpus/schemas/messaging-as4/ebms-header-3_0.xsd: Resolution error: Unresolved type {http://www.w3.org/XML/1998/namespace}lang at line 5
+
+
+[Suite] Defense UCI (US DoD / NATO) (4 files)
+  ✓ Validated in 1965.56ms
+
+============================================================
+STEP 2: Workspace dry-run compilation (polyxml.toml)
+============================================================
+✗ Build dry-run failed:
+Error: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-fhir/fhir-xhtml.xsd: Resolution error: Unresolved type {http://www.w3.org/XML/1998/namespace}lang at line 2
+
+
+============================================================
+SUMMARY
+============================================================
+Validation: FAILED
+Module Resolution & Graph: FAILED

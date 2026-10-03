@@ -1,0 +1,41 @@
+In file included from /tmp/polyxml-corpus-check-cnenjdlj/check.cpp:3:
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_cac/ubl_cac.hpp:7211:7: error: conflicting declaration 'using polyxml::corpus::ubl_cac::ContractingPartyType = struct polyxml::corpus::ubl_cac::ContractingPartyTypeType'
+ 7211 | using ContractingPartyType = ContractingPartyTypeType;
+      |       ^~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_cac/ubl_cac.hpp:4057:8: note: previous declaration as 'struct polyxml::corpus::ubl_cac::ContractingPartyType'
+ 4057 | struct ContractingPartyType {
+      |        ^~~~~~~~~~~~~~~~~~~~
+In file included from /tmp/polyxml-corpus-check-cnenjdlj/check.cpp:6:
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:30:1: error: redefinition of 'template<class ... Ts> polyxml::corpus::ubl_cac::overloaded(Ts ...) -> overloaded<Ts ...>'
+   30 | overloaded(Ts...) -> overloaded<Ts...>;
+      | ^~~~~~~~~~
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_cac/ubl_cac.hpp:825:1: note: 'template<class ... Ts> polyxml::corpus::ubl_cac::overloaded(Ts ...) -> overloaded<Ts ...>' previously declared here
+  825 | overloaded(Ts...) -> overloaded<Ts...>;
+      | ^~~~~~~~~~
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:73:17: error: 'UblExtensionType' was not declared in this scope; did you mean 'polyxml::corpus::ubl_extensions::UblExtensionType'?
+   73 |     std::vector<UblExtensionType> ubl_extension = {};
+      |                 ^~~~~~~~~~~~~~~~
+      |                 polyxml::corpus::ubl_extensions::UblExtensionType
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:47:8: note: 'polyxml::corpus::ubl_extensions::UblExtensionType' declared here
+   47 | struct UblExtensionType;
+      |        ^~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:73:33: error: template argument 1 is invalid
+   73 |     std::vector<UblExtensionType> ubl_extension = {};
+      |                                 ^
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:73:33: error: template argument 2 is invalid
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:73:10: error: '<expression error>' in namespace 'std' does not name a type
+   73 |     std::vector<UblExtensionType> ubl_extension = {};
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:82:50: error: expected class-name before '{' token
+   82 | struct ExtensionReasonCodeType : public CodeType {
+      |                                                  ^
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:83:5: error: 'CodeType' does not name a type
+   83 |     CodeType value = {};
+      |     ^~~~~~~~
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:92:55: error: expected class-name before '{' token
+   92 | struct ExtensionAgencyIdType : public IdentifierType2 {
+      |                                                       ^
+/tmp/polyxml-corpus-check-cnenjdlj/generated/cpp/ubl_extensions/ubl_extensions.hpp:93:5: error: 'IdentifierType2' does not name a type
+   93 |     IdentifierType2 value = {};
+      |     ^~~~~~~~~~~~~~~
+compilation terminated due to -fmax-errors=10.

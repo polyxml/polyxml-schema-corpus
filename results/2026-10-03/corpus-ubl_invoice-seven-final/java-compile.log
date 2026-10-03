@@ -1,0 +1,6 @@
+/tmp/polyxml-corpus-check-cnenjdlj/generated/java/ubl_signature_aggregate/SignatureInformationType.java:24: error: cannot find symbol
+    java.util.Optional<SignatureType> signature
+                       ^
+  symbol:   class SignatureType
+  location: class SignatureInformationType
+1 error

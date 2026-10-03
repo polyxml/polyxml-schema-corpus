@@ -1,0 +1,35 @@
+  Determining projects to restore...
+  Restored /tmp/polyxml-corpus-check-0vdiw92z/Check.csproj (in 172 ms).
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(66112,26): error CS0102: The type 'ParkingAreaTypeItem' already contains a definition for 'ParkingProperties' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(91552,26): error CS0102: The type 'TaxiParkingAreaTypeItem' already contains a definition for 'ParkingProperties' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(108179,26): error CS0102: The type 'EntitiesInVersionRelStructureItem' already contains a definition for 'ServiceAccessRight' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(70647,26): error CS0102: The type 'PathLinkInSequenceTypeItem' already contains a definition for 'Description' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(66112,43): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(66114,16): error CS0111: Type 'ParkingAreaTypeItem.ParkingProperties' already defines a member called 'ParkingProperties' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(122757,131): warning CS0108: 'CodespaceAssignmentVersionedChildStructure.NameOfClass' hides inherited member 'EntityStructure.NameOfClass'. Use the new keyword if hiding was intended. [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(70647,37): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(70649,16): error CS0111: Type 'PathLinkInSequenceTypeItem.Description' already defines a member called 'Description' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(91552,43): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(91554,16): error CS0111: Type 'TaxiParkingAreaTypeItem.ParkingProperties' already defines a member called 'ParkingProperties' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(108179,44): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(108181,16): error CS0111: Type 'EntitiesInVersionRelStructureItem.ServiceAccessRight' already defines a member called 'ServiceAccessRight' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+
+Build FAILED.
+
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(122757,131): warning CS0108: 'CodespaceAssignmentVersionedChildStructure.NameOfClass' hides inherited member 'EntityStructure.NameOfClass'. Use the new keyword if hiding was intended. [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(66112,26): error CS0102: The type 'ParkingAreaTypeItem' already contains a definition for 'ParkingProperties' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(91552,26): error CS0102: The type 'TaxiParkingAreaTypeItem' already contains a definition for 'ParkingProperties' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(108179,26): error CS0102: The type 'EntitiesInVersionRelStructureItem' already contains a definition for 'ServiceAccessRight' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(70647,26): error CS0102: The type 'PathLinkInSequenceTypeItem' already contains a definition for 'Description' [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(66112,43): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(66114,16): error CS0111: Type 'ParkingAreaTypeItem.ParkingProperties' already defines a member called 'ParkingProperties' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(70647,37): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(70649,16): error CS0111: Type 'PathLinkInSequenceTypeItem.Description' already defines a member called 'Description' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(91552,43): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(91554,16): error CS0111: Type 'TaxiParkingAreaTypeItem.ParkingProperties' already defines a member called 'ParkingProperties' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(108179,44): error CS8863: Only a single partial type declaration may have a parameter list [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+/tmp/polyxml-corpus-check-0vdiw92z/generated/csharp/transit_netex/TransitNetex.cs(108181,16): error CS0111: Type 'EntitiesInVersionRelStructureItem.ServiceAccessRight' already defines a member called 'ServiceAccessRight' with the same parameter types [/tmp/polyxml-corpus-check-0vdiw92z/Check.csproj]
+    1 Warning(s)
+    12 Error(s)
+
+Time Elapsed 00:00:07.24

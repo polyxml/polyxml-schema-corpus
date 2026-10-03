@@ -1,0 +1,28 @@
+In file included from /tmp/polyxml-corpus-check-0vdiw92z/check.cpp:1:
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:187:41: error: 'NameOrNilReason' was not declared in this scope
+  187 | using NameOrNilReasonList = std::vector<NameOrNilReason>;
+      |                                         ^~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:187:56: error: template argument 1 is invalid
+  187 | using NameOrNilReasonList = std::vector<NameOrNilReason>;
+      |                                                        ^
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:187:56: error: template argument 2 is invalid
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:187:34: error: '<expression error>' in namespace 'std' does not name a type
+  187 | using NameOrNilReasonList = std::vector<NameOrNilReason>;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:190:44: error: 'BooleanOrNilReason' was not declared in this scope
+  190 | using BooleanOrNilReasonList = std::vector<BooleanOrNilReason>;
+      |                                            ^~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:190:62: error: template argument 1 is invalid
+  190 | using BooleanOrNilReasonList = std::vector<BooleanOrNilReason>;
+      |                                                              ^
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:190:62: error: template argument 2 is invalid
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:190:37: error: '<expression error>' in namespace 'std' does not name a type
+  190 | using BooleanOrNilReasonList = std::vector<BooleanOrNilReason>;
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:193:43: error: 'DoubleOrNilReason' was not declared in this scope
+  193 | using DoubleOrNilReasonList = std::vector<DoubleOrNilReason>;
+      |                                           ^~~~~~~~~~~~~~~~~
+/tmp/polyxml-corpus-check-0vdiw92z/generated/cpp/geospatial_gml/geospatial_gml.hpp:193:60: error: template argument 1 is invalid
+  193 | using DoubleOrNilReasonList = std::vector<DoubleOrNilReason>;
+      |                                                            ^
+compilation terminated due to -fmax-errors=10.
