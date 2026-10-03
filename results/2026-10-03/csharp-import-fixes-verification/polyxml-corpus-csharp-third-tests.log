@@ -1,0 +1,26 @@
+memcap: <=8157 MiB (60% of 13596 MiB available) [systemd MemoryMax, swap off]
+   Compiling polyxml v0.34.3 (/home/bailey/github/PolyXML/crates/polyxml-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.27s
+     Running tests/test_csharp_codegen.rs (target/debug/deps/test_csharp_codegen-c47160ede987060f)
+
+running 1 test
+test particle_wire_structure_round_trips ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 19 filtered out; finished in 27.11s
+
+   Compiling polyxml v0.34.3 (/home/bailey/github/PolyXML/crates/polyxml-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.25s
+     Running tests/test_qualified_attributes.rs (target/debug/deps/test_qualified_attributes-ac49f87913d6e77b)
+
+running 5 tests
+test derived_validators_preserve_base_constraints ... ok
+test global_attribute_references_round_trip_by_namespace ... ok
+test imported_inline_global_attribute_enum_round_trips ... ok
+test inherited_attribute_and_distinct_element_keep_separate_property_names ... ok
+test lexical_dependencies_compile_and_round_trip_without_implicit_imports ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 26.15s
+
+   Compiling polyxml v0.34.3 (/home/bailey/github/PolyXML/crates/polyxml-core)
+   Compiling polyxml-cli v0.34.3 (/home/bailey/github/PolyXML/crates/polyxml-cli)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.91s

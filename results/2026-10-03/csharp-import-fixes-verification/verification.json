@@ -1,0 +1,24 @@
+{
+  "compiler_commit": "8b183aca90c7de63bbd8842b76018700d53a152a",
+  "compiler_cli_version": "0.34.5",
+  "workspace_gate": "pass",
+  "seven_target_smoke": "pass",
+  "python_tests": 112,
+  "python_statement_and_branch_coverage": 100,
+  "upa_decisions_matching_xerces": 507,
+  "strict_docs": "pass",
+  "w3c_CType": {
+    "schemas": "31/31",
+    "instances": "23/28",
+    "known_failures_unchanged": 5
+  },
+  "csharp_runtime_tests": "net8.0 fixtures on .NET 10 with DOTNET_ROLL_FORWARD=Major",
+  "corpus_checks": {
+    "netex_csharp_records": "pass, zero warnings/errors",
+    "netex_csharp_classes": "pass, zero warnings/errors",
+    "uci_csharp": "pass, zero warnings/errors",
+    "ubl_go": "FAIL, unresolved SignatureType; no unused imports",
+    "ubl_rust": "FAIL, existing reference/codec errors; no warnings in compiler log"
+  },
+  "scope": "bounded compile checks plus reduced runtime regressions; full NeTEx XML conformance not established"
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "language": "go",
+    "error": "go-compile failed (1); full log: /home/bailey/github/polyxml-schema-corpus/results/2026-10-03/import-fixes-ubl-go-rust-final/go-compile.log"
+  },
+  {
+    "language": "rust",
+    "error": "rust-compile failed (101); full log: /home/bailey/github/polyxml-schema-corpus/results/2026-10-03/import-fixes-ubl-go-rust-final/rust-compile.log"
+  }
+]

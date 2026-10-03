@@ -1,0 +1,5 @@
+Loading manifest: /tmp/polyxml-netex-class-fix/polyxml.toml
+Compiling module [geospatial_gml]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-netex/gml/gml_extract_all_objects_v_3_2_1.xsd
+Compiling module [transit_siri]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-siri/siri/siri_all_framework-v2.0.xsd
+Compiling module [transit_netex]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-netex/NeTEx_publication_timetable.xsd
+Module build finished successfully.

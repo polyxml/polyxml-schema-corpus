@@ -1,5 +1,37 @@
 # Bounded corpus checks — 2026-10-03
 
+## NeTEx C# compilation and import cleanup
+
+Latest compiler source: PolyXML `8b183ac` (local CLI 0.34.5). Complete NeTEx
+C# dependency closures now compile as **records and mutable classes with zero
+warnings and errors** at 3500 MiB. See `csharp-fixes-netex-record/` and
+`csharp-fixes-netex-class/` for manifests, compiler hashes, timings and RSS.
+The record compile used 2,820,632 KiB peak process RSS (37.694 s); the class
+compile used 2,547,004 KiB (24.763 s). Swap is disabled for each named cgroup.
+`csharp-fixes-uci-regression/` also passes with zero warnings/errors.
+
+`import-fixes-ubl-go-rust/` records the initial import cleanup, including two
+remaining Serde wildcard warnings. The subsequent
+`import-fixes-ubl-go-rust-final/` logs have **no warnings**: unused Go bytes imports,
+empty Rust module reexports and duplicate JSON field names have been fixed.
+Both complete UBL Go/Rust compile attempts still **fail** on existing signature
+references and Rust codec/type errors. They are not labeled successful builds.
+Those broader defects remain tracked in PolyXML #135.
+
+`csharp-import-fixes-verification/` retains the full passing workspace/smoke gate,
+100% Python statement/branch coverage (112 tests), 507 UPA decisions matching
+Xerces, strict docs, reduced C#/Rust runtime regressions and the unchanged
+W3C CType sample (31/31 schemas; 23/28 instance round trips).
+
+Reduced tests verify inherited constraints, mixed text/children/attributes,
+branch-name/type shadowing, repeated XML branches, nested lexical unions, lists
+without implicit usings, required default/fixed scalars and distinct JSON values.
+Full NeTEx XML conformance remains unestablished; a separate mixed extension
+adding child elements can omit inherited children. Its valid saved fixture and
+scope are documented in PolyXML research/corpus-csharp-import-fixes-2026-10-03.md.
+
+Historical checks below retain their original compiler versions and failures.
+
 ## Generated warning follow-up
 
 PolyXML `08db594` fixes Rust named-choice wrappers and C# inherited property

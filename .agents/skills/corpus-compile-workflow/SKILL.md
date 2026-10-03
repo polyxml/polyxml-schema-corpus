@@ -50,3 +50,12 @@ the full split codec/Serde compile still passes at 12000 MiB (~11.21 GiB RSS).
 C# inherited identifier collisions can lose XML elements even when records
 compile. Reserve ancestor identifiers in the generator and check both styles.
 A warning-free target compile does not imply whole-corpus runtime conformance.
+
+PolyXML 8b183ac makes the full NeTEx C# closure compile in record/class modes
+with zero warnings/errors at 3500 MiB. For a class comparison, append style =
+"class" to the selected manifest's [[generate]] block and use BoundedRunner
+for both generation and compile_command, retaining metadata, the manifest and
+file counts just as the standard harness does. Build success is not runtime XML
+conformance; the mixed extension adding child elements still needs separate
+particle/codec work. UBL Go/Rust unused imports and Serde duplicate JSON names
+are fixed, while their signature/reference/codec compile errors remain in #135.

@@ -1,0 +1,15 @@
+?   	polyxml/corpus-check/etsi_xades	[no test files]
+?   	polyxml/corpus-check/iso15118_xmldsig	[no test files]
+?   	polyxml/corpus-check/ubl_cac	[no test files]
+?   	polyxml/corpus-check/ubl_cbc	[no test files]
+?   	polyxml/corpus-check/ubl_ccts	[no test files]
+?   	polyxml/corpus-check/ubl_extensions	[no test files]
+?   	polyxml/corpus-check/ubl_invoice	[no test files]
+?   	polyxml/corpus-check/ubl_qdt	[no test files]
+# polyxml/corpus-check/ubl_signature_aggregate
+ubl_signature_aggregate/ubl_signature_aggregate.go:25:16: undefined: SignatureType
+FAIL	polyxml/corpus-check/ubl_signature [build failed]
+FAIL	polyxml/corpus-check/ubl_signature_aggregate [build failed]
+?   	polyxml/corpus-check/ubl_signature_basic	[no test files]
+?   	polyxml/corpus-check/ubl_udt	[no test files]
+FAIL

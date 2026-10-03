@@ -1,0 +1,71 @@
+[
+  {
+    "label": "preflight",
+    "command": [
+      "/bin/true"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.133,
+    "peak_rss_kib": 1544,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "go-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-naw8511c/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.526,
+    "peak_rss_kib": 49332,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "go-compile",
+    "command": [
+      "go",
+      "test",
+      "-p",
+      "1",
+      "./..."
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 6.691,
+    "peak_rss_kib": 392164,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "rust-generate",
+    "command": [
+      "/home/bailey/github/PolyXML/target/debug/polyxml",
+      "build",
+      "--config",
+      "/tmp/polyxml-corpus-check-naw8511c/polyxml.toml"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.776,
+    "peak_rss_kib": 54116,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  },
+  {
+    "label": "rust-compile",
+    "command": [
+      "cargo",
+      "check",
+      "--lib",
+      "-j",
+      "1"
+    ],
+    "exit_code": 101,
+    "elapsed_seconds": 48.926,
+    "peak_rss_kib": 3253408,
+    "memory_mib": 3500,
+    "timeout_seconds": 600
+  }
+]

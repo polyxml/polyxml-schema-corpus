@@ -1,0 +1,25 @@
+{
+  "module": "ubl_invoice",
+  "closure": [
+    "ubl_ccts",
+    "ubl_udt",
+    "ubl_qdt",
+    "ubl_cbc",
+    "ubl_signature_basic",
+    "ubl_signature_aggregate",
+    "iso15118_xmldsig",
+    "etsi_xades",
+    "ubl_signature",
+    "ubl_extensions",
+    "ubl_cac",
+    "ubl_invoice"
+  ],
+  "compiler": "/home/bailey/github/PolyXML/target/debug/polyxml",
+  "compiler_sha256": "b600252bf485194cfedb7d162547703316d34a4c4825e5c734c9a3873ba4b1bf",
+  "languages": [
+    "go",
+    "rust"
+  ],
+  "skipped": [],
+  "check": "syntax/compile; no runtime round trips"
+}

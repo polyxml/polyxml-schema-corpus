@@ -1,0 +1,10 @@
+memcap: <=7821 MiB (60% of 13035 MiB available) [systemd MemoryMax, swap off]
+   Compiling polyxml v0.34.4 (/home/bailey/github/PolyXML/crates/polyxml-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.03s
+     Running tests/test_rust_codegen.rs (target/debug/deps/test_rust_codegen-8d3ef8b97f570ca7)
+
+running 1 test
+test duplicate_wire_names_keep_distinct_json_values ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 25 filtered out; finished in 7.15s
+

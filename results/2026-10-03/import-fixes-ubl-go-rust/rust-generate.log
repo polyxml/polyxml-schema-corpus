@@ -1,0 +1,16 @@
+Loading manifest: /tmp/polyxml-corpus-check-6h83cifi/polyxml.toml
+Compiling module [iso15118_xmldsig]: /tmp/polyxml-corpus-check-6h83cifi/schemas/iso15118/xmldsig-core-schema.xsd
+Compiling module [etsi_xades]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-XAdESv132-2.1.xsd
+Compiling module [etsi_xades]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-XAdESv141-2.1.xsd
+Compiling module [ubl_ccts]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/CCTS_CCT_SchemaModule-2.1.xsd
+Compiling module [ubl_udt]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-UnqualifiedDataTypes-2.1.xsd
+Compiling module [ubl_qdt]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-QualifiedDataTypes-2.1.xsd
+Compiling module [ubl_cbc]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-CommonBasicComponents-2.1.xsd
+Compiling module [ubl_signature_basic]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-SignatureBasicComponents-2.1.xsd
+Compiling module [ubl_signature_aggregate]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-SignatureAggregateComponents-2.1.xsd
+Compiling module [ubl_signature]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-CommonSignatureComponents-2.1.xsd
+Compiling module [ubl_extensions]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-CommonExtensionComponents-2.1.xsd
+Compiling module [ubl_extensions]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-ExtensionContentDataType-2.1.xsd
+Compiling module [ubl_cac]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/common/UBL-CommonAggregateComponents-2.1.xsd
+Compiling module [ubl_invoice]: /tmp/polyxml-corpus-check-6h83cifi/schemas/ubl-2.1/maindoc/UBL-Invoice-2.1.xsd
+Module build finished successfully.
