@@ -3,8 +3,9 @@
 Latest: UCI passes all seven targets locally and in GitHub CI at 12000 MiB using the compiler
 fixes published in PolyXML 031ab53. NeTEx Python passes at 3500 MiB after UPA
 source deduplication, module ownership, and quoted-docstring fixes. These checks
-verify compilation, not runtime XML conformance. Detailed outcomes and historical
-failures follow.
+verify compilation, not runtime XML conformance. Full validation now passes all 20 suites and the 46-module graph with the
+subsequent fixes in d3ecf31; see `validation-followup/`. Detailed outcomes
+and historical failures follow.
 
 ## Initial checks at 3500 MiB
 
@@ -118,3 +119,19 @@ The remaining heavy jobs continue to collect their independent failures.
 Ordinary PR/push CI passed both CDA/UBL Python checks and system-manager
 harness regression tests. Full validation remains red; its failures and
 heavy-module generator failures are tracked in PolyXML #134, #135, and #136.
+
+## Full validation follow-up
+
+PolyXML d3ecf31 parses imported inline global attributes and list item types,
+accepts declared types in the schema-for-schemas namespace while still rejecting
+unknown references, preserves owned ordered-content markers in module builds,
+and assigns retained generated mixed-content helpers to a unique namespace
+owner. C# optional enum attributes use a lexical XML proxy, with round-trip
+regressions for present/absent values, namespaces, JSON naming, and invalid enums.
+
+The corpus adds the shared `w3c_xml` owner/dependencies and rewrites the normative
+meta-schema's XML import to its existing local mirror. **All 20 validation
+suites and the 46-module graph now pass** at 12000 MiB, swap disabled, within
+a ten-minute timeout. Raw verification logs are in `validation-followup/`.
+The preceding validation failures are historical; generated-code compilation
+failures in #135 remain separate and unresolved.

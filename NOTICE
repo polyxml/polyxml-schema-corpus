@@ -83,3 +83,7 @@ stipulated by their respective authoring bodies:
 12. United States Department of Defense (DoD) & NATO
     - Universal Command and Control Interface (UCI) Version 2.5.
     Public domain / United States Government Work.
+
+Offline corpus adjustment (2026-10-03): the W3C XMLSchema.xsd import of
+http://www.w3.org/2001/xml.xsd points to the existing sibling xml.xsd mirror.
+Namespace and schema declarations are unchanged; validation requires no network.

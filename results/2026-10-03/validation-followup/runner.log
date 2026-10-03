@@ -1,0 +1,191 @@
+Running as unit: run-p137609-i138061.scope; invocation ID: f4d390c2134746a6a371aa5fb3a450a8
+Using PolyXML binary: /home/bailey/github/PolyXML/target/debug/polyxml
+
+============================================================
+STEP 1: Validating schemas with polyxml validate
+============================================================
+
+[Suite] SEPA camt.054 (ISO 20022) (1 files)
+  ✓ Validated in 70.04ms
+
+[Suite] SEPA pacs.008 (ISO 20022) (1 files)
+  ✓ Validated in 42.24ms
+
+[Suite] SEPA pain.001 (ISO 20022) (1 files)
+  ✓ Validated in 44.93ms
+
+[Suite] ISO 15118 EV Charging (6 files)
+  ✓ Validated in 80.87ms
+
+[Suite] BPMN 2.0 (OMG) (5 files)
+  ✓ Validated in 42.85ms
+
+[Suite] HL7 CDA R2.1 (7 files)
+  ✓ Validated in 209.99ms
+
+[Suite] HL7 FHIR R4 (2 files)
+  ✓ Validated in 523.12ms
+
+[Suite] OASIS UBL 2.1 (2 files)
+  ✓ Validated in 850.85ms
+
+[Suite] W3C XML Schema (1 files)
+  ✓ Validated in 31.08ms
+
+[Suite] OASIS SAML 2.0 (2 files)
+  ✓ Validated in 36.25ms
+
+[Suite] XBRL 2.1 Financial Filings (1 files)
+  ✓ Validated in 18.21ms
+
+[Suite] OGC KML 2.2 (1 files)
+  ✓ Validated in 65.90ms
+
+[Suite] OGC GML 3.2.1 (ISO 19136) (1 files)
+  ✓ Validated in 18.91ms
+
+[Suite] FIXM 4.0 (ICAO & FAA Aviation) (5 files)
+  ✓ Validated in 233.17ms
+
+[Suite] FpML 5.12 (ISDA Derivatives) (1 files)
+  ✓ Validated in 1097.48ms
+
+[Suite] Transit SIRI (CEN) (1 files)
+  ✓ Validated in 47.59ms
+
+[Suite] Transit NeTEx (CEN Timetables) (1 files)
+  ✓ Validated in 18619.00ms
+
+[Suite] Transit RailML 2.4 (1 files)
+  ✓ Validated in 137.55ms
+
+[Suite] OASIS ebMS 3.0 / AS4 (1 files)
+  ✓ Validated in 9.92ms
+
+[Suite] Defense UCI (US DoD / NATO) (4 files)
+  ✓ Validated in 1991.43ms
+
+============================================================
+STEP 2: Workspace dry-run compilation (polyxml.toml)
+============================================================
+Loading manifest: /home/bailey/github/polyxml-schema-corpus/polyxml.toml
+Compiling module [aviation_base]: /home/bailey/github/polyxml-schema-corpus/schemas/aviation-fixm/core/base/Base.xsd
+Compiling module [aviation_flight]: /home/bailey/github/polyxml-schema-corpus/schemas/aviation-fixm/core/flight/Flight.xsd
+Compiling module [aviation_messaging]: /home/bailey/github/polyxml-schema-corpus/schemas/aviation-fixm/core/messaging/Messaging.xsd
+Compiling module [aviation_fixm]: /home/bailey/github/polyxml-schema-corpus/schemas/aviation-fixm/core/Fixm.xsd
+Compiling module [aviation_nas]: /home/bailey/github/polyxml-schema-corpus/schemas/aviation-fixm/extensions/nas/Nas.xsd
+Compiling module [bpmn20]: /home/bailey/github/polyxml-schema-corpus/schemas/bpmn20/BPMN20.xsd
+Compiling module [bpmn20]: /home/bailey/github/polyxml-schema-corpus/schemas/bpmn20/BPMNDI.xsd
+Compiling module [bpmn20]: /home/bailey/github/polyxml-schema-corpus/schemas/bpmn20/DC.xsd
+Compiling module [bpmn20]: /home/bailey/github/polyxml-schema-corpus/schemas/bpmn20/DI.xsd
+Compiling module [bpmn20]: /home/bailey/github/polyxml-schema-corpus/schemas/bpmn20/Semantic.xsd
+Compiling module [defense_uci]: /home/bailey/github/polyxml-schema-corpus/schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd
+Compiling module [defense_uci]: /home/bailey/github/polyxml-schema-corpus/schemas/defense-uci/UCI_SecurityMarkings_v2_5_0.xsd
+Compiling module [defense_uci]: /home/bailey/github/polyxml-schema-corpus/schemas/defense-uci/UCI_Versioning_v2_5_0.xsd
+Compiling module [defense_uci]: /home/bailey/github/polyxml-schema-corpus/schemas/defense-uci/uci_entity_core.xsd
+Compiling module [w3c_xml]: /home/bailey/github/polyxml-schema-corpus/schemas/w3c-xmlschema/xml.xsd
+Compiling module [dublin_core]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-railml/dc.xsd
+Compiling module [iso15118_xmldsig]: /home/bailey/github/polyxml-schema-corpus/schemas/iso15118/xmldsig-core-schema.xsd
+Compiling module [etsi_xades]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-XAdESv132-2.1.xsd
+Compiling module [etsi_xades]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-XAdESv141-2.1.xsd
+Compiling module [finance_fpml]: /home/bailey/github/polyxml-schema-corpus/schemas/finance-fpml/fpml-main-5-12.xsd
+Compiling module [geospatial_gml]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-netex/gml/gml_extract_all_objects_v_3_2_1.xsd
+Compiling module [ietf_atom]: /home/bailey/github/polyxml-schema-corpus/schemas/geospatial-kml/atom-author-link.xsd
+Compiling module [oasis_ciq_xal]: /home/bailey/github/polyxml-schema-corpus/schemas/geospatial-kml/xAL.xsd
+Compiling module [geospatial_kml]: /home/bailey/github/polyxml-schema-corpus/schemas/geospatial-kml/ogckml22.xsd
+Compiling module [hl7_cda]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-cda/CDA.xsd
+Compiling module [hl7_cda]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-cda/POCD_MT000040UV02.xsd
+Compiling module [hl7_cda]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-cda/coreschemas/NarrativeBlock.xsd
+Compiling module [hl7_cda]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-cda/coreschemas/datatypes-base.xsd
+Compiling module [hl7_cda]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-cda/coreschemas/datatypes.xsd
+Compiling module [hl7_cda]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-cda/coreschemas/infrastructureRoot.xsd
+Compiling module [hl7_cda]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-cda/coreschemas/voc.xsd
+Compiling module [w3c_xhtml]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-fhir/fhir-xhtml.xsd
+Compiling module [hl7_fhir]: /home/bailey/github/polyxml-schema-corpus/schemas/hl7-fhir/fhir-single.xsd
+Compiling module [iso15118_v2g]: /home/bailey/github/polyxml-schema-corpus/schemas/iso15118/V2G_CI_AppProtocol.xsd
+Compiling module [iso15118_v2g]: /home/bailey/github/polyxml-schema-corpus/schemas/iso15118/V2G_CI_MsgBody.xsd
+Compiling module [iso15118_v2g]: /home/bailey/github/polyxml-schema-corpus/schemas/iso15118/V2G_CI_MsgDataTypes.xsd
+Compiling module [iso15118_v2g]: /home/bailey/github/polyxml-schema-corpus/schemas/iso15118/V2G_CI_MsgDef.xsd
+Compiling module [iso15118_v2g]: /home/bailey/github/polyxml-schema-corpus/schemas/iso15118/V2G_CI_MsgHeader.xsd
+Compiling module [iso20022_camt054]: /home/bailey/github/polyxml-schema-corpus/schemas/iso20022/camt.054.001.08.xsd
+Compiling module [iso20022_pacs008]: /home/bailey/github/polyxml-schema-corpus/schemas/iso20022/pacs.008.001.09.xsd
+Compiling module [iso20022_pain001]: /home/bailey/github/polyxml-schema-corpus/schemas/iso20022/pain.001.001.10.xsd
+Compiling module [soap_envelope]: /home/bailey/github/polyxml-schema-corpus/schemas/messaging-as4/soap-envelope-1.1.xsd
+Compiling module [soap_envelope]: /home/bailey/github/polyxml-schema-corpus/schemas/messaging-as4/soap-envelope-1.2.xsd
+Compiling module [messaging_as4]: /home/bailey/github/polyxml-schema-corpus/schemas/messaging-as4/ebms-header-3_0.xsd
+Compiling module [w3c_xlink]: /home/bailey/github/polyxml-schema-corpus/schemas/regulatory-xbrl/xlink-2003-12-31.xsd
+Compiling module [xbrl_xlink]: /home/bailey/github/polyxml-schema-corpus/schemas/regulatory-xbrl/xl-2003-12-31.xsd
+Compiling module [xbrl_linkbase]: /home/bailey/github/polyxml-schema-corpus/schemas/regulatory-xbrl/xbrl-linkbase-2003-12-31.xsd
+Compiling module [regulatory_xbrl]: /home/bailey/github/polyxml-schema-corpus/schemas/regulatory-xbrl/xbrl-instance-2003-12-31.xsd
+Compiling module [w3c_xmlenc]: /home/bailey/github/polyxml-schema-corpus/schemas/security-saml/xenc-schema.xsd
+Compiling module [saml_assertion]: /home/bailey/github/polyxml-schema-corpus/schemas/security-saml/saml-schema-assertion-2.0.xsd
+Compiling module [security_saml]: /home/bailey/github/polyxml-schema-corpus/schemas/security-saml/saml-schema-protocol-2.0.xsd
+Compiling module [transit_siri]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-siri/siri/siri_all_framework-v2.0.xsd
+Compiling module [transit_netex]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-netex/NeTEx_publication_timetable.xsd
+Compiling module [transit_railml]: /home/bailey/github/polyxml-schema-corpus/schemas/transit-railml/railML.xsd
+Compiling module [ubl_ccts]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/CCTS_CCT_SchemaModule-2.1.xsd
+Compiling module [ubl_udt]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-UnqualifiedDataTypes-2.1.xsd
+Compiling module [ubl_qdt]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-QualifiedDataTypes-2.1.xsd
+Compiling module [ubl_cbc]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-CommonBasicComponents-2.1.xsd
+Compiling module [ubl_signature_basic]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-SignatureBasicComponents-2.1.xsd
+Compiling module [ubl_signature_aggregate]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-SignatureAggregateComponents-2.1.xsd
+Compiling module [ubl_signature]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-CommonSignatureComponents-2.1.xsd
+Compiling module [ubl_extensions]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-CommonExtensionComponents-2.1.xsd
+Compiling module [ubl_extensions]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-ExtensionContentDataType-2.1.xsd
+Compiling module [ubl_cac]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/common/UBL-CommonAggregateComponents-2.1.xsd
+Compiling module [ubl_invoice]: /home/bailey/github/polyxml-schema-corpus/schemas/ubl-2.1/maindoc/UBL-Invoice-2.1.xsd
+Compiling module [w3c_xmlschema]: /home/bailey/github/polyxml-schema-corpus/schemas/w3c-xmlschema/XMLSchema.xsd
+Module [aviation_base]: 111 owned types
+Module [aviation_flight]: 116 owned types
+Module [aviation_messaging]: 16 owned types
+Module [aviation_fixm]: 0 owned types
+Module [aviation_nas]: 164 owned types
+Module [bpmn20]: 190 owned types
+Module [defense_uci]: 5558 owned types
+Module [w3c_xml]: 3 owned types
+Module [dublin_core]: 3 owned types
+Module [iso15118_xmldsig]: 39 owned types
+Module [etsi_xades]: 58 owned types
+Module [finance_fpml]: 1905 owned types
+Module [geospatial_gml]: 77 owned types
+Module [ietf_atom]: 6 owned types
+Module [oasis_ciq_xal]: 148 owned types
+Module [geospatial_kml]: 112 owned types
+Module [hl7_cda]: 1838 owned types
+Module [w3c_xhtml]: 129 owned types
+Module [hl7_fhir]: 1305 owned types
+Module [iso15118_v2g]: 136 owned types
+Module [iso20022_camt054]: 265 owned types
+Module [iso20022_pacs008]: 163 owned types
+Module [iso20022_pain001]: 167 owned types
+Module [soap_envelope]: 20 owned types
+Module [messaging_as4]: 22 owned types
+Module [w3c_xlink]: 5 owned types
+Module [xbrl_xlink]: 10 owned types
+Module [xbrl_linkbase]: 27 owned types
+Module [regulatory_xbrl]: 65 owned types
+Module [w3c_xmlenc]: 18 owned types
+Module [saml_assertion]: 32 owned types
+Module [security_saml]: 32 owned types
+Module [transit_siri]: 131 owned types
+Module [transit_netex]: 4445 owned types
+Module [transit_railml]: 748 owned types
+Module [ubl_ccts]: 10 owned types
+Module [ubl_udt]: 20 owned types
+Module [ubl_qdt]: 0 owned types
+Module [ubl_cbc]: 873 owned types
+Module [ubl_signature_basic]: 1 owned types
+Module [ubl_signature_aggregate]: 1 owned types
+Module [ubl_signature]: 1 owned types
+Module [ubl_extensions]: 10 owned types
+Module [ubl_cac]: 228 owned types
+Module [ubl_invoice]: 1 owned types
+Module [w3c_xmlschema]: 139 owned types
+
+✓ All modules parsed and ownership verified in 28679.28ms
+
+============================================================
+SUMMARY
+============================================================
+Validation: PASSED
+Module Resolution & Graph: PASSED

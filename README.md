@@ -4,7 +4,7 @@
 
 <p align="center">
   <strong>PolyXML Industry Schema Corpus & Multi-Language Benchmark Suite</strong><br>
-  <em>20 Battle-Tested Enterprise Standards • 45 Modules • 6,800+ Owned Types</em>
+  <em>20 Battle-Tested Enterprise Standards • 46 Modules • 6,800+ Owned Types</em>
 </p>
 
 <p align="center">
@@ -88,7 +88,7 @@ polyxml-schema-corpus/
 │   ├── transit-siri/          # CEN SIRI real-time transit telemetry
 │   ├── ubl-2.1/               # OASIS UBL 2.1 procurement & invoicing
 │   └── w3c-xmlschema/         # Normative W3C XML Schema definition
-├── polyxml.toml               # Multi-module workspace configuration (45 modules)
+├── polyxml.toml               # Multi-module workspace configuration (46 modules)
 ├── runner.py                  # Automated validation and benchmark harness
 ├── scripts/check_module_codegen.py # Parameterized bounded compile check
 ├── scripts/check_uci_codegen.py # UCI compatibility entry point
@@ -149,11 +149,12 @@ runs all seven languages for `defense_uci`, `hl7_cda`, `ubl_invoice`,
 The original validation/dry-run job remains separate.
 
 Published [2026-10-03 results](results/2026-10-03/README.md) show UCI passing
-all seven targets locally and in GitHub CI at 12000 MiB. Other heavy modules have remaining
-[compiler failures](https://github.com/polyxml/PolyXML/issues/135); full-corpus
-validation also exposes [inline global attribute support](https://github.com/polyxml/PolyXML/issues/134)
-and [schema-for-schemas validation](https://github.com/polyxml/PolyXML/issues/136).
-The scheduled matrix retains these failures in its artifacts.
+all seven targets locally and in GitHub CI at 12000 MiB. Full validation also
+passes all 20 suites and the 46-module graph after inline attribute and
+schema-for-schemas fixes. Other heavy modules have remaining
+[compiler failures](https://github.com/polyxml/PolyXML/issues/135), retained in
+scheduled matrix artifacts. The W3C meta-schema uses its vendored XML import,
+and the shared `w3c_xml` module owns XML-namespace helper types.
 
 Harness regression tests (including real user-cgroup limit and timeout checks):
 
@@ -195,7 +196,7 @@ polyxml validate schemas/defense-uci/UCI_MessageDefinitions_v2_5_0.xsd
 
 ### 3. Build & Generate Code Across Modules
 
-The root `polyxml.toml` defines modular boundaries with dependency resolution and type deduplication across all 45 modules:
+The root `polyxml.toml` defines modular boundaries with dependency resolution and type deduplication across all 46 modules:
 
 ```bash
 # Test schema resolution & module graph in dry-run mode

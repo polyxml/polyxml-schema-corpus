@@ -105,8 +105,12 @@ depends_on = ["ubl_cbc", "ubl_extensions"]
 schemas = ["schemas/ubl-2.1/maindoc/UBL-Invoice-2.1.xsd"]
 depends_on = ["ubl_cac", "ubl_cbc", "ubl_extensions"]
 
+[modules.w3c_xml]
+schemas = ["schemas/w3c-xmlschema/xml.xsd"]
+
 [modules.w3c_xhtml]
 schemas = ["schemas/hl7-fhir/fhir-xhtml.xsd"]
+depends_on = ["w3c_xml"]
 
 [modules.hl7_fhir]
 schemas = ["schemas/hl7-fhir/fhir-single.xsd"]
@@ -114,6 +118,7 @@ depends_on = ["w3c_xhtml"]
 
 [modules.w3c_xmlschema]
 schemas = ["schemas/w3c-xmlschema/XMLSchema.xsd"]
+depends_on = ["w3c_xml"]
 
 [modules.w3c_xmlenc]
 schemas = ["schemas/security-saml/xenc-schema.xsd"]
@@ -187,6 +192,7 @@ schemas = [
     "schemas/messaging-as4/soap-envelope-1.1.xsd",
     "schemas/messaging-as4/soap-envelope-1.2.xsd",
 ]
+depends_on = ["w3c_xml"]
 
 [modules.messaging_as4]
 schemas = ["schemas/messaging-as4/ebms-header-3_0.xsd"]
@@ -194,6 +200,7 @@ depends_on = ["soap_envelope"]
 
 [modules.dublin_core]
 schemas = ["schemas/transit-railml/dc.xsd"]
+depends_on = ["w3c_xml"]
 
 [modules.transit_railml]
 schemas = ["schemas/transit-railml/railML.xsd"]

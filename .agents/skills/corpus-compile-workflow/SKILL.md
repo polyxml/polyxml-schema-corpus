@@ -35,3 +35,10 @@ CI uses this mode. Never label failed targets as skipped or passing.
 
 Keep workflow concurrency groups separate by event name so routine main pushes
 do not cancel a weekly/manual heavy matrix partway through its serial checks.
+
+The corpus has 46 modules, including a shared w3c_xml owner for anonymous
+XML-namespace attribute types. XHTML/FHIR, schema-for-schemas, SOAP/AS4, and
+Dublin Core/railML closures include it through declared dependencies. Keep the
+W3C meta-schema XML import pointed at its existing sibling xml.xsd mirror;
+compiler imports do not fetch HTTP schemas implicitly. Verify the full runner
+after changing schema ownership as well as selected generated-code closures.

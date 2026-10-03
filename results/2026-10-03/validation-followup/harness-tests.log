@@ -1,0 +1,23 @@
+test_compile_failure_is_retained (test_compile_harness.CgroupTests.test_compile_failure_is_retained) ... compile: /usr/bin/python3 -m py_compile /tmp/tmpz39xbaph/bad.py
+  File "/tmp/tmpz39xbaph/bad.py", line 1
+    def broken(:
+               ^
+SyntaxError: invalid syntax
+Oct 03 03:59:21 BAILEYWHITEBOX systemd[727]: Started corpus-check-99f701e7dba64c67b75886897741f045.scope - [systemd-run] /usr/bin/env PATH=/home/bailey/.local/bin:/home/bailey/.codex/tmp/arg0/codex-arg0HyvSop:/home/bailey/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/bin/remote-cli:/home/bailey/.local/bin:/home/bailey/.local/bin:/home/bailey/.nvm/versions/node/v24.21.0/bin:/home/bailey/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bailey/.dotnet/tools:/home/bailey/.vscode-server/extensions/openai.chatgpt-26.930.31428-linux-x64/bin/linux-x86_64 CARGO_BUILD_JOBS=1 CARGO_INCREMENTAL=0 GOMAXPROCS=1 LC_ALL=C /usr/bin/time -v -o /tmp/tmpz39xbaph/compile.time /usr/bin/python3 -m py_compile /tmp/tmpz39xbaph/bad.py.
+ok
+test_limits_are_kernel_enforced (test_compile_harness.CgroupTests.test_limits_are_kernel_enforced) ... limits: /usr/bin/python3 -c from pathlib import Path; c=Path("/sys/fs/cgroup")/Path("/proc/self/cgroup").read_text().strip().split("::")[1].lstrip("/"); assert (c/"memory.max").read_text().strip()==str(64*1024*1024); assert (c/"memory.swap.max").read_text().strip()=="0"
+ok
+test_timeout_kills_descendants (test_compile_harness.CgroupTests.test_timeout_kills_descendants) ... timeout: /usr/bin/python3 -c import subprocess,time; from pathlib import Path; p=subprocess.Popen(["sleep","60"]); Path("child.pid").write_text(str(p.pid)); time.sleep(60)
+TIMEOUT after 1 seconds
+Oct 03 03:59:22 BAILEYWHITEBOX systemd[727]: Started corpus-check-2e99894e61bf4fa08ef92a83852119db.scope - [systemd-run] /usr/bin/env PATH=/home/bailey/.local/bin:/home/bailey/.codex/tmp/arg0/codex-arg0HyvSop:/home/bailey/.vscode-server/cli/servers/Stable-07f806f999227108933c2e30515b26eecc1fda74/server/bin/remote-cli:/home/bailey/.local/bin:/home/bailey/.local/bin:/home/bailey/.nvm/versions/node/v24.21.0/bin:/home/bailey/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bailey/.dotnet/tools:/home/bailey/.vscode-server/extensions/openai.chatgpt-26.930.31428-linux-x64/bin/linux-x86_64 CARGO_BUILD_JOBS=1 CARGO_INCREMENTAL=0 GOMAXPROCS=1 LC_ALL=C /usr/bin/time -v -o /tmp/tmp1w_cubwj/timeout.time /usr/bin/python3 -c "import subprocess,time; from pathlib import Path; p=subprocess.Popen([\"sleep\",\"60\"]); Path(\"child.pid\").write_text(str(p.pid)); time.sleep(60)".
+ok
+test_dependency_cycle_fails (test_compile_harness.ManifestTests.test_dependency_cycle_fails) ... ok
+test_diamond_closure_and_valid_manifest (test_compile_harness.ManifestTests.test_diamond_closure_and_valid_manifest) ... ok
+test_keep_going_collects_other_targets_but_returns_failure (test_compile_harness.OrchestrationTests.test_keep_going_collects_other_targets_but_returns_failure) ... deliberate generation failure
+1 target(s) failed. Logs: /tmp/tmpuulmmshr/results
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.194s
+
+OK
