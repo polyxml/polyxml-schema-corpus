@@ -13,7 +13,8 @@ The host had ~13.6 GiB available before checks; WSL swap remained unused.
 | defense_uci (exact four-schema module) | Python, Go, TypeScript, Java | pass |
 | defense_uci | C++20 syntax | pass, peak process RSS 2,753,596 KiB |
 | defense_uci | C# net8.0 build | pass after Equals property-name fix |
-| defense_uci | Rust cargo check | cgroup OOM, 3.4 GiB reported scope peak |
+| defense_uci | Rust cargo check, monolithic | cgroup OOM, 3.4 GiB reported scope peak |
+| defense_uci | Rust cargo check, split_units=true, 250-type chunks | cgroup OOM, 25 emitted files |
 | transit_netex + dependencies | Python generation | cgroup OOM (journal retained) |
 | finance_fpml | Python generation/syntax | pass after adding XML-signature module dependency |
 
@@ -34,3 +35,8 @@ UCI's seven-language gate is not green: corpus issue #1 must remain open until
 Rust compilation succeeds within the chosen budget. NeTEx likewise needs
 memory work before its scheduled check can pass. The harness intentionally
 reports these failures instead of treating them as skips or increasing caps.
+
+The follow-up `corpus-uci-rust-split` run explicitly enabled topological
+chunking (25 emitted files versus 3 for the monolithic run). It also hit the
+cgroup memory cap. Chunking is retained in the final harness, but this evidence
+does not support claiming that splitting alone resolves Rust compilation.

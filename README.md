@@ -124,7 +124,8 @@ Every generation and compile command runs in a separate systemd scope with
 `MemoryMax=3500M` and `MemorySwapMax=0`. The ten-minute timeout stops the entire
 scope, including compiler children. The cap must leave at least 1 GiB available
 for the host; no uncapped fallback is permitted. `--memory-mib` and `--timeout`
-allow deliberate budget changes. Rust/Go builds use one worker; Java's heap
+allow deliberate budget changes. Rust checks explicitly enable `split_units = true` with 250-type chunks;
+chunking is opt-in in PolyXML. Rust/Go builds use one worker; Java's heap
 is additionally limited to 2200 MiB. `--system` selects CI's system manager
 and runs compilers as the invoking user. Missing tools fail before generation;
 `--allow-missing` is for local partial runs only and records explicit skips.

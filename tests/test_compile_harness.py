@@ -29,6 +29,9 @@ class ManifestTests(unittest.TestCase):
         manifest = harness.tomllib.loads(harness.manifest(modules, names, "python"))
         self.assertEqual(list(manifest["modules"]), names)
         self.assertEqual(manifest["modules"]["root"], modules["root"])
+        rust = harness.tomllib.loads(harness.manifest(modules, names, "rust"))
+        self.assertTrue(rust["generate"][0]["split_units"])
+        self.assertEqual(rust["generate"][0]["chunk_size"], 250)
 
     def test_dependency_cycle_fails(self):
         with self.assertRaisesRegex(ValueError, "cyclic"):

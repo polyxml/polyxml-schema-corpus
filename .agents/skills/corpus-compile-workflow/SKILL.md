@@ -19,3 +19,8 @@ Record exact compiler source commit and tool versions with local results.
 Do not treat syntax compilation as runtime XML conformance or skipped targets
 as full success. C# net8.0 build tests need the SDK/reference pack but no runtime
 execution. Missing toolchains are fatal unless --allow-missing is explicit.
+
+Rust chunking is opt-in (`split_units = true`, `chunk_size = 250` in the
+generated manifest), not automatic. Inspect emitted file counts and preserve
+this setting in regression tests; a monolithic run does not test the split
+strategy. Both strategies still share one cargo check crate.

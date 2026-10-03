@@ -51,6 +51,8 @@ def manifest(modules: dict, names: list[str], language: str) -> str:
         )
         text += f"depends_on = {json.dumps(modules[name].get('depends_on', []))}\n"
     text += f'\n[[generate]]\ntarget = "{language}"\noutput = "{language}"\n'
+    if language == "rust":
+        text += "split_units = true\nchunk_size = 250\n"
     if language in ("java", "cpp"):
         text += (
             "package = "
@@ -168,10 +170,13 @@ class BoundedRunner:
             )
         if code:
             lines = log.read_text().splitlines()
+            diagnostic = self.output / f"{label}.cgroup.log"
+            if diagnostic.exists():
+                lines += diagnostic.read_text().splitlines()
             errors = [
                 line
                 for line in lines
-                if re.search(r"error|fatal|killed|timeout", line, re.IGNORECASE)
+                if re.search(r"\berror\b|fatal|killed|timeout|oom", line, re.IGNORECASE)
             ]
             print("\n".join(errors[:10] or lines[-15:]), file=sys.stderr)
             raise RuntimeError(f"{label} failed ({code}); full log: {log}")
