@@ -56,7 +56,7 @@ def manifest(modules: dict, names: list[str], language: str) -> str:
     if language == "go":
         text += "chunk_size = 250\nsplit_crates = true\n"
     if language == "cpp" and "transit_netex" in names:
-        text += "split_units = true\nchunk_size = 140\n"
+        text += "split_units = true\nchunk_size = 250\n"
     if language in ("java", "cpp"):
         text += (
             "package = "
