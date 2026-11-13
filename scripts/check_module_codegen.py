@@ -55,6 +55,8 @@ def manifest(modules: dict, names: list[str], language: str) -> str:
         text += "split_units = true\nchunk_size = 250\nsplit_crates = true\n"
     if language == "go":
         text += "chunk_size = 250\nsplit_crates = true\n"
+    if language == "cpp":
+        text += "split_units = true\nchunk_size = 120\n"
     if language in ("java", "cpp"):
         text += (
             "package = "
@@ -216,6 +218,15 @@ def compile_command(language: str, work: Path, core: Path) -> tuple[list[str], P
         unit.write_text(
             "".join(f'#include "{path.relative_to(work)}"\n' for path in headers)
         )
+        cpp_units = sorted(source.rglob("*.cpp"))
+        if cpp_units:
+            list_file = work / "cpp-units.txt"
+            list_file.write_text("".join(f"{path}\n" for path in [unit, *cpp_units]))
+            return [
+                "sh",
+                "-c",
+                f'while IFS= read -r tu; do g++ -std=c++20 -fsyntax-only -fmax-errors=10 "$tu" || exit 1; done < "{list_file}"',
+            ], work
         return [
             "g++",
             "-std=c++20",
