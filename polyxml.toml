@@ -77,7 +77,7 @@ depends_on = ["ubl_udt"]
 
 [modules.ubl_signature_aggregate]
 schemas = ["schemas/ubl-2.1/common/UBL-SignatureAggregateComponents-2.1.xsd"]
-depends_on = ["ubl_signature_basic", "ubl_cbc"]
+depends_on = ["ubl_signature_basic", "ubl_cbc", "iso15118_xmldsig"]
 
 [modules.etsi_xades]
 schemas = [
