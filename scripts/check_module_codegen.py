@@ -52,7 +52,7 @@ def manifest(modules: dict, names: list[str], language: str) -> str:
         text += f"depends_on = {json.dumps(modules[name].get('depends_on', []))}\n"
     text += f'\n[[generate]]\ntarget = "{language}"\noutput = "{language}"\n'
     if language == "rust":
-        text += "split_units = true\nchunk_size = 250\n"
+        text += "split_units = true\nchunk_size = 250\nsplit_crates = true\n"
     if language in ("java", "cpp"):
         text += (
             "package = "
@@ -246,7 +246,16 @@ def compile_command(language: str, work: Path, core: Path) -> tuple[list[str], P
             "-m:1",
             "-p:UseSharedCompilation=false",
         ], work
-    (source / "Cargo.toml").write_text(
+    cargo_toml = source / "Cargo.toml"
+    if cargo_toml.exists():
+        ws_text = cargo_toml.read_text()
+        ws_text = ws_text.replace(
+            'polyxml = "0.35"',
+            f"polyxml = {{ path = {json.dumps(str(core))} }}",
+        )
+        cargo_toml.write_text(ws_text)
+        return ["cargo", "check", "--workspace", "-j", "1"], source
+    cargo_toml.write_text(
         '[package]\nname="corpus_check"\nversion="0.1.0"\nedition="2021"\n[profile.dev]\ndebug=0\nincremental=false\n[workspace]\n[lib]\npath="mod.rs"\n[dependencies]\npolyxml={path='
         + json.dumps(str(core))
         + '}\nquick-xml={version="0.42",features=["serialize"]}\nserde={version="1",features=["derive"]}\nserde_json="1"\nregex="1"\n'
